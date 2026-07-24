@@ -3,6 +3,10 @@ remote_theme: just-the-docs/just-the-docs
 markdown: kramdown
 permalink: pretty
 
+# 使用 GFM 解析器，支持 4 反引号嵌套代码块（与 GitHub 渲染一致）
+kramdown:
+  input: GFM
+
 # Color scheme and appearance
 color_scheme: dark
 search_enabled: true
