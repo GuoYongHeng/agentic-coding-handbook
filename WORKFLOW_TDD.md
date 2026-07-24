@@ -34,7 +34,7 @@ nav_order: 2
 
 ## 提示词示例及其输出
 
-```txt
+````txt
 ### Prompt: Generate TDD Plan from Business Logic
 
 I'm implementing a new feature based on the following business rules from a Jira ticket.
@@ -50,7 +50,7 @@ The structure should guide me to:
 
 Here are the business rules:
 
-\`\`\`markdown
+```markdown
 Feature: calculate_invoice_total(items, customer_location)
 
 Business rules:
@@ -76,26 +76,26 @@ Business rules:
    - If item list is empty, return total = 0
    - If location is missing or unknown, default to 5% tax
    - Negative prices or quantities are invalid and should raise an error
-\`\`\`
+```
 
 Format the result like this:
 
-\`\`\`markdown
+```markdown
 # TDD Plan: [Feature Name]
 
-\[ ] Write test for \[simple behavior]
-\[ ] Implement logic to pass test
-\[ ] Write test for \[next rule]
-\[ ] Update implementation to pass
-\[ ] Add test for edge case \[X]
-\[ ] Refactor logic for clarity
-\`\`\`
+[ ] Write test for [simple behavior]
+[ ] Implement logic to pass test
+[ ] Write test for [next rule]
+[ ] Update implementation to pass
+[ ] Add test for edge case [X]
+[ ] Refactor logic for clarity
+```
 
 You can group tests by theme if needed. Only include things that should be verified through tests.
 Avoid assumptions — reason from the rules given.
 Before starting creating the file, you can ask questions to the user to clarify your understanding.
 Check the boxes above as you progress. This is important, DO NOT FORGET ABOUT THIS.
-```
+````
 
 输出：
 
