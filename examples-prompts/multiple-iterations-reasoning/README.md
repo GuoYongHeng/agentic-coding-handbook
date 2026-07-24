@@ -1,55 +1,55 @@
-# Multiple Iterations Reasoning Prompt
+# 多轮迭代推理提示词
 
-## Overview
-This prompt template encourages AI systems to solve problems through a structured, iterative approach that mimics how skilled human problem-solvers work. It guides the AI through multiple rounds of solution analysis and refinement, leading to more robust, optimized outcomes.
+## 概述
+本提示词模板鼓励 AI 系统通过结构化的迭代方法解决问题，模拟熟练人类问题解决者的工作方式。它引导 AI 经历多轮方案分析和优化，从而获得更加健壮、优化的结果。
 
-## How It Works
-The prompt follows a three-stage process:
-1. **Initial Solution**: The AI creates a concise first-draft solution focused on core requirements.
-2. **Analysis Rounds** (3 iterations): The AI critically evaluates its own work and makes targeted improvements in each round.
-3. **Last Solution**: The AI delivers an optimized solution with a brief summary of major improvements.
+## 工作原理
+该提示词遵循三阶段流程：
+1. **初始方案**：AI 创建一个简洁的初稿，专注于核心需求。
+2. **分析轮次**（3 次迭代）：AI 批判性地评估自己的工作，并在每轮中进行有针对性的改进。
+3. **最终方案**：AI 提供优化后的方案，并附上主要改进的简要总结。
 
-## Customization Options
+## 自定义选项
 
-### Adjusting Iteration Depth
-- You can specify exactly how many iterations you want (default is 3 iterations)
-- For simpler problems, 2 iterations may be sufficient
-- For complex problems, 3 or more iterations allow for deeper refinement
+### 调整迭代深度
+- 你可以指定所需的迭代次数（默认为 3 次迭代）
+- 对于较简单的问题，2 次迭代可能就足够了
+- 对于复杂问题，3 次或更多次迭代可以实现更深层的优化
 
-### Domain-Specific Focus Areas
-Depending on your task, you can request focus on specific aspects during analysis:
+### 特定领域的关注点
+根据你的任务，你可以在分析过程中要求关注特定方面：
 
-#### For Code Development:
-- Algorithm efficiency and performance optimization
-- Code readability and maintainability
-- Comprehensive error handling and resilience
-- Security considerations and best practices
-- Test coverage and edge cases
+#### 代码开发：
+- 算法效率和性能优化
+- 代码可读性和可维护性
+- 全面的错误处理和健壮性
+- 安全考量和最佳实践
+- 测试覆盖率和边界情况
 
-#### For Writing Tasks:
-- Clarity and logical flow
-- Supporting evidence and examples
-- Tone and audience appropriateness
-- Conciseness and impact
+#### 写作任务：
+- 清晰度和逻辑流畅性
+- 支撑论据和示例
+- 语气和受众适配性
+- 简洁性和影响力
 
-#### For Decision-Making:
-- Risk assessment and mitigation strategies
-- Resource allocation efficiency
-- Stakeholder impact analysis
-- Long-term vs. short-term tradeoffs
+#### 决策制定：
+- 风险评估和缓解策略
+- 资源分配效率
+- 利益相关者影响分析
+- 长期与短期的权衡
 
-## Example Applications
-- Developing and optimizing complex algorithms
-- Designing robust system architectures
-- Creating data processing pipelines with error handling
-- Formulating business strategies with contingency plans
-- Writing technical specifications or documentation
-- Solving multi-faceted engineering problems
-- Developing comprehensive testing strategies
+## 应用示例
+- 开发和优化复杂算法
+- 设计健壮的系统架构
+- 创建具有错误处理功能的数据处理管道
+- 制定具有应急计划的业务战略
+- 编写技术规范或文档
+- 解决多方面的工程问题
+- 制定全面的测试策略
 
-## Benefits
-- Produces more thoughtful, refined solutions
-- Uncovers edge cases and limitations proactively
-- Documents the evolution of thinking, creating transparency
-- Allows for targeted improvements in specific areas of concern
-- Reduces the need for multiple back-and-forth interactions
+## 优势
+- 产出更深思熟虑、更精细的解决方案
+- 主动发现边界情况和局限性
+- 记录思维演变过程，创造透明度
+- 允许在特定关注领域进行有针对性的改进
+- 减少多轮来回交互的需要

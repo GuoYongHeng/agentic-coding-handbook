@@ -2,73 +2,73 @@
 applyTo: "**/*.ts,**/*.tsx"
 ---
 
-# General rules and best practices for working with TypeScript code
+# TypeScript 代码通用规范与最佳实践
 
-## TypeScript Coding Standards
+## TypeScript 编码标准
 
-- You MUST always use strict typing. Avoid the `any` type unless absolutely necessary.
-- You MUST always enable and respect the strict mode in the `tsconfig.json` file.
-- You MUST always prefer type aliases or interfaces over inline object types for better readability and reusability.
-- You MUST always annotate function return types explicitly, except for trivial cases where inference is obvious (e.g., getters).
-- You MUST always use readonly for properties that should not be modified after initialization.
-- You MUST always use strict null checks.
-- You MUST always prefer interface over type when possible.
-- You MUST always utilize type guards and assertions for runtime type checking.
-- You MUST always implement proper type inference to reduce explicit type annotations.
-- You MUST always use nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator.
-- You SHOULD NEVER use non-null assertions (`!`) unless you are certain the value cannot be null or undefined.
+- 必须始终使用严格类型。除非绝对必要，否则避免使用 `any` 类型。
+- 必须始终在 `tsconfig.json` 文件中启用并遵守严格模式。
+- 必须始终优先使用类型别名或接口，而非内联对象类型，以提高可读性和可复用性。
+- 必须始终显式标注函数返回类型，但对于推断明显的简单情况（如 getter）可以例外。
+- 必须始终对初始化后不应被修改的属性使用 readonly。
+- 必须始终使用严格的空值检查。
+- 必须始终优先使用 interface 而非 type（在可能的情况下）。
+- 必须始终利用类型守卫和类型断言进行运行时类型检查。
+- 必须始终实现适当的类型推断，以减少显式类型注解。
+- 必须始终使用空值合并运算符（`??`）而非逻辑或（`||`），因为它是更安全的运算符。
+- 除非确定值不可能为 null 或 undefined，否则绝不使用非空断言（`!`）。
 
-## Best Practices for TypeScript Features
+## TypeScript 特性最佳实践
 
-### Union and Intersection Types
+### 联合类型与交叉类型
 
-- You MUST use union types (`|`) to represent a value that can be one of several types.
-- You SHOULD use intersection types (`&`) sparingly and only when combining multiple types is necessary.
+- 必须使用联合类型（`|`）来表示可以是多种类型之一的值。
+- 应谨慎使用交叉类型（`&`），仅在确实需要组合多种类型时使用。
 
-### Enums
+### 枚举
 
-- You SHOULD prefer using string literal unions over enums unless enums are required for specific use cases.
+- 除非特定用例需要枚举，否则应优先使用字符串字面量联合类型而非枚举。
 
-### Generics
+### 泛型
 
-- You MUST use generics to create reusable components or functions when working with collections or dynamic data structures.
-- You SHOULD ALWAYS provide meaningful names for generic type parameters (e.g., `TItem` instead of just `T`).
+- 在处理集合或动态数据结构时，必须使用泛型来创建可复用的组件或函数。
+- 应始终为泛型类型参数提供有意义的名称（例如使用 `TItem` 而不是简单的 `T`）。
 
-## Error Handling
+## 错误处理
 
-- You MUST always handle errors gracefully using `try-catch` blocks or equivalent mechanisms.
-- You SHOULD NEVER throw raw strings or numbers as errors. Always throw instances of `Error` or custom error classes.
-- You MUST annotate error handling logic with meaningful comments to explain why errors are being caught or re-thrown.
+- 必须始终使用 `try-catch` 块或等效机制优雅地处理错误。
+- 绝不将原始字符串或数字作为错误抛出。始终抛出 `Error` 实例或自定义错误类。
+- 必须在错误处理逻辑中添加有意义的注释，说明捕获或重新抛出错误的原因。
 
-## Code Organization
+## 代码组织
 
-- You MUST organize your code into modules to promote reusability and maintainability.
-- You SHOULD group related utility functions into separate files (e.g., `utils.ts`).
-- You MUST follow a consistent import order:
-  1. Node.js built-ins (e.g., `fs`, `path`)
-  2. External libraries (e.g., `react`, `lodash`)
-  3. Internal imports (relative paths)
+- 必须将代码组织到模块中，以提高可复用性和可维护性。
+- 应将相关的工具函数分组到单独的文件中（例如 `utils.ts`）。
+- 必须遵循一致的导入顺序：
+  1. Node.js 内置模块（例如 `fs`、`path`）
+  2. 外部库（例如 `react`、`lodash`）
+  3. 内部导入（相对路径）
 
-## Testing Guidelines
+## 测试指南
 
-- You MUST write unit tests for all critical functions and components using the testing framework specified by the project (e.g., Vitest).
-- You SHOULD aim for at least 80% test coverage across all TypeScript files.
-- You MUST mock external dependencies in tests to isolate functionality.
-- Tests SHOULD include edge cases and failure scenarios.
+- 必须使用项目指定的测试框架（例如 Vitest）为所有关键函数和组件编写单元测试。
+- 应争取所有 TypeScript 文件的测试覆盖率至少达到 80%。
+- 必须在测试中模拟外部依赖，以隔离功能。
+- 测试应包含边界情况和失败场景。
 
-## Security Rules
+## 安全规范
 
-- You SHOULD NEVER expose sensitive data (e.g., API keys) in TypeScript files. Use environment variables instead.
-- You MUST validate all user inputs thoroughly to prevent injection attacks or other vulnerabilities.
-- You MUST sanitize any data before rendering it in a UI component to prevent XSS attacks.
+- 绝不在 TypeScript 文件中暴露敏感数据（例如 API 密钥）。请使用环境变量代替。
+- 必须彻底验证所有用户输入，以防止注入攻击或其他漏洞。
+- 必须在将数据渲染到 UI 组件之前对其进行清理，以防止 XSS 攻击。
 
-## Performance Optimization
+## 性能优化
 
-- You SHOULD ALWAYS avoid expensive operations inside loops or frequently called functions.
-- You MUST debounce or throttle expensive operations triggered by user events (e.g., scrolling, resizing).
-- When working with large datasets, you SHOULD prefer lazy loading or pagination over loading everything at once.
+- 应始终避免在循环或频繁调用的函数中执行昂贵的操作。
+- 必须对由用户事件触发的昂贵操作（例如滚动、调整大小）进行防抖或节流处理。
+- 在处理大型数据集时，应优先考虑懒加载或分页，而非一次性加载所有数据。
 
-## Linting and Formatting
+## 代码检查与格式化
 
-- The codebase MUST adhere to the linting rules defined in `.eslintrc`. Fix all linting issues before committing code.
-- Prettier SHOULD be used as the default formatter for consistent styling across files.
+- 代码库必须遵循 `.eslintrc` 中定义的代码检查规则。在提交代码前修复所有代码检查问题。
+- 应使用 Prettier 作为默认格式化工具，以确保文件间样式一致。

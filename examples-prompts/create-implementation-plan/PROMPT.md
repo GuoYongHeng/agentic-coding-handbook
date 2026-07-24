@@ -1,215 +1,215 @@
-# Agentic Coding Implementation Plan Generator
+# AI 智能编码实现计划生成器
 
-## Context
-I need your help creating a detailed implementation plan for a software feature or user story using a "Agentic coding" approach. This involves leveraging AI to break down requirements into manageable, testable chunks that can be incrementally built and verified.
+## 背景
+我需要你帮助我为一个软件功能或用户故事创建详细的实现计划，采用"智能编码"方法。这涉及利用 AI 将需求分解为可管理的、可测试的模块，这些模块可以被逐步构建和验证。
 
-## Step 1: Requirement Clarification
-First, help me refine and clarify the requirements through a focused conversation:
+## 第一步：需求澄清
+首先，通过聚焦的对话帮助我细化和明确需求：
 
-1. Ask ONE specific, relevant question at a time about the feature/story
-2. Use each answer to build understanding of project needs
-3. Continue asking targeted questions until we've covered:
-   - Core functionality and features
-   - Technical architecture
-   - Data models and relationships
-   - User experience requirements
-   - Integration points
-   - Performance expectations
-   - Edge cases and error handling
-   - Security considerations
+1. 每次只询问一个具体的、相关的问题
+2. 利用每个答案加深对项目需求的理解
+3. 持续提出针对性问题，直到覆盖以下所有方面：
+   - 核心功能和特性
+   - 技术架构
+   - 数据模型和关系
+   - 用户体验需求
+   - 集成点
+   - 性能预期
+   - 边界情况和错误处理
+   - 安全考量
 
-## Step 2: Comprehensive Specification
-Once requirements are clear, create a complete specification document (spec.md) including:
+## 第二步：完整规格说明
+需求明确后，创建完整的规格说明文档（spec.md），包括：
 
-1. **Executive Summary**: Concise overview of feature purpose and goals
-2. **Functional Requirements**:
-   - Core features and user workflows
-   - Interface requirements and interaction patterns
-   - Performance expectations and constraints
-3. **Technical Specifications**:
-   - Architecture design and component relationships
-   - Technology stack recommendations with justifications
-   - Data models, schemas, and relationships
-   - API specifications (if applicable)
-   - Integration points with external systems
-4. **Implementation Considerations**:
-   - Error handling strategies
-   - Edge cases and their solutions
-   - Security requirements
-   - Scalability considerations
-5. **Testing Strategy**:
-   - Testing approach and coverage expectations
-   - Acceptance criteria
+1. **执行摘要**：功能目的和目标的简洁概述
+2. **功能需求**：
+   - 核心功能和用户工作流
+   - 界面需求和交互模式
+   - 性能预期和约束
+3. **技术规格**：
+   - 架构设计和组件关系
+   - 技术栈推荐及理由
+   - 数据模型、Schema 和关系
+   - API 规格（如适用）
+   - 与外部系统的集成点
+4. **实现注意事项**：
+   - 错误处理策略
+   - 边界情况及其解决方案
+   - 安全需求
+   - 可扩展性考量
+5. **测试策略**：
+   - 测试方法和覆盖率预期
+   - 验收标准
 
-## Step 3: Implementation Planning
-Break down the specification into an incremental development plan:
+## 第三步：实现规划
+将规格说明分解为增量式开发计划：
 
-1. Draft a high-level blueprint outlining project scope and major components
-2. Divide this blueprint into logical, incremental milestones that build upon each other
-3. Break down each milestone into specific implementation tasks that are:
-   - Focused on a single responsibility
-   - Small enough to implement and test confidently
-   - Large enough to provide meaningful progress
-   - Connected to previous work
-4. For each task, create a specific coding prompt that:
-   - Clearly states what needs to be implemented
-   - References previous code as needed
-   - Includes test requirements
-   - Explains integration with existing components
+1. 起草高层次蓝图，概述项目范围和主要组件
+2. 将蓝图划分为相互递进的逻辑里程碑
+3. 将每个里程碑分解为具体的实现任务，这些任务应：
+   - 专注于单一职责
+   - 足够小，可以自信地实现和测试
+   - 足够大，能提供有意义的进展
+   - 与之前的工作相关联
+4. 为每个任务创建具体的编码提示词，该提示词应：
+   - 清晰说明需要实现的内容
+   - 根据需要引用之前的代码
+   - 包含测试要求
+   - 说明与现有组件的集成方式
 
-## Step 4: Development Roadmap
-Generate two key outputs:
+## 第四步：开发路线图
+生成两个关键输出：
 
-1. **prompt_plan.md**: Step-by-step prompts for code generation tools like Cursor, Claude Code, etc.
+1. **prompt_plan.md**：用于 Cursor、Claude Code 等代码生成工具的逐步提示词
    ```markdown
-   # Implementation Prompts for [Feature Name]
+   # [功能名称] 实现提示词
    
-   ## Setup and Prerequisites
-   
-   ```prompt
-   [Description of what needs to be set up first]
-   
-   Please set up the initial project structure for [feature] with the following:
-   - [Specific framework/library requirements]
-   - [File structure needed]
-   - [Configuration requirements]
-   
-   Generate the following files:
-   1. [Filename] - [Purpose]
-   2. [Filename] - [Purpose]
-   
-   Include tests that verify:
-   - [Test criteria]
-   ```
-   
-   ## Milestone 1: [Milestone Name]
-   
-   ### Task 1.1: [Task Name]
-   
-   **Context:** [Explanation of how this fits into the overall project]
+   ## 设置和前置条件
    
    ```prompt
-   [Detailed description of what code needs to be implemented]
+   [描述需要首先设置的内容]
    
-   Requirements:
-   - [Specific requirement]
-   - [Specific requirement]
+   请为 [功能] 设置初始项目结构，包含以下内容：
+   - [具体的框架/库需求]
+   - [所需的文件结构]
+   - [配置需求]
    
-   This should integrate with [existing component] by [explanation of integration].
+   生成以下文件：
+   1. [文件名] - [用途]
+   2. [文件名] - [用途]
    
-   Include tests that verify:
-   - [Test criteria]
-   - [Test criteria]
+   包含验证以下内容的测试：
+   - [测试标准]
    ```
    
-   ### Task 1.2: [Task Name]
+   ## 里程碑 1：[里程碑名称]
+   
+   ### 任务 1.1：[任务名称]
+   
+   **背景：** [说明此任务如何融入整体项目]
+   
+   ```prompt
+   [详细描述需要实现的代码]
+   
+   需求：
+   - [具体需求]
+   - [具体需求]
+   
+   这应该通过 [集成说明] 与 [现有组件] 集成。
+   
+   包含验证以下内容的测试：
+   - [测试标准]
+   - [测试标准]
+   ```
+   
+   ### 任务 1.2：[任务名称]
    
    ...
    
-   ## Milestone 2: [Milestone Name]
+   ## 里程碑 2：[里程碑名称]
    
    ...
    
-   ## Integration and Final Testing
+   ## 集成和最终测试
    
    ```prompt
-   [Final integration steps]
+   [最终集成步骤]
    
-   Please implement integration tests that verify:
-   - [Integration test criteria]
-   - [Integration test criteria]
+   请实现验证以下内容的集成测试：
+   - [集成测试标准]
+   - [集成测试标准]
    ```
    ```
 
-2. **todo.md**: A comprehensive, actionable checklist of tasks that can be checked off during development
+2. **todo.md**：开发期间可逐项勾选的全面、可操作的任务清单
    ```markdown
-   # Development Checklist for [Feature Name]
+   # [功能名称] 开发清单
    
-   ## Setup and Prerequisites
-   - [ ] Set up project structure
-   - [ ] Configure development environment
-   - [ ] Install required dependencies
+   ## 设置和前置条件
+   - [ ] 设置项目结构
+   - [ ] 配置开发环境
+   - [ ] 安装所需依赖
    
-   ## Milestone 1: [Milestone Name]
+   ## 里程碑 1：[里程碑名称]
    
-   ### Core Implementation
-   - [ ] Task 1.1: [Clear, actionable description]
-     - [ ] Implement [specific component/function]
-     - [ ] Write tests for [specific component/function]
-     - [ ] Ensure tests are passing
+   ### 核心实现
+   - [ ] 任务 1.1：[清晰、可操作的描述]
+     - [ ] 实现 [具体组件/函数]
+     - [ ] 为 [具体组件/函数] 编写测试
+     - [ ] 确保测试通过
    
-   - [ ] Task 1.2: [Clear, actionable description]
-     - [ ] Implement [specific component/function]
-     - [ ] Write tests for [specific component/function]
-     - [ ] Ensure tests are passing
+   - [ ] 任务 1.2：[清晰、可操作的描述]
+     - [ ] 实现 [具体组件/函数]
+     - [ ] 为 [具体组件/函数] 编写测试
+     - [ ] 确保测试通过
    
-   ### Review & Refactoring
-   - [ ] Refactor [specific component] for better [performance/readability/etc.]
-   - [ ] Ensure all tests still pass after refactoring
+   ### 审查与重构
+   - [ ] 重构 [具体组件] 以提升 [性能/可读性/等]
+   - [ ] 确保重构后所有测试仍然通过
    
-   ## Milestone 2: [Milestone Name]
+   ## 里程碑 2：[里程碑名称]
    
-   ### Feature Implementation
-   - [ ] Task 2.1: [Clear, actionable description]
-     - [ ] Implement [specific component/function]
-     - [ ] Write tests for [specific component/function]
+   ### 功能实现
+   - [ ] 任务 2.1：[清晰、可操作的描述]
+     - [ ] 实现 [具体组件/函数]
+     - [ ] 为 [具体组件/函数] 编写测试
    
    ...
    
-   ## Final Integration
-   - [ ] Integrate all components
-   - [ ] Run comprehensive test suite
-   - [ ] Verify all acceptance criteria are met
+   ## 最终集成
+   - [ ] 集成所有组件
+   - [ ] 运行全面测试套件
+   - [ ] 验证所有验收标准已满足
    
-   ## Deployment Preparation
-   - [ ] Update documentation
-   - [ ] Prepare release notes
-   - [ ] Final code review
+   ## 部署准备
+   - [ ] 更新文档
+   - [ ] 准备发布说明
+   - [ ] 最终代码审查
    ```
 
-## Integration Options
-If I've shared any of these resources, use them to enhance your analysis:
-- **Jira tickets**: Extract acceptance criteria, requirements, and dependencies
-- **Confluence pages**: Gather context, technical documentation, and related information
-- **Figma designs**: Reference for UI/UX implementation details and visual requirements
-- **Codebase or repository details**: Understand existing architecture and implementation patterns
+## 集成选项
+如果我已共享以下任何资源，请使用它们来增强你的分析：
+- **Jira 工单**：提取验收标准、需求和依赖关系
+- **Confluence 页面**：收集背景、技术文档和相关信息
+- **Figma 设计**：UI/UX 实现细节和视觉需求参考
+- **代码库或仓库详情**：了解现有架构和实现模式
 
-## Implementation Principles
-Throughout the planning process, emphasize:
-- Test-driven development (TDD) approach
-- Incremental progress with verifiable steps
-- Clear dependency chains between components
-- Small, focused tasks that build toward the whole
-- Integration testing at logical milestones
+## 实现原则
+在整个规划过程中，强调：
+- 测试驱动开发（TDD）方法
+- 通过可验证的步骤实现增量进展
+- 组件间的清晰依赖链
+- 面向整体的小型、专注任务
+- 在逻辑里程碑处进行集成测试
 
-## Example Input
-I need an implementation plan for adding a "forgot password" feature to our authentication system. The feature should allow users to reset their password via email.
+## 示例输入
+我需要为认证系统添加"忘记密码"功能的实现计划。该功能应允许用户通过电子邮件重置密码。
 
-## My User Story/Feature
-[Replace this with your feature requirements. For example:
+## 我的用户故事/功能
+[将此处替换为你的功能需求。例如：
 
-Feature: Inventory Management System for Small Retail Business
+功能：小型零售业务的库存管理系统
 
-As a retail store owner, I need a simple inventory management system that allows me to:
-- Track product stock levels in real-time
-- Receive notifications when items reach low stock thresholds
-- Generate inventory reports (daily, weekly, monthly)
-- Scan barcodes to quickly update inventory during receiving
-- Log sales and automatically adjust inventory counts
+作为零售店主，我需要一个简单的库存管理系统，使我能够：
+- 实时追踪产品库存水平
+- 当商品达到低库存阈值时收到通知
+- 生成库存报告（日报、周报、月报）
+- 扫描条形码以在收货时快速更新库存
+- 记录销售并自动调整库存数量
 
-Technical context:
-- Need to support both web and mobile access
-- Should integrate with our existing Square POS system
-- Must be cloud-based with offline capabilities
-- Currently have approximately 1,500 different SKUs
-- Need to support multiple user roles (admin, manager, staff)
+技术背景：
+- 需要支持 Web 和移动端访问
+- 应与我们现有的 Square POS 系统集成
+- 必须基于云端，支持离线功能
+- 目前约有 1,500 个不同 SKU
+- 需要支持多用户角色（管理员、经理、员工）
 
-Existing systems:
-- Square POS for sales
-- QuickBooks for accounting
-- G Suite for business operations
+现有系统：
+- 销售使用 Square POS
+- 会计使用 QuickBooks
+- 业务运营使用 G Suite
 
-User profile:
-- Small team (5-8 users)
-- Limited technical expertise
-- Need simple, intuitive interface]
+用户概况：
+- 小型团队（5-8 名用户）
+- 技术专业知识有限
+- 需要简单、直观的界面]

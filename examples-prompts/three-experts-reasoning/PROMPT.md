@@ -1,35 +1,35 @@
-# Three Experts Prompt
+# 三位专家提示词
 
 <task_description>
-Replace this text with a detailed description of the problem you need to solve. Be specific about requirements, constraints, and what you're trying to achieve. The more context you provide, the better the experts can analyze your problem.
+将此处文字替换为你需要解决的问题的详细描述。请具体说明需求、约束条件以及你想要实现的目标。你提供的背景越多，专家们分析你的问题就越到位。
 </task_description>
 
 <current_approach>
-(Optional) Describe your current approach or implementation if you have one. Include relevant code snippets, architectural decisions, or design patterns you're using or considering.
+（可选）如果你已有方案，请描述你当前的实现方式。包括相关代码片段、架构决策，或你正在使用或考虑的设计模式。
 </current_approach>
 
 <specific_concerns>
-(Optional) List any specific concerns, trade-offs, or aspects you'd like the experts to address in their analysis.
+（可选）列出你希望专家在分析中重点关注的具体顾虑、权衡点或方面。
 </specific_concerns>
 
-I need three senior engineers with different expertise to help me solve this problem:
+我需要三位具有不同专业背景的高级工程师帮助我解决这个问题：
 
-1. Expert 1 should be a **practical implementer** who focuses on working solutions, maintainability, and proven patterns
-2. Expert 2 should be a **systems architect** who considers scalability, performance, and long-term evolution
-3. Expert 3 should be a **critical reviewer** who identifies potential issues, edge cases, and alternative approaches
+1. 专家 1 应是一位**实践实现者**，专注于可行的解决方案、可维护性和经过验证的模式
+2. 专家 2 应是一位**系统架构师**，关注可扩展性、性能和长期演进
+3. 专家 3 应是一位**批判性审查者**，负责识别潜在问题、边界情况和替代方案
 
-Each expert should:
-1. Introduce themselves and their approach to the problem
-2. Analyze the problem from their unique perspective
-3. Provide specific recommendations with reasoning
-4. Address any concerns or trade-offs they see
+每位专家应：
+1. 介绍自己及其解决问题的方法
+2. 从各自独特的视角分析问题
+3. 提供带有推理依据的具体建议
+4. 指出他们所看到的顾虑或权衡点
 
-After all three experts have presented their analysis, they should engage in a brief discussion highlighting points of agreement and disagreement, then collaborate to provide a unified recommendation that combines the best aspects of their individual approaches.
+三位专家完成各自的分析后，应进行简短讨论，重点阐明他们的共识与分歧，然后协作提供一个综合建议，结合各自方案的最佳方面。
 
-The final output should include:
-- A clear recommended solution or approach
-- Key implementation considerations
-- Any trade-offs or compromises made
-- Next steps or areas for further investigation
+最终输出应包括：
+- 清晰的推荐解决方案或方法
+- 关键实施注意事项
+- 任何权衡或妥协
+- 后续步骤或需要进一步研究的领域
 
-Please provide detailed, technical responses that demonstrate deep expertise in software engineering principles and best practices.
+请提供详尽的技术性回答，展示对软件工程原则和最佳实践的深厚专业知识。

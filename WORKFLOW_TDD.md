@@ -5,39 +5,39 @@ parent: Core Workflows
 nav_order: 2
 ---
 
-# Test Driven Development
+# 测试驱动开发
 
-Test-Driven Development (TDD) and Agentic Coding may seem like opposites — one is structured and disciplined, the other fluid and intuitive. But when paired, they create a powerful feedback loop: TDD gives structure to your flow, and Agentic coding gives speed to your structure.
+测试驱动开发（TDD）和智能体编码看似相反——前者结构化而严谨，后者流畅而直觉驱动。但两者结合时，能创造出强大的反馈循环：TDD 为你的流程提供结构，智能体编码为你的结构提供速度。
 
-This combination shines when you’re working with complex logic files, such as pricing engines, rules-based validators, or multi-condition workflows. Instead of prompting the AI to generate everything at once, you describe one behavior at a time through tests — and let the AI build up the logic incrementally, safely, and cleanly.
+当处理复杂逻辑文件时，这种组合尤为出色，例如定价引擎、基于规则的验证器或多条件工作流。不必一次性提示 AI 生成所有内容，而是通过测试逐一描述行为，让 AI 以增量、安全、清晰的方式构建逻辑。
 
-## Why TDD Makes Agentic Coding Better
+## 为什么 TDD 能让智能体编码更好
 
-- **Tests act as prompts:** In the AI-assisted workflow, a test becomes a natural language spec that guides the AI toward exactly the behavior you expect. Instead of saying "generate a function that filters valid emails," you say it('should return only valid emails from a mixed list') and the AI writes the code to pass that test.
+- **测试充当提示词：** 在 AI 辅助工作流中，测试成为引导 AI 实现预期行为的自然语言规格说明。与其说"生成一个过滤有效邮件的函数"，不如写 it('should return only valid emails from a mixed list')，然后让 AI 编写代码来通过该测试。
 
-- **You reduce hallucination:** The more precise the prompt (in this case, the test), the more accurate the generation.
-  TDD keeps the LLM focused on small, testable goals instead of bloated implementations.
+- **减少幻觉：** 提示词越精确（在这个场景中即测试），生成结果越准确。
+  TDD 让 LLM 专注于小型、可测试的目标，而不是臃肿的实现。
 
-- **It builds confidence:** When every code generation step is validated by a test, you know it's working. This is crucial when you’re using AI as your pair.
+- **建立信心：** 当每个代码生成步骤都经过测试验证时，你知道它是有效的。当使用 AI 作为你的结对编程伙伴时，这一点至关重要。
 
-- **It keeps you in flow:** Tests give you checkpoints. Instead of stopping to debug a vague output, you just write the next test and let the AI catch up.
+- **保持工作流的流畅性：** 测试给你提供检查点。不必停下来调试模糊的输出，直接写下一个测试，让 AI 跟上来。
 
-- **It reinforces clean, behavioral thinking:** TDD forces you to describe what the code should do, not how to write it. That’s exactly how we should prompt LLMs.
+- **强化简洁的行为化思维：** TDD 强制你描述代码应该做什么，而不是如何编写。这正是我们应该提示 LLM 的方式。
 
-## TDD Tips for Agentic Coders
+## 智能体编码者的 TDD 技巧
 
-- Start with high-value behavior first, not edge cases.
-- Use descriptive test names — the clearer the test, the better the AI result.
-- Keep test scopes tight: one behavior per prompt.
-- Let the AI refactor — ask it to "clean up the logic but keep all tests green".
-- Use pre-commit hooks to run tests and stop bad code from merging.
+- 先从高价值行为开始，而不是边界情况。
+- 使用描述性的测试名称——测试越清晰，AI 结果越好。
+- 保持测试范围紧凑：每次提示只验证一个行为。
+- 让 AI 重构——要求它"清理逻辑但保持所有测试通过"。
+- 使用预提交钩子运行测试，阻止不良代码合并。
 
-## Example of Prompt and its output
+## 提示词示例及其输出
 
 ```txt
 ### Prompt: Generate TDD Plan from Business Logic
 
-I’m implementing a new feature based on the following business rules from a Jira ticket.
+I'm implementing a new feature based on the following business rules from a Jira ticket.
 Please help me break it down into a clear **Test-Driven Development flow**, where each step represents a test to be written and the logic to be implemented to pass it.
 Output the result as a **markdown checklist** (`tdd-plan.md`) using `[ ]` for each step.
 The structure should guide me to:
@@ -97,7 +97,7 @@ Before starting creating the file, you can ask questions to the user to clarify 
 Check the boxes above as you progress. This is important, DO NOT FORGET ABOUT THIS.
 ```
 
-Output:
+输出：
 
 ```txt
 # TDD Plan: Calculate Invoice Total
@@ -161,10 +161,10 @@ Output:
 - [ ] Ensure all tests still pass after refactoring
 ```
 
-## References
+## 参考资料
 
 - [TDD with Github Copilot Agent](https://www.loom.com/share/d442996affe14bdea81014183f633988)
 
-## Keep Reading
+## 继续阅读
 
-[Automatic Code Validations](./WORKFLOW_AUTO_VALIDATIONS.md)
+[自动代码验证](./WORKFLOW_AUTO_VALIDATIONS.md)

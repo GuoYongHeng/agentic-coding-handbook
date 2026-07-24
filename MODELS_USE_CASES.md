@@ -1,114 +1,113 @@
 ---
 layout: page
-title: Model Use Cases
-parent: Tools & Setup
+title: 模型使用场景
+parent: 工具与配置
 nav_order: 1
 ---
 
-# Models Use Cases
+# 模型使用场景
 
-When integrating AI agents into your development process, selecting the right foundation model is critical for productivity, quality of the output code, and cost-efficiency. Based on our internal experiment and industry observations, here’s how to evaluate and use the leading models:
+在将 AI 智能体集成到开发流程时，选择合适的基础模型对于提升生产力、代码输出质量和成本效益至关重要。基于我们的内部实验和行业观察，以下是评估和使用主流模型的指南：
 
-## Claude Sonnet 4.6 (Anthropic)
+## Claude Sonnet 4.6（Anthropic）
 
-**Strengths:** Best for reasoning-heavy tasks like debugging, architecture decisions, system design, and breaking down complex prompts. With Thinking effort set to High, it excels at multi-step planning and structured output.
-**Context Window:** 200K tokens, well-suited for multi-file reasoning and complex feature generation.
-**When to avoid:** High-frequency interactive prompting where speed is the priority, or when token costs are a concern.
+**优势：** 最擅长推理密集型任务，如调试、架构决策、系统设计以及拆解复杂提示词。将思考力度设为高档时，在多步骤规划和结构化输出方面表现出色。
+**上下文窗口：** 200K tokens，非常适合多文件推理和复杂功能生成。
+**应避免的场景：** 速度优先的高频交互式提示词场景，或对 token 成本敏感时。
 
-### Ideal Use Cases for Claude Sonnet 4.6 (Anthropic)
+### Claude Sonnet 4.6（Anthropic）的理想使用场景
 
-- Writing comprehensive specs or planning files like `spec.md`, `plan.md` or `todo.md`.
-- Refactoring legacy code with unclear logic.
-- Debugging hard-to-identify issues with long history or dependencies.
+- 编写全面的规格说明或规划文件，如 `spec.md`、`plan.md` 或 `todo.md`。
+- 重构逻辑不清晰的遗留代码。
+- 调试具有较长历史记录或复杂依赖关系的难以定位的问题。
 
-## GPT-5.4 / GPT-5.4 mini (OpenAI)
+## GPT-5.4 / GPT-5.4 mini（OpenAI）
 
-**Strengths:** The GPT-5.4 family covers the full spectrum from fast/cheap to flagship reasoning. GPT-5.4 mini is the go-to for speed and cost; GPT-5.4 balances quality and cost; GPT-5.5 is also available for complex reasoning at higher cost.
-**Context Window:** 400K tokens (GPT-5.4 mini), 1M tokens (GPT-5.4, GPT-5.5).
-**When to avoid:** GPT-5.4 mini for tasks requiring deep multi-step reasoning — use GPT-5.4 or GPT-5.5 instead.
+**优势：** GPT-5.4 系列覆盖从快速/低成本到旗舰推理的全部场景。GPT-5.4 mini 是速度和成本的首选；GPT-5.4 在质量和成本之间取得平衡；GPT-5.5 也适用于高成本的复杂推理场景。
+**上下文窗口：** 400K tokens（GPT-5.4 mini），1M tokens（GPT-5.4、GPT-5.5）。
+**应避免的场景：** 使用 GPT-5.4 mini 处理需要深度多步骤推理的任务——此类任务应使用 GPT-5.4 或 GPT-5.5。
 
-### Ideal Use Cases for GPT-5.4 / GPT-5.4 mini (OpenAI)
+### GPT-5.4 / GPT-5.4 mini（OpenAI）的理想使用场景
 
-- Quick iteration of UI components and scaffolding (GPT-5.4 mini).
-- Writing test files, simple APIs, or scaffolding endpoints (GPT-5.4 mini / GPT-5.4).
-- Architectural reasoning, complex debugging, and coding tasks on par with Claude (GPT-5.4 / GPT-5.5).
+- UI 组件和脚手架的快速迭代（GPT-5.4 mini）。
+- 编写测试文件、简单 API 或脚手架端点（GPT-5.4 mini / GPT-5.4）。
+- 架构推理、复杂调试以及与 Claude 相当的编程任务（GPT-5.4 / GPT-5.5）。
 
-## Gemini 2.5 Pro / Gemini 3.1 Pro (Google)
+## Gemini 2.5 Pro / Gemini 3.1 Pro（Google）
 
-**Strengths:** Best model for full-repo understanding, DevOps, and infrastructure-as-code. Extremely powerful context window. Gemini 2.5 Pro is the current stable release; Gemini 3.1 Pro is available in preview with enhanced agentic and coding capabilities.
+**优势：** 最适合全仓库理解、DevOps 和基础设施即代码场景。拥有极强大的上下文窗口。Gemini 2.5 Pro 是当前稳定版；Gemini 3.1 Pro 以预览版形式提供，具备增强的智能体和编程能力。
 
-**Context Window:** Up to 1M tokens (Gemini 2.5 Pro).
+**上下文窗口：** 最高 1M tokens（Gemini 2.5 Pro）。
 
-**When to avoid:** Prompting conversationally on very small tasks — might be overkill in terms of latency and cost. Use Gemini 3 Flash (Preview) for lighter, high-volume tasks.
+**应避免的场景：** 对非常小的任务进行对话式提示——从延迟和成本角度来看可能过于重量级。轻量级、高频任务可使用 Gemini 3 Flash（预览版）。
 
-### Ideal Use Cases for Gemini 2.5 Pro / Gemini 3.1 Pro (Google)
+### Gemini 2.5 Pro / Gemini 3.1 Pro（Google）的理想使用场景
 
-- Modifying infra using CDK/Terraform.
-- Coordinating changes across microservices or large monorepos.
-- CI/CD automation, API gateway routing, or handling config-heavy workflows.
+- 使用 CDK/Terraform 修改基础设施。
+- 协调跨微服务或大型 monorepo 的变更。
+- CI/CD 自动化、API 网关路由或处理配置密集型工作流程。
 
-## Comparison table
+## 对比表
 
-| **LLM**           | **Best at**                                         | **Avoid when**                          |
+| **LLM**           | **最擅长**                                         | **应避免的场景**                          |
 | ----------------- | --------------------------------------------------- | --------------------------------------- |
-| Claude Sonnet 4.6 | System reasoning, specs, debugging                  | You need fast short feedback loops      |
-| GPT-5.4 mini      | UI, scaffolding, fast/cheap prompting               | You need deep multi-step reasoning      |
-| GPT-5.4 / GPT-5.5 | Complex reasoning and coding on par with Claude    | Speed and low latency are the priority  |
-| Gemini 2.5 Pro / 3.1 Pro | Infra/codebase-wide operations and larger codebases | You're doing small or interactive tasks |
+| Claude Sonnet 4.6 | 系统推理、规格说明、调试                  | 需要快速简短反馈循环时      |
+| GPT-5.4 mini      | UI、脚手架、快速/低成本提示词               | 需要深度多步骤推理时      |
+| GPT-5.4 / GPT-5.5 | 复杂推理和与 Claude 相当的编程任务    | 速度和低延迟是优先考虑因素时  |
+| Gemini 2.5 Pro / 3.1 Pro | 基础设施/全代码库操作及大型代码库 | 执行小型或交互式任务时 |
 
-Each model offers a unique advantage depending on the nature of the task. For day-to-day work, a combination approach using GPT-5.4 mini for speed and Claude Sonnet 4.6 or Gemini for structure often yields the best outcome.
+每个模型根据任务性质都有其独特优势。在日常工作中，结合使用 GPT-5.4 mini 提升速度，以及 Claude Sonnet 4.6 或 Gemini 处理结构化任务，通常能获得最佳效果。
 
-## Token Efficiency & Cost Awareness in AI Coding Workflows
+## AI 编程工作流中的 Token 效率与成本意识
 
-As AI becomes part of our daily software development process, it’s essential to understand that the way we interact with AI models impacts both cost and performance. Even if you're using tools like GitHub Copilot, Cursor, or Claude on a fixed monthly license, there are still important limits tied to usage — especially around context window size and token quotas.
+随着 AI 成为我们日常软件开发流程的一部分，了解我们与 AI 模型交互的方式如何影响成本和性能至关重要。即使你使用的是固定月费的 GitHub Copilot、Cursor 或 Claude，仍然存在与使用量相关的重要限制——尤其是上下文窗口大小和 token 配额方面。
 
-This section explains why developers must learn to work efficiently, and why engineering leaders and managers should actively support a cost-conscious mindset.
+本节解释了为什么开发者必须学会高效工作，以及为什么工程负责人和管理者应积极倡导节省成本的思维方式。
 
-## Why This Matters
+## 为什么这很重要
 
-### For Developers
+### 对开发者而言
 
-- **Better prompts cost less:** Specific, scoped prompts reduce token use and improve AI accuracy.
-- **Avoid degraded performance:** Tools like Cursor and Copilot operate under token and context limits. Once usage exceeds those thresholds, performance drops (longer latency, weaker completions, missing context).
-- **Prevent feature lockout:** Some tools may stop working temporarily when quota caps are exceeded — requiring additional credits or waiting until reset.
+- **更好的提示词成本更低：** 具体、聚焦的提示词减少 token 使用，并提升 AI 准确性。
+- **避免性能下降：** Cursor 和 Copilot 等工具在 token 和上下文限制下运行。一旦使用量超过阈值，性能就会下降（延迟增加、补全质量变差、缺失上下文）。
+- **防止功能锁定：** 部分工具在超出配额上限时可能暂时停止工作——需要额外充值或等待重置。
 
-### For Managers
+### 对管理者而言
 
-- **A flat-rate is not unlimited:** Even with monthly pricing, most tools have soft or hard caps. Token abuse leads to throttling or degraded service across the team.
-- **Track usage:** Understanding team-wide usage patterns can help plan licenses, detect misuse, and manage renewal tiers.
-- **Token efficiency = productivity efficiency:** Well-structured AI interactions save engineering time, avoid retries, and improve project timelines.
+- **固定费率并不等于无限使用：** 即使是按月收费，大多数工具也有软性或硬性上限。token 滥用会导致整个团队的服务被限流或降级。
+- **追踪使用情况：** 了解团队整体使用模式有助于规划许可证、发现滥用行为并管理续订级别。
+- **Token 效率 = 生产力效率：** 结构良好的 AI 交互可以节省工程时间、减少重试次数，并改善项目时间线。
 
-## Best Practices for Developers: Prompt Efficiently, Work Smart
+## 开发者最佳实践：高效提示，聪明工作
 
-- **Be Specific, Not Chatty:** Replace vague instructions with task-focused prompts. Don’t: `Can you help me fix this maybe?`. Instead do: `Refactor validateUser() to support optional phone number.`.
-- **Use Attachments, Not Dumps:** Don’t paste full files into prompts. Use file references or context attachment features (#codebase, Cursor context menu).
-- **One Task per Prompt:** Instead of asking for a test, refactor, and docs in one go — split into focused steps. Reduces retries and output bloat.
-- **Limit Output Size:** Add constraints: `Return only the code, no explanation.`, `Limit to 20 lines.` Keeps the interaction sharp and reduces unnecessary token consumption, especially in tools where both input and output count toward your quota.
-- **Avoid Recursive Prompt Chains Without Limits:** Prompts like `Refine this 10 times` may sound clever but can generate thousands of tokens. Use: `Improve this once. Stop after 2 iterations.`
-- **Use Lighter Models for Simpler Tasks:** For documentation, variable naming, or test generation, faster and cheaper options like GPT-5.4 mini are often sufficient.
-  Reserve GPT-5.4, GPT-5.5, or Claude Sonnet 4.6 (with Thinking effort High) for architectural reasoning or multi-file refactoring.
-- **Use Memory Banks and Instructions Files:** Store recurring context (architecture rules, naming patterns, stack details) in `.github/copilot-instructions.md`, `.cursor/rules`, or `CLAUDE.md`. This prevents repeating the same setup context in every prompt — a common source of wasted tokens.
+- **具体，不要闲聊：** 用任务导向的提示词替代模糊指令。不要：`你能帮我修一下这个吗？`。而是：`重构 validateUser() 以支持可选的电话号码参数。`
+- **使用附件，而非粘贴：** 不要将完整文件粘贴到提示词中。使用文件引用或上下文附件功能（#codebase、Cursor 上下文菜单）。
+- **一次提示一个任务：** 不要一次性要求测试、重构和文档——拆分为聚焦的步骤。减少重试次数和输出膨胀。
+- **限制输出大小：** 添加约束：`只返回代码，不需要解释。`，`限制在 20 行以内。` 保持交互简洁，减少不必要的 token 消耗，尤其是在输入和输出都计入配额的工具中。
+- **避免无限制的递归提示链：** 像 `将这个改进 10 次` 的提示词听起来聪明，但可能产生数千个 token。改用：`改进一次。最多迭代 2 次后停止。`
+- **简单任务使用轻量级模型：** 对于文档编写、变量命名或测试生成，GPT-5.4 mini 等更快速、更低成本的选项通常已足够。为架构推理或多文件重构保留 GPT-5.4、GPT-5.5 或 Claude Sonnet 4.6（思考力度设为高）。
+- **使用内存库和指令文件：** 将重复出现的上下文（架构规则、命名模式、技术栈详情）存储在 `.github/copilot-instructions.md`、`.cursor/rules` 或 `CLAUDE.md` 中。这样可以避免在每次提示词中重复相同的配置上下文——这是浪费 token 的常见来源。
 
-| **Prompt Style**          | **Input Tokens** | **Output Tokens** | **Total** | **Result**               |
+| **提示词风格**          | **输入 Token** | **输出 Token** | **合计** | **结果**               |
 | ------------------------- | ---------------- | ----------------- | --------- | ------------------------ |
-| Chatty, vague, multi-task | 700              | 1400              | 2100      | Low quality, AI misfires |
-| Focused, scoped, clear    | 200              | 600               | 800       | High quality, no retries |
+| 闲聊、模糊、多任务 | 700              | 1400              | 2100      | 质量低，AI 出错 |
+| 聚焦、有范围、清晰    | 200              | 600               | 800       | 质量高，无需重试 |
 
-Even small improvements save thousands of tokens per day when repeated across engineers.
+即使是小幅改进，在多名工程师中每天重复执行，也能节省数千个 token。
 
-## What Managers Should Do
+## 管理者应该做什么
 
-- Set token-awareness as a team expectation — just like we manage test coverage or code review discipline.
-- Encourage shared context assets (instructions files, prompt plans, `spec.md`, etc.).
-- Monitor usage if possible — via OpenAI dashboards, Claude usage logs, or billing APIs.
-- Default to value-tier models where appropriate (e.g., staging/dev workflows).
+- 将 token 意识设定为团队期望——就像我们管理测试覆盖率或代码审查规范一样。
+- 鼓励共享上下文资产（指令文件、提示词规划、`spec.md` 等）。
+- 尽可能监控使用情况——通过 OpenAI 控制台、Claude 使用日志或计费 API。
+- 在适当情况下默认使用性价比高的模型（如暂存/开发工作流程）。
 
-By applying token-efficient practices, we keep our tools responsive, our budgets sustainable, and our workflows high-impact. This isn’t just about saving money — it’s about engineering with intention.
+通过应用 token 高效实践，我们可以保持工具的响应速度、预算的可持续性，以及工作流程的高效性。这不仅仅是省钱——这是有意识地进行工程实践。
 
-## References
+## 参考资料
 
 - [Choosing the right AI model for your task](https://docs.github.com/en/copilot/using-github-copilot/ai-models/choosing-the-right-ai-model-for-your-task)
 
-## Keep Reading
+## 继续阅读
 
-[Privacy Considerations](./PRIVACY.md)
+[隐私注意事项](./PRIVACY.md)

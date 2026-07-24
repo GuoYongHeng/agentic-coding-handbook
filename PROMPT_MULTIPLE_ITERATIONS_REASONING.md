@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Multiple Iterations Reasoning
-parent: Prompt Engineering
+title: 多轮迭代推理法
+parent: 提示词工程
 nav_order: 3
 ---
 
-# Multiple Iterations Reasoning Method
+# 多轮迭代推理法
 
-The Multiple Iterations Reasoning prompt is a structured approach designed to guide AI systems through progressive rounds of self-improvement. This method leverages iterative analysis and refinement to produce solutions that are more robust, optimized, and thoroughly considered.
+多轮迭代推理提示词是一种结构化方法，旨在引导 AI 系统经历渐进式的自我改进轮次。这种方法利用迭代分析和优化，产出更健壮、更经过优化、更全面考量的解决方案。
 
-In agentic coding, this technique is particularly valuable when dealing with complex problems that benefit from layered analysis, such as algorithm development, system architecture design, or code optimization where the first solution is rarely the best one.
+在智能体编程中，这项技术对于需要分层分析的复杂问题尤为有价值，例如算法开发、系统架构设计或代码优化——在这些场景中，第一个解决方案很少是最佳方案。
 
-## What's the Method?
+## 方法是什么？
 
-**Core Prompt Pattern:**
+**核心提示词模式：**
 
 ```txt
 I want you to solve the following problem/task: [DESCRIBE PROBLEM OR TASK HERE]
@@ -42,21 +42,21 @@ Provide your optimized solution with:
 - Any remaining considerations
 ```
 
-This creates a self-reflective loop that encourages the AI to critically evaluate and improve its own work multiple times.
+这创建了一个自我反思的循环，鼓励 AI 多次批判性地评估和改进自己的工作。
 
-| **Use Case**                     | **Why It Works**                                       |
+| **使用场景**                     | **为什么有效**                                       |
 | -------------------------------- | ------------------------------------------------------ |
-| Algorithm optimization           | Forces consideration of edge cases and performance     |
-| System design refinement         | Builds in layers of error handling and robustness      |
-| Code quality improvement         | Progressively enhances readability and maintainability |
-| Problem-solving with constraints | Tests solution against increasingly complex criteria   |
-| Test coverage planning           | Expands from basic to comprehensive test scenarios     |
+| 算法优化           | 强制考虑边界情况和性能     |
+| 系统设计改进         | 分层构建错误处理和健壮性      |
+| 代码质量提升         | 逐步增强可读性和可维护性 |
+| 有约束条件的问题求解 | 针对日益复杂的标准测试方案   |
+| 测试覆盖规划           | 从基础测试扩展到全面测试场景     |
 
-## Example 1: Optimizing a Search Algorithm
+## 示例一：优化搜索算法
 
-**Goal:** Develop an efficient algorithm for searching partially sorted data.
+**目标：** 开发一种高效的部分排序数据搜索算法。
 
-Prompt:
+提示词：
 
 ```txt
 I want you to solve the following problem: Design an algorithm to find a target number in a partially sorted array (elements are sorted in ascending order, then rotated at some pivot).
@@ -85,18 +85,18 @@ Provide your optimized solution with:
 - Any remaining considerations
 ```
 
-**Expected Outcome:**
+**预期结果：**
 
-- Initial solution might use linear search O(n)
-- First iteration might identify binary search potential
-- Second iteration might handle the rotation complexity
-- Final solution likely optimizes to O(log n) with detailed edge cases covered
+- 初始方案可能使用线性搜索 O(n)
+- 第一轮迭代可能发现二分搜索的潜力
+- 第二轮迭代可能处理旋转的复杂性
+- 最终方案可能优化至 O(log n) 并涵盖详细的边界情况
 
-## Example 2: Designing a Caching Strategy
+## 示例二：设计缓存策略
 
-**Goal:** Create a caching implementation for a data-intensive application.
+**目标：** 为数据密集型应用创建缓存实现方案。
 
-Prompt:
+提示词：
 
 ```txt
 I want you to solve the following problem: Design a caching strategy for a web application that handles thousands of product queries per minute with data that changes infrequently (once per day).
@@ -125,18 +125,18 @@ Provide your optimized solution with:
 - Any remaining considerations
 ```
 
-**Expected Outcome:**
+**预期结果：**
 
-- Initial solution might use a simple time-based cache
-- Progressive iterations address invalidation strategies, memory concerns
-- Later rounds might introduce Redis, cache layers, or warm-up procedures
-- Final solution likely includes a comprehensive strategy with fallbacks
+- 初始方案可能使用简单的基于时间的缓存
+- 渐进式迭代解决失效策略、内存问题
+- 后续轮次可能引入 Redis、缓存分层或预热机制
+- 最终方案可能包含带回退机制的综合策略
 
-## Example 3: Building a Robust API Error Handling System
+## 示例三：构建健壮的 API 错误处理系统
 
-**Goal:** Design an error handling system for a microservice architecture.
+**目标：** 为微服务架构设计错误处理系统。
 
-Prompt:
+提示词：
 
 ```txt
 I want you to solve the following problem: Design a standardized error handling system for a collection of microservices that needs to provide consistent error responses, logging, retries, and circuit breaking.
@@ -165,43 +165,43 @@ Provide your optimized solution with:
 - Any remaining considerations
 ```
 
-**Expected Outcome:**
+**预期结果：**
 
-- Initial solution might focus on basic error structure
-- Middle iterations refine retry policies, circuit breaking logic
-- Later iterations might add observability, error aggregation
-- Final solution would be a layered approach with examples of implementation
+- 初始方案可能专注于基本的错误结构
+- 中间迭代优化重试策略、熔断逻辑
+- 后续迭代可能增加可观测性、错误聚合
+- 最终方案将是带有实现示例的分层方法
 
-## Summary: Why Use the Multiple Iterations Reasoning Pattern?
+## 总结：为什么使用多轮迭代推理模式？
 
-| **Benefit**                          | **Why It Helps in Agentic Coding**                 |
+| **优势**                          | **在智能体编程中的帮助**                 |
 | ------------------------------------ | -------------------------------------------------- |
-| Promotes depth over breadth          | Forces solutions beyond the obvious first approach |
-| Documents the evolution of thinking  | Creates transparency in the solution development   |
-| Identifies edge cases systematically | Reduces the "oh, I didn't think of that" factor    |
-| Builds in justified refinement       | Each improvement has explicit reasoning            |
-| Mimics real development processes    | Aligns with how engineers actually solve problems  |
-| Works well with modern AI models     | Leverages LLM capabilities for self-critique       |
+| 促进深度而非广度          | 强制方案超越第一个显而易见的思路 |
+| 记录思维的演进过程  | 在方案开发中创造透明度   |
+| 系统性地识别边界情况 | 减少"哦，我没想到这个"的情况    |
+| 内置有理由的优化       | 每次改进都有明确的理由            |
+| 模拟真实开发过程    | 与工程师实际解决问题的方式保持一致  |
+| 适用于现代 AI 模型     | 充分利用 LLM 的自我批判能力       |
 
-## Variations
+## 变体
 
-For greater refinement in specific areas:
+针对特定领域进行更深度的优化：
 
 ```txt
 For iteration 2, focus specifically on performance optimization.
 For iteration 3, focus exclusively on edge case handling.
 ```
 
-For constrained prompting:
+受限提示词：
 
 ```txt
 Limit each solution to under 50 lines of code, forcing increasingly elegant solutions.
 ```
 
-## References
+## 参考资料
 
 - [Multiple Iterations Reasoning Prompt Pattern](https://www.loom.com/share/10ecca1aa5a54eaf95669f2fe16cd56f?sid=1607557b-5d22-4d49-935e-933bdde55442)
 
-## Keep Reading
+## 继续阅读
 
-[Zero-Shot, One-Shot, and Multi-Shot Prompts](./PROMPT_ZERO_ONE_N_SHOT_PROMPTS.md)
+[零样本、单样本和多样本提示词](./PROMPT_ZERO_ONE_N_SHOT_PROMPTS.md)

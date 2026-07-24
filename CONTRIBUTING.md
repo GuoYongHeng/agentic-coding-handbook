@@ -1,34 +1,34 @@
-# Contributing
+# 贡献指南
 
-This handbook is a living document. It reflects what we’ve learned so far about coding with agents — but it’s not finished, and it never will be. We expect it to grow, evolve, and adapt as our team experiments, learns, and discovers better ways to collaborate with AI.
+本手册是一份持续演进的文档。它反映了我们迄今为止在与智能体协作编程方面所学到的经验——但它尚未完成，也永远不会完成。随着我们的团队不断实验、学习和探索与 AI 协作的更好方式，我们期望它不断成长、演进和适应。
 
-## Why Contributions Matter
+## 为什么贡献很重要
 
-- **The handbook evolves with you:** Every week, people across teams are learning new tricks, testing new workflows, and improving results. When you find something that works, document it here.
-- **AI changes fast:** New models, features, and tools are launching constantly. What works today might be outdated in six months. Help us keep this handbook current.
-- **Your experiments help everyone:** If you test a new prompting pattern, context feeding strategy, or way of organizing specs — document it. Share the knowledge.
-- **Enterprise-scale Agentic Coding is still evolving:** We’re all figuring this out together. If you discover better ways to scale across squads or workflows, bring it here.
+- **手册随你一起成长：** 每周，各团队成员都在学习新技巧、测试新工作流程，并持续改进结果。当你发现有效的方法时，请在这里记录下来。
+- **AI 变化很快：** 新模型、新功能和新工具不断推出。今天有效的方法，六个月后可能就已过时。帮助我们保持手册的时效性。
+- **你的实验对所有人都有帮助：** 如果你测试了新的提示词模式、上下文输入策略，或组织规格文件的新方式——请记录下来，分享知识。
+- **企业级智能体编程仍在发展中：** 我们都在共同摸索。如果你发现了跨团队或跨工作流更好的扩展方式，请在这里分享。
 
-## Common Contribution Practices
+## 常见贡献规范
 
-To ensure consistency and collaboration, please follow these best practices:
+为确保一致性和协作效率，请遵循以下最佳实践：
 
-- **Start small:** You don’t need to write a whole page. A short note, list of learnings, or useful prompt is enough to get started.
-- **Use examples:** Real examples (with prompts, outputs, or before/after code) help others replicate what worked.
-- **Keep the tone consistent:** Practical, direct, and focused on helping other engineers.
-- **Avoid tool-specific bias unless needed:** Focus on transferable practices unless documenting something tool-specific (like Cursor, Copilot, Claude).
-- **Group related updates:** If you're updating a section, make sure it's coherent as a whole — not a collection of unrelated edits.
-- **Keep it structured:** Use headers, bullets, and short paragraphs to keep the content scannable and reusable.
-- **Flag outdated content:** If you’re not sure how to replace old info, comment or tag it as "needs update".
-- **Ask for peer review:** Major changes should be reviewed by at least one other engineer before publishing.
+- **从小处着手：** 不需要写一整页内容。一条简短的笔记、一份学习总结，或一个有用的提示词，就足以开始。
+- **使用示例：** 真实示例（包含提示词、输出结果或前后对比代码）有助于他人复现有效的做法。
+- **保持语气一致：** 实用、直接，专注于帮助其他工程师。
+- **避免工具偏向（除非必要）：** 除非在记录特定工具（如 Cursor、Copilot、Claude）的内容，否则聚焦于可迁移的实践。
+- **将相关更新归组：** 如果你在更新某个章节，请确保整体内容连贯——而不是一堆不相关的零散编辑。
+- **保持结构清晰：** 使用标题、要点和简短段落，让内容易于扫读和复用。
+- **标记过时内容：** 如果不确定如何替换旧信息，可以添加注释或将其标记为"需要更新"。
+- **寻求同行评审：** 重大改动在发布前应由至少一位其他工程师审阅。
 
-## How to Get Started
+## 如何开始
 
-- Use inline comments in Confluence to suggest changes if you're not ready to write.
-- For new ideas or patterns, create a new section or subpage under the most relevant area.
-- Add your name or initials next to contributions when appropriate — this helps others follow up with questions.
-- Let’s build this handbook the same way we build great products: collaboratively, iteratively, and with care.
+- 如果你还没准备好动笔，可以使用 Confluence 的内联评论功能来提出修改建议。
+- 对于新想法或新模式，在最相关的区域下创建新章节或子页面。
+- 在适当的情况下，在贡献内容旁注明你的姓名或缩写——这有助于他人在有疑问时找到你。
+- 让我们用构建优秀产品的方式来构建这本手册：协作、迭代，并用心对待。
 
-## Keep Reading
+## 继续阅读
 
-[Team Experiences](./TEAM_EXPERIENCES.md)
+[团队经验](./TEAM_EXPERIENCES.md)

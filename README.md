@@ -1,6 +1,5 @@
 # Agentic Coding Handbook
 
-This repo contains our agentic coding handbook, which will teach you how to
-work with AI agents effectively and responsibly. It is [hosted] on GitHub Pages.
+本仓库包含我们的智能体编程手册，将教你如何高效、负责任地与 AI 智能体协作。手册已[托管]在 GitHub Pages 上。
 
-[hosted]: https://tweag.github.io/agentic-coding-handbook/
+[托管]: https://tweag.github.io/agentic-coding-handbook/

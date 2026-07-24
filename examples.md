@@ -6,55 +6,55 @@ has_children: true
 permalink: /examples/
 ---
 
-# 💡 Examples & Templates
+# 💡 示例与模板
 
-Real-world examples and templates you can use immediately. These practical resources demonstrate how to apply agentic coding principles in your daily development workflow.
+可立即使用的真实案例和模板。这些实用资源展示了如何在日常开发工作流中应用智能体编程原则。
 
-## What You'll Find
+## 你将找到什么
 
-### Prompt Templates
+### 提示词模板
 
-Ready-to-use prompts for common development tasks:
+针对常见开发任务的即用提示词：
 
-- Implementation planning and architecture design
-- Frontend debugging and UI optimization
-- React + Vite project bootstrapping
-- Code refactoring strategies
-- Test case generation
-- User story decomposition
+- 实现规划与架构设计
+- 前端调试与 UI 优化
+- React + Vite 项目脚手架搭建
+- 代码重构策略
+- 测试用例生成
+- 用户故事拆解
 
-### Automation Scripts
+### 自动化脚本
 
-Production-ready scripts and tools:
+可用于生产的脚本和工具：
 
-- Pre-commit hooks with quality gates
-- Automated code validation pipelines
-- Git workflow automation
+- 带质量门控的 pre-commit 钩子
+- 自动化代码验证流水线
+- Git 工作流自动化
 
-### Documentation Examples
+### 文档示例
 
-Best practices for documenting agentic workflows:
+智能体工作流文档化的最佳实践：
 
-- UI/UX guidelines for design consistency
-- Team onboarding documentation
-- Project-specific coding standards
+- 保持设计一致性的 UI/UX 规范
+- 团队入职文档
+- 项目专属编码规范
 
-## How to Use These Examples
+## 如何使用这些示例
 
-1. **Copy and adapt** - These templates are starting points, not rigid rules
-2. **Customize for your context** - Adjust language, tools, and patterns to match your stack
-3. **Share improvements** - Help the community by contributing your refinements
-4. **Combine patterns** - Mix and match different approaches for complex scenarios
+1. **复制并适配** - 这些模板是起点，而非硬性规则
+2. **针对你的上下文定制** - 根据你的技术栈调整语言、工具和模式
+3. **分享改进** - 贡献你的优化成果，帮助社区共同进步
+4. **组合模式** - 针对复杂场景混合搭配不同方法
 
-Each example includes:
+每个示例包含：
 
-- **Context** - When and why to use this approach
-- **Template** - Ready-to-copy prompt or script
-- **Variations** - How to adapt for different situations
-- **Results** - What to expect from the output
+- **背景** - 何时以及为何使用此方法
+- **模板** - 可直接复制的提示词或脚本
+- **变体** - 如何针对不同情况进行适配
+- **结果** - 预期输出是什么
 
-Start with the examples that match your current challenges, then explore related patterns as you build confidence with agentic coding workflows.
+从与你当前挑战最匹配的示例开始，随着你对智能体编程工作流信心的增长，再探索相关模式。
 
-## Keep Reading
+## 继续阅读
 
-Share your own experiences and help grow our knowledge base: [Team Experiences](./TEAM_EXPERIENCES.md)
+分享你的经验，帮助扩充我们的知识库：[团队经验](./TEAM_EXPERIENCES.md)

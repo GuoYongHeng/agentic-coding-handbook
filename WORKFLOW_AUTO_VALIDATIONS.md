@@ -5,58 +5,58 @@ parent: Core Workflows
 nav_order: 7
 ---
 
-# Automatic Code Validations
+# 自动代码验证
 
-A powerful capability of AI coding agents is their ability to run code validation tools, analyze the feedback, and self-correct the code until it meets all defined quality standards. This turns your prompting loop into a smarter, more reliable workflow, where the AI not only writes code but also learns from validation outputs and fixes issues automatically.
+AI 编码智能体的一项强大能力是运行代码验证工具、分析反馈并自我修正代码，直到满足所有定义的质量标准。这将你的提示词循环变成更智能、更可靠的工作流，AI 不仅编写代码，还从验证输出中学习并自动修复问题。
 
-## Why It Matters
+## 为何重要
 
-In our experiment, this approach drastically reduced rework, improved code quality, and made the AI a more useful coding assistant. Instead of shipping code with hidden lint errors or poor complexity, the agent could catch and fix these issues in real time, before a human even reviewed it.
+在我们的实验中，这种方法大幅减少了返工，提升了代码质量，并使 AI 成为更有用的编码助手。智能体能够实时捕获并修复隐藏的 lint 错误或高复杂度问题，而无需等到人工审查。
 
-## How It Works
+## 工作原理
 
-- The developer prompts the AI to implement a function or feature.
-- The AI writes the code and runs validation scripts (linters, formatters, test suites, etc.).
-- If a validation fails, the AI uses the feedback from the terminal output as new context and iterates.
-- Once all validations pass, the AI can move on and proceed with committing the code.
+- 开发者提示 AI 实现某个函数或功能。
+- AI 编写代码并运行验证脚本（lint 检查器、格式化工具、测试套件等）。
+- 如果验证失败，AI 使用终端输出的反馈作为新的上下文并进行迭代。
+- 一旦所有验证通过，AI 可以继续提交代码。
 
-## Example: Cognitive Complexity with Lizard
+## 示例：使用 Lizard 检测认知复杂度
 
-We use a pre-configured script that runs [Lizard](https://github.com/terryyin/lizard) and enforces a cognitive complexity limit of 10.
+我们使用预配置的脚本运行 [Lizard](https://github.com/terryyin/lizard) 并强制执行认知复杂度上限 10。
 
-- The AI writes a new function.
-- It runs the Lizard script.
-- The script returns: `Function X has cognitive complexity of 15`
-- The AI picks up this feedback and rewrites the function to bring complexity under the limit.
+- AI 编写一个新函数。
+- 运行 Lizard 脚本。
+- 脚本返回：`Function X has cognitive complexity of 15`
+- AI 获取这个反馈并重写函数，使复杂度降到限制以下。
 
-This loop can be applied to many validation tools.
+这个循环可以应用于许多验证工具。
 
-## Common Validations Used in the Loop
+## 循环中常用的验证工具
 
-- Linters (e.g., ESLint)
-- Formatters (e.g., Prettier)
-- Unit tests (e.g., Jest, Vitest)
-- Code complexity analyzers (e.g., Lizard, SonarQube)
-- Static analysis tools (e.g., TypeScript compiler, Horusec, Bandit)
+- Lint 检查器（如 ESLint）
+- 格式化工具（如 Prettier）
+- 单元测试（如 Jest、Vitest）
+- 代码复杂度分析器（如 Lizard、SonarQube）
+- 静态分析工具（如 TypeScript 编译器、Horusec、Bandit）
 
-## Git Integration with Pre-Commit / Pre-Push Hooks
+## 与预提交/预推送钩子的 Git 集成
 
-This self-correction loop can also be extended to Git commands. For example:
+这个自我修正循环也可以扩展到 Git 命令。例如：
 
-- You ask the AI: `Stage and commit all changes that pass our validations.`
-- The AI:
-  - Runs the pre-commit hooks
-  - Captures the output
-  - Fixes any issues that arise
-  - Repeats until validations pass
-  - Then commits the changes
+- 你要求 AI：`Stage and commit all changes that pass our validations.`
+- AI：
+  - 运行预提交钩子
+  - 捕获输出
+  - 修复出现的任何问题
+  - 重复直到验证通过
+  - 然后提交更改
 
-This ensures that no invalid code ever gets committed, keeping your repo clean and compliant with team rules.
+这确保了没有无效代码被提交，保持仓库的整洁并符合团队规范。
 
-## References
+## 参考资料
 
 - [Enhancing Code Quality with AI](https://www.loom.com/share/32bd23d355d9438587d55d7a87b58ed1)
 
-## Keep Reading
+## 继续阅读
 
-[Exploratory & Refactoring Workflow](./WORKFLOW_EXPLORATORY.md)
+[探索与重构工作流](./WORKFLOW_EXPLORATORY.md)

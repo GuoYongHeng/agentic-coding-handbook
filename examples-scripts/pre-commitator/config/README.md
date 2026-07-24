@@ -1,12 +1,12 @@
-# Configuration Files
+# 配置文件
 
-This directory contains configuration files used by Pre-Commitator to customize its behavior.
+本目录包含 Pre-Commitator 用于自定义其行为的配置文件。
 
-## Available Configuration Files
+## 可用配置文件
 
 ### settings.yaml
 
-General settings for Pre-Commitator:
+Pre-Commitator 的通用设置：
 
 ```yaml
 database:
@@ -19,17 +19,17 @@ logging:
   format: '%(asctime)s - %(levelname)s - %(message)s'
 ```
 
-## Other Configuration Files
+## 其他配置文件
 
-These files are located in the root directory:
+以下文件位于根目录：
 
 ### .pre-commit-config.yaml
 
-Configures which pre-commit hooks are executed and how they behave. This is the main configuration file for customizing which checks are run.
+配置执行哪些 pre-commit 钩子及其行为方式。这是自定义运行哪些检查的主配置文件。
 
 ### .bandit.yml
 
-Configuration for Bandit security scanner:
+Bandit 安全扫描器的配置：
 
 ```yaml
 # Skip these tests
@@ -40,7 +40,7 @@ skips:
 
 ### .eslintrc.json
 
-Configuration for ESLint JavaScript linter:
+ESLint JavaScript 代码检查工具的配置：
 
 ```json
 {
@@ -54,12 +54,12 @@ Configuration for ESLint JavaScript linter:
 }
 ```
 
-## Customizing Configuration
+## 自定义配置
 
-To customize Pre-Commitator's behavior:
+要自定义 Pre-Commitator 的行为：
 
-1. Edit the appropriate configuration file
-2. Test your changes with `./run_quality_check.sh --all`
-3. Commit the changes to version control
+1. 编辑相应的配置文件
+2. 使用 `./run_quality_check.sh --all` 测试更改
+3. 将更改提交到版本控制
 
-For more detailed information, see the [SETUP.md](../SETUP.md) file.
+更多详细信息，请参阅 [SETUP.md](../SETUP.md) 文件。

@@ -1,79 +1,79 @@
 ---
 layout: default
-title: Privacy Considerations
-parent: Tools & Setup
+title: 隐私注意事项
+parent: 工具与配置
 nav_order: 4
 ---
 
-# Privacy Considerations for Agentic Coding
+# 智能体编程的隐私注意事项
 
-As we adopt AI coding agents in our daily workflow, it's critical that we stay vigilant about data privacy and security. Tools like Cursor, GitHub Copilot Agent, Claude, and others introduce new capabilities — but also new risks if misused.
+随着我们在日常工作流程中引入 AI 编程智能体，保持对数据隐私和安全的高度警觉至关重要。Cursor、GitHub Copilot Agent、Claude 等工具带来了新的能力，但若使用不当，也会带来新的风险。
 
-This page outlines the non-negotiable privacy boundaries, best practices, and tooling recommendations that all developers must follow while using agentic coding techniques.
+本页概述了所有开发者在使用智能体编程技术时必须遵守的不可妥协的隐私边界、最佳实践和工具建议。
 
-## What You Must Never Do
+## 绝对禁止事项
 
-### ❌ Do not prompt with real user data
+### ❌ 禁止在提示词中使用真实用户数据
 
-Never paste or reference real user emails, names, phone numbers, IDs, or any personally identifiable information (PII) into prompts.
+绝不能将真实的用户邮件、姓名、电话号码、ID 或任何个人可识别信息（PII）粘贴或引用到提示词中。
 
-This includes debugging issues, writing test cases, or requesting data transformations.
+这包括调试问题、编写测试用例或请求数据转换等场景。
 
-### ❌ Do not attach files containing sensitive data
+### ❌ 禁止附加包含敏感数据的文件
 
-Avoid storing in the codebase (even if git ignored), uploading or referencing exports with live data — such as CSVs, PDF reports, or logs with user identifiers.
+避免在代码库中存储（即使已被 git 忽略）、上传或引用包含真实数据的导出文件，例如带有用户标识符的 CSV 文件、PDF 报告或日志文件。
 
-These files may be stored temporarily or indexed by your IDE or tool.
+这些文件可能会被你的 IDE 或工具临时存储或索引。
 
-### ❌ Do not connect AI tools to production databases
+### ❌ 禁止将 AI 工具连接到生产数据库
 
-Never connect a agent to a live production database using a Model Context Provider (MCP).
+绝不能使用模型上下文提供者（MCP）将智能体连接到实时生产数据库。
 
-Example: Do not create an MCP integration that fetches data directly from a production live PostgreSQL or DynamoDB instance. It is fine to connect to test data stores.
+示例：不要创建直接从生产 PostgreSQL 或 DynamoDB 实例获取数据的 MCP 集成。连接到测试数据存储是允许的。
 
-### ❌ Do not use AI tools that train on your data by default
+### ❌ 禁止使用默认会训练你数据的 AI 工具
 
-Avoid uploading the codebase to any AI coding tool that may use inputs to improve their models unless explicitly allowed by legal and security teams.
+除非获得法律和安全团队的明确许可，否则避免将代码库上传到任何可能使用输入来改进其模型的 AI 编程工具。
 
-## What You Should Do Instead
+## 应该采取的替代做法
 
-### ✅ Use mock data in all prompts and test cases.
+### ✅ 在所有提示词和测试用例中使用模拟数据
 
-Create safe, fake data sets or anonymized examples when showing the AI how your system behaves.
+在向 AI 展示系统行为时，创建安全的、虚假的数据集或匿名化示例。
 
-### ✅ Stick to tools with enterprise-safe defaults.
+### ✅ 坚持使用企业安全默认设置的工具
 
-Preferred tools at Modus Create:
+Modus Create 推荐的工具：
 
-- Cursor – does not train models on your prompts or code.
+- Cursor – 不会基于你的提示词或代码训练模型。
 
-- GitHub Copilot Agent (enterprise) – keeps data within GitHub and respects repo privacy boundaries.
+- GitHub Copilot Agent（企业版）– 将数据保存在 GitHub 内部，并遵守仓库隐私边界。
 
-- Claude (via secure workspace API) – when used through approved infrastructure, Claude does not retain prompt history.
+- Claude（通过安全工作区 API）– 通过经批准的基础设施使用时，Claude 不会保留提示词历史记录。
 
-### ✅ Use memory files or documentation, not live data, for context.
+### ✅ 使用内存文件或文档（而非实时数据）提供上下文
 
-Store reusable information in safe .md files like `spec.md`, `activeContext.md`, and `.copilot-instructions.md`.
+将可复用信息存储在安全的 .md 文件中，如 `spec.md`、`activeContext.md` 和 `.copilot-instructions.md`。
 
-These are indexed but controllable, and never contain user data.
+这些文件会被索引但可控，且绝不包含用户数据。
 
-### ✅ Mask real data when debugging or generating logs.
+### ✅ 调试或生成日志时对真实数据进行脱敏处理
 
-Use placeholders: "user_123", "test@example.com", "TXN_0001"
+使用占位符："user_123"、"test@example.com"、"TXN_0001"
 
-Prompt: “This log contains simulated user activity. Based on this structure, can you help identify potential auth failure scenarios?”
+提示词示例："此日志包含模拟的用户活动。根据此结构，你能帮助识别潜在的身份验证失败场景吗？"
 
-### ✅ Connect MCPs to test/dev environment data stores.
+### ✅ 将 MCP 连接到测试/开发环境的数据存储
 
-## Real Risks If Ignored
+## 忽视隐私的真实风险
 
-- Privacy violations under GDPR, CCPA, HIPAA, or internal customer contracts.
-- Credential leaks when full environment configs are prompted without redaction.
-- Reputational damage if client data is exposed through AI usage logs or vendor breaches.
-- Audit failure due to use of unvetted tools or unapproved data exposure in prompt flows.
+- 违反 GDPR、CCPA、HIPAA 或内部客户合同的隐私规定。
+- 在未脱敏的情况下将完整环境配置输入提示词，导致凭证泄露。
+- 若客户数据通过 AI 使用日志或供应商数据泄露事件暴露，将损害公司声誉。
+- 因使用未经审查的工具或提示词流程中存在未经批准的数据暴露而导致审计失败。
 
-Treat every prompt like a commit: if it contains sensitive data, it's already too late: Stay intentional, stay secure — agentic coding is powerful, but privacy comes first.
+将每次提示词视为一次代码提交：如果它包含敏感数据，那就已经太晚了。保持有意识，保持安全——智能体编程功能强大，但隐私永远是第一位的。
 
-## Keep Reading
+## 继续阅读
 
-[Contributing](./CONTRIBUTING.md)
+[贡献指南](./CONTRIBUTING.md)

@@ -1,35 +1,35 @@
-# Contributing to Pre-Commitator
+# 为 Pre-Commitator 做贡献
 
-Thank you for your interest in contributing to Pre-Commitator! This document provides guidelines and instructions for contributing to the project.
+感谢您有兴趣为 Pre-Commitator 做贡献！本文档提供了为项目做贡献的指南和说明。
 
-## Getting Started
+## 入门指南
 
-1. **Fork the repository** on GitHub
-2. **Clone your fork** to your local machine
-3. **Install dependencies** by running `./install.sh`
-4. **Create a new branch** for your feature or bugfix
-5. **Make your changes** following our code style guidelines
-6. **Run the tests** to ensure your changes don't break existing functionality
-7. **Submit a pull request** from your fork to the main repository
+1. 在 GitHub 上 **Fork 仓库**
+2. 将您的 fork **克隆**到本地机器
+3. 运行 `./install.sh` **安装依赖**
+4. 为您的功能或 bugfix **创建新分支**
+5. 遵循我们的代码风格规范**进行更改**
+6. **运行测试**以确保您的更改不会破坏现有功能
+7. 从您的 fork 向主仓库**提交 Pull Request**
 
-## Development Environment Setup
+## 开发环境搭建
 
 ```bash
-# Clone the repository
+# 克隆仓库
 git clone https://github.com/yourusername/pre-commitator.git
 cd pre-commitator
 
-# Install development dependencies
+# 安装开发依赖
 ./install.sh
 
-# Create a virtual environment (recommended)
+# 创建虚拟环境（推荐）
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install additional development dependencies
+# 安装额外的开发依赖
 pip install pytest pytest-cov mypy
 
-# If you encounter SSL certificate issues (especially on macOS)
+# 如果遇到 SSL 证书问题（尤其是在 macOS 上）
 ./fix_certificates.sh  # for macOS
 # OR
 ./fix_certificates_unix.sh  # for other Unix systems
@@ -37,7 +37,7 @@ pip install pytest pytest-cov mypy
 export PYTHONPATH=$PWD  # Points to the SSL context fix
 ```
 
-## Project Structure
+## 项目结构
 
 ```
 pre-commitator/
@@ -53,25 +53,25 @@ pre-commitator/
 └── README.md           # Project documentation
 ```
 
-## Coding Standards
+## 编码规范
 
-We follow these standards:
+我们遵循以下规范：
 
-- **Python**: PEP 8 style guide, enforced by Black formatter
-- **JavaScript**: ESLint with security plugins
-- **Shell scripts**: Shellcheck compliant
+- **Python**：PEP 8 风格指南，由 Black 格式化工具强制执行
+- **JavaScript**：带安全插件的 ESLint
+- **Shell 脚本**：符合 Shellcheck 规范
 
-## Adding New Validators
+## 添加新的验证器
 
-To add a new validation tool:
+要添加新的验证工具：
 
-1. Add the dependency to `requirements.txt` or `package.json`
-2. Create a new method in `src/quality_gate.py`
-3. Call your method from the `run_all_checks` method
-4. Add appropriate testing
-5. Update documentation
+1. 将依赖添加到 `requirements.txt` 或 `package.json`
+2. 在 `src/quality_gate.py` 中创建新方法
+3. 从 `run_all_checks` 方法中调用您的方法
+4. 添加相应的测试
+5. 更新文档
 
-Example of adding a new validator:
+添加新验证器的示例：
 
 ```python
 def run_new_validator(self, files: List[str]) -> None:
@@ -85,43 +85,43 @@ def run_new_validator(self, files: List[str]) -> None:
         self.warnings.append("Warning: New tool not found. Install with 'pip install new-tool'")
 ```
 
-## Testing
+## 测试
 
-Before submitting a pull request, make sure all tests pass:
+在提交 Pull Request 之前，请确保所有测试通过：
 
 ```bash
-# Run all tests
+# 运行所有测试
 ./run_tests.sh
 
-# Test your changes
+# 测试您的更改
 ./run_quality_check.sh --all
 
-# Test with example problematic code
+# 使用示例问题代码进行测试
 ./run_quality_check.sh src/demo.py src/demo.js
 ```
 
-### Using the Test Artifacts Directory
+### 使用测试工件目录
 
-When testing Pre-Commitator, use the `tests/artifacts/` directory for any temporary test files:
+测试 Pre-Commitator 时，请将所有临时测试文件放在 `tests/artifacts/` 目录中：
 
-1. **Creating Test Files**:
+1. **创建测试文件**：
    ```bash
    # Create a test file with trailing whitespace
    echo "This has trailing spaces    " > tests/artifacts/test_whitespace.txt
    ```
 
-2. **Naming Convention**:
-   - Prefix all test files with `test_`
-   - Use descriptive names that indicate the purpose
-   - Example: `test_trailing_whitespace.txt`
+2. **命名规范**：
+   - 所有测试文件以 `test_` 为前缀
+   - 使用能说明用途的描述性名称
+   - 示例：`test_trailing_whitespace.txt`
 
-3. **Cleanup**:
-   - Clean up test files after your tests complete
-   - The directory is git-ignored to prevent accidental commits
+3. **清理**：
+   - 测试完成后清理测试文件
+   - 该目录已被 git 忽略，以防意外提交
 
-### Auto-Stage Hook Testing
+### 自动暂存钩子测试
 
-When making changes to the auto-stage hook, be especially careful to test in both VS Code and terminal modes:
+对自动暂存钩子进行更改时，务必在 VS Code 和终端两种模式下进行测试：
 
 ```bash
 # Install the auto-stage hook
@@ -147,68 +147,68 @@ git commit -m "Testing auto-stage hook in terminal mode"
 rm tests/artifacts/test_whitespace*.txt
 ```
 
-## Pull Request Process
+## Pull Request 流程
 
-1. Ensure your code follows our style guidelines
-2. Update documentation if necessary
-3. Make sure all tests pass
-4. Update the README.md with details of your changes if appropriate
-5. The PR should work against the main branch
+1. 确保您的代码遵循我们的风格规范
+2. 如有必要，更新文档
+3. 确保所有测试通过
+4. 如有必要，用您的更改详情更新 README.md
+5. PR 应针对 main 分支
 
-## Security Considerations
+## 安全注意事项
 
-- All dependencies must come from trusted, verified sources
-- No external HTTP calls in the main validation logic
-- Security checks should err on the side of caution
-- No hardcoded credentials or sensitive information
+- 所有依赖必须来自可信的经过验证的来源
+- 主验证逻辑中不得有外部 HTTP 调用
+- 安全检查应偏向谨慎
+- 不得有硬编码的凭据或敏感信息
 
-## Handling SSL Certificate Issues
+## 处理 SSL 证书问题
 
-When developing Pre-Commitator, you might encounter SSL certificate verification errors, especially on macOS. These typically occur when pre-commit tries to install Node.js environments, or when Python security tools (like Bandit) make HTTPS requests.
+在开发 Pre-Commitator 时，您可能会遇到 SSL 证书验证错误，尤其是在 macOS 上。这通常发生在 pre-commit 尝试安装 Node.js 环境时，或者 Python 安全工具（如 Bandit）发出 HTTPS 请求时。
 
-### Common SSL Error Symptoms
+### 常见 SSL 错误症状
 
 ```
 [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate
 ```
 
-### Solutions (in order of preference)
+### 解决方案（按优先级排序）
 
-1. **Switch to VS Code Mode**: For testing/development
+1. **切换到 VS Code 模式**：用于测试/开发
    ```bash
    ./switch_mode.sh vscode
    ```
 
-2. **Fix Certificates**:
+2. **修复证书**：
    ```bash
    ./fix_certificates.sh  # macOS
    ./fix_certificates_unix.sh  # Other Unix systems
    ```
 
-3. **Set PYTHONPATH**: This points to our temporary SSL context fix
+3. **设置 PYTHONPATH**：指向我们的临时 SSL 上下文修复
    ```bash
    export PYTHONPATH=$PWD
    ```
 
-4. **Install Python Certificates**: For proper macOS certificate installation
+4. **安装 Python 证书**：用于正确的 macOS 证书安装
    ```bash
    open /Applications/Python\ 3.x/Install\ Certificates.command
    ```
 
-Remember to document any SSL-related changes you make, as they impact both developer and user experience.
+请记得记录您所做的任何与 SSL 相关的更改，因为它们会影响开发者和用户的体验。
 
-## Code Review Criteria
+## 代码审查标准
 
-Pull requests will be evaluated based on:
+Pull Request 将根据以下标准进行评估：
 
-- Code quality and style
-- Test coverage
-- Documentation
-- Security implications
-- Performance considerations
+- 代码质量和风格
+- 测试覆盖率
+- 文档
+- 安全影响
+- 性能考量
 
-## License
+## 许可证
 
-By contributing to Pre-Commitator, you agree that your contributions will be licensed under the project license.
+通过为 Pre-Commitator 做贡献，您同意您的贡献将在项目许可证下授权。
 
-Thank you for contributing to making Pre-Commitator better!
+感谢您为让 Pre-Commitator 变得更好而做出的贡献！

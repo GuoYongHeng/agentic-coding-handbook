@@ -1,194 +1,194 @@
-# GitHub Copilot Agent Mode - Advanced Training
+# GitHub Copilot Agent 模式 - 进阶培训
 
 ---
 
-## **Materials**
+## **培训材料**
 
-[**Slide Deck**](https://docs.google.com/presentation/d/1bdjGgnPWV6Dqhi7Hy7KOZvqM1iz-u7q5M5CSBbxZi5o/edit?slide=id.g1ff7b2f3b96_0_2674&pli=1#slide=id.g1ff7b2f3b96_0_2674)
+[**幻灯片**](https://docs.google.com/presentation/d/1bdjGgnPWV6Dqhi7Hy7KOZvqM1iz-u7q5M5CSBbxZi5o/edit?slide=id.g1ff7b2f3b96_0_2674&pli=1#slide=id.g1ff7b2f3b96_0_2674)
 
-[**Training Repository**](https://github.com/ModusCreateOrg/agentic-coding-training)
-
----
-
-## **Overview**
-
-GitHub Copilot Agent Mode represents the next evolution in AI-assisted development, moving beyond individual code suggestions to intelligent, multi-file, project-aware assistance. Unlike traditional Copilot modes, Agent Mode acts as an autonomous coding partner that can understand project architecture, execute complex refactoring tasks, and coordinate changes across multiple files and directories.
-
-**How Agent Mode differs from other Copilot approaches:**
-
-1. **Copilot Inline** - Provides real-time code completions and suggestions within the editor (always-on, beneath all other modes)
-2. **Ask** - Conversational assistance for coding questions, explanations, and guidance
-3. **Plan** - Generates a step-by-step implementation plan for review and approval before any code is written
-4. **Agent** - Autonomous project-level operations with contextual awareness, architectural understanding, and multi-step task execution
-
-**Why Agent Mode matters:**
-- **Project-level intelligence**: Understands entire codebases, not just individual files
-- **Autonomous execution**: Can plan and execute complex, multi-step development tasks
-- **Architectural awareness**: Respects existing patterns, conventions, and project structure
-- **Cross-cutting concerns**: Handles refactoring, testing, documentation, and infrastructure changes holistically
-
-> **Important Note**: While this training demonstrates specific tools like Cursor, VS Code, and GitHub Copilot, **remember that tools are secondary**. The **core value lies in understanding and applying AI concepts** to extend your knowledge and improve productivity across any development environment. Our goal is to empower you to adapt and apply these concepts with whatever tools are available at your respective companies, rather than becoming dependent on any particular stack. Focus on the underlying principles that can be transferred to any AI-assisted development workflow.
-
+[**培训仓库**](https://github.com/ModusCreateOrg/agentic-coding-training)
 
 ---
 
-## **Delivery Time**
-1 hour (focused workshop format)
+## **概述**
+
+GitHub Copilot Agent 模式代表了 AI 辅助开发的下一次进化，从单一的代码建议进化为智能化的、多文件、项目感知的辅助能力。与传统 Copilot 模式不同，Agent 模式作为自主编程伙伴，能够理解项目架构、执行复杂的重构任务，并协调跨多个文件和目录的变更。
+
+**Agent 模式与其他 Copilot 方式的区别：**
+
+1. **Copilot 内联** - 在编辑器中提供实时代码补全和建议（始终开启，位于所有其他模式之下）
+2. **问答模式（Ask）** - 针对编程问题、解释说明和指导的对话式辅助
+3. **规划模式（Plan）** - 在编写任何代码之前，生成分步实现计划供审查和批准
+4. **智能体模式（Agent）** - 具备上下文感知、架构理解和多步骤任务执行能力的自主项目级操作
+
+**Agent 模式为什么重要：**
+- **项目级智能**：理解整个代码库，而不仅仅是单个文件
+- **自主执行**：能够规划并执行复杂的多步骤开发任务
+- **架构感知**：遵循现有的模式、约定和项目结构
+- **横切关注点**：整体处理重构、测试、文档和基础设施变更
+
+> **重要说明**：虽然本培训演示了 Cursor、VS Code 和 GitHub Copilot 等特定工具，但**请记住工具是次要的**。**核心价值在于理解和应用 AI 概念**，从而拓展你的知识并在任何开发环境中提升生产力。我们的目标是让你能够利用所在公司现有的任何工具，灵活应用这些概念，而不是依赖于某一特定技术栈。专注于可迁移到任何 AI 辅助开发工作流的底层原则。
+
 
 ---
 
-## **Before You Join - Setup Checklist**
-
-**Required Setup (Complete 24 hours before training):**
-- [ ] **GitHub Copilot Business/Enterprise subscription** with Agent Mode enabled
-- [ ] **Supported IDE installed** (VS Code recommended; Cursor supported; JetBrains supported but Agent Mode features may vary)
-- [ ] **Fork or clone the training repository**: https://github.com/ModusCreateOrg/agentic-coding-training
-- [ ] **Verify Agent Mode is available** in the Copilot Chat panel (Ask / Plan / Agent dropdown)
-- [ ] **Verify Agent Mode functionality** with a simple test prompt
-- [ ] **Join training Slack channel**: #copilot-agent-training
-
-**Recommended Preparation:**
-- [ ] Review GitHub Copilot 101 materials (if not previously completed)
-- [ ] Identify 1-2 current development challenges that could benefit from Agent Mode
-- [ ] Bring specific use cases or questions for the live demo session
+## **培训时长**
+1 小时（专题工作坊形式）
 
 ---
 
-## **Key Features and Benefits**
+## **参加前的准备清单**
 
-GitHub Copilot Agent Mode transforms how development teams approach complex, project-wide tasks:
+**必要准备（请在培训前 24 小时完成）：**
+- [ ] **GitHub Copilot Business/Enterprise 订阅**，并启用 Agent 模式
+- [ ] **安装支持的 IDE**（推荐 VS Code；支持 Cursor；支持 JetBrains，但 Agent 模式功能可能有所不同）
+- [ ] **Fork 或克隆培训仓库**：https://github.com/ModusCreateOrg/agentic-coding-training
+- [ ] **确认 Agent 模式可用**，在 Copilot Chat 面板中查看（Ask / Plan / Agent 下拉菜单）
+- [ ] **验证 Agent 模式功能**，使用简单的测试提示词
+- [ ] **加入培训 Slack 频道**：#copilot-agent-training
 
-* **Intelligent Refactoring**: Automatically refactor across multiple files while maintaining functionality and architectural integrity
-* **Scaffolding & Architecture**: Generate entire feature modules, microservices, or component hierarchies based on high-level requirements
-* **Cross-cutting Implementation**: Handle concerns like logging, error handling, and security patterns across entire codebases
-* **Test Generation**: Create comprehensive test suites that understand component relationships and integration points
-* **Documentation Synthesis**: Generate and maintain technical documentation that stays synchronized with code changes
-* **Migration Assistance**: Streamline framework upgrades, dependency migrations, and platform transitions
-
----
-
-## **Training Agenda & Syllabus**
-
-This intensive 1-hour workshop covers the essential aspects of GitHub Copilot Agent Mode through focused sessions and live demonstrations:
-
-### **1. Agent Mode Overview** 
-- What is Agent Mode and how it differs from traditional Copilot features
-- Key capabilities and use cases
-- When to use each mode: Inline, Ask, Plan, and Agent
-
-### **2. MCP (Model Context Protocol)**
-- Understanding Model Context Protocol architecture
-- How MCP enables agent-to-environment communication
-- Integration patterns and context management
-
-### **3. Prompting Strategies**
-- Effective prompt engineering for Agent Mode
-- Structuring requests for optimal agent performance
-- Context provision and scope management techniques
-
-### **4. Context and Workflows**
-- Managing project context and workspace awareness
-- Integrating Agent Mode into existing development workflows
-- Best practices for multi-file operations
-
-### **5. Security**
-- Enterprise security considerations
-- Data handling and privacy controls
-- Access management and governance
-
-### **6. Live Demo**
-- Real-time demonstration of Agent Mode capabilities
-- Interactive examples showing refactoring and code generation
-- Q&A during demonstration
-
-### **7. Q&A Session**
-- Open discussion and troubleshooting
-- Next steps and additional resources
+**推荐准备工作：**
+- [ ] 回顾 GitHub Copilot 101 材料（如果之前未完成）
+- [ ] 确定 1-2 个当前可能受益于 Agent 模式的开发挑战
+- [ ] 准备特定的使用场景或问题，用于现场演示环节
 
 ---
 
-## **Live Demo Examples and Key Scenarios**
+## **主要特性与优势**
 
-During the live demonstration segment, we'll showcase Agent Mode capabilities through real-world scenarios:
+GitHub Copilot Agent 模式改变了开发团队处理复杂项目级任务的方式：
 
-### **MCP Integration Demo**
-- **Scenario**: Setting up Model Context Protocol for project-aware assistance
-- **Focus**: How agents understand and interact with your codebase architecture
+* **智能重构**：在维护功能性和架构完整性的同时，自动跨多个文件进行重构
+* **脚手架与架构**：根据高层级需求生成完整的功能模块、微服务或组件层次结构
+* **横切关注点实现**：在整个代码库中处理日志记录、错误处理和安全模式等横切关注点
+* **测试生成**：创建能够理解组件关系和集成点的全面测试套件
+* **文档合成**：生成并维护与代码变更保持同步的技术文档
+* **迁移辅助**：简化框架升级、依赖迁移和平台迁移
 
-### **Intelligent Refactoring Example**
+---
+
+## **培训议程与大纲**
+
+这个紧凑的 1 小时工作坊通过专题讲解和现场演示，覆盖了 GitHub Copilot Agent 模式的核心内容：
+
+### **1. Agent 模式概述** 
+- 什么是 Agent 模式，以及它与传统 Copilot 功能的区别
+- 主要能力和使用场景
+- 何时使用各种模式：内联、问答、规划和智能体
+
+### **2. MCP（模型上下文协议）**
+- 理解模型上下文协议架构
+- MCP 如何实现智能体与环境的通信
+- 集成模式与上下文管理
+
+### **3. 提示词策略**
+- Agent 模式的有效提示词工程
+- 构建最优化智能体性能的请求
+- 上下文提供和范围管理技巧
+
+### **4. 上下文与工作流程**
+- 管理项目上下文和工作区感知
+- 将 Agent 模式集成到现有开发工作流程中
+- 多文件操作的最佳实践
+
+### **5. 安全**
+- 企业安全注意事项
+- 数据处理和隐私控制
+- 访问管理和治理
+
+### **6. 现场演示**
+- Agent 模式能力的实时演示
+- 展示重构和代码生成的交互式示例
+- 演示期间的问答环节
+
+### **7. 问答环节**
+- 开放讨论和故障排查
+- 后续步骤和额外资源
+
+---
+
+## **现场演示示例和关键场景**
+
+在现场演示环节，我们将通过真实场景展示 Agent 模式的能力：
+
+### **MCP 集成演示**
+- **场景**：为项目感知辅助设置模型上下文协议
+- **重点**：智能体如何理解并与你的代码库架构进行交互
+
+### **智能重构示例**
 ```
 Agent: Refactor the authentication middleware to use the new JWT validation 
 approach while maintaining backward compatibility with existing API endpoints.
 ```
 
-### **Multi-File Context Demonstration**
+### **多文件上下文演示**
 ```
 Agent: Update the user profile system - modify the database schema, update the 
 API models, adjust the frontend components, and ensure all tests pass.
 ```
 
-### **Workflow Integration Showcase**
-- **Scenario**: Integrating Agent Mode into existing PR review and CI/CD processes
-- **Focus**: Security considerations and team collaboration patterns
+### **工作流程集成展示**
+- **场景**：将 Agent 模式集成到现有的 PR 审查和 CI/CD 流程中
+- **重点**：安全注意事项和团队协作模式
 
-**Interactive Elements:**
-- Participants can suggest specific scenarios from their own projects
-- Real-time problem-solving with Agent Mode
-- Q&A integrated throughout the demonstration
-
----
-
-## **Follow-Up Resources and Hands-On Practice**
-
-Since this is a focused 1-hour overview, additional hands-on practice is available through:
-
-### **Self-Paced Exercises** (Available post-training)
-**Exercise 1: First Agent Interaction**
-- Navigate to the training repository
-- Complete a guided agent-assisted refactoring task
-- Document observations and results
-
-**Exercise 2: MCP Setup and Configuration**
-- Configure Model Context Protocol for your development environment
-- Test context awareness with a sample project
-- Validate security and access controls
-
-**Exercise 3: Prompting Practice**
-- Practice crafting effective agent prompts
-- Compare results with different prompting strategies
-- Share findings with the training community
+**互动环节：**
+- 参与者可以提出来自自身项目的具体场景
+- 与 Agent 模式进行实时问题解决
+- 整个演示过程中穿插问答
 
 ---
 
-## **FAQ Section**
+## **后续资源与动手实践**
 
-### **General Questions**
+由于这是 1 小时的专题概述，可通过以下方式进行额外的动手实践：
 
-**Q: What is MCP and how does it relate to Agent Mode?**
-A: Model Context Protocol (MCP) is an open protocol for connecting AI models to external tools and data sources — such as GitHub, Jira, Figma, or databases. Agent Mode's built-in codebase understanding (file reads, search, terminal access) is separate from MCP. MCP extends what the agent can reach *beyond* the local workspace.
+### **自主练习**（培训后可用）
+**练习 1：首次 Agent 交互**
+- 导航到培训仓库
+- 完成一项有引导的 Agent 辅助重构任务
+- 记录观察结果和发现
 
-**Q: How quickly can teams start using Agent Mode after this training?**
-A: Teams can begin experimenting immediately with the setup guidance provided. Full integration typically takes 1-2 weeks depending on project complexity and security requirements.
+**练习 2：MCP 配置与设置**
+- 为你的开发环境配置模型上下文协议
+- 在示例项目中测试上下文感知能力
+- 验证安全性和访问控制
 
-**Q: What's the difference between Ask, Plan, and Agent modes?**
-A: **Ask** is conversational — great for questions, explanations, and exploring options. **Plan** generates a structured, step-by-step implementation plan you can review and approve before any files are changed. **Agent** executes autonomously — it reads files, runs terminal commands, and implements changes across the entire project. Use Plan when you want to stay in control of scope; use Agent when the task is well-defined and you trust it to run.
-
-### **Security and Governance**
-
-**Q: How is sensitive code and data handled during Agent Mode operations?**
-A: Agent Mode respects the same security and data handling policies as standard GitHub Copilot, with additional enterprise controls for multi-file operations and code analysis scope.
-
-**Q: Can we limit Agent Mode's access to certain files or directories?**
-A: Yes, enterprise administrators can configure file and directory restrictions, ensuring Agent Mode only operates within approved areas of the codebase.
-
-### **Technical Questions**
-
-**Q: How do I get started with MCP integration in my existing projects?**
-A: The training repository includes step-by-step MCP setup guides for common development environments. Most teams can complete basic integration within 30 minutes.
-
-**Q: Can Agent Mode integrate with our existing CI/CD and security tools?**
-A: Yes, Agent Mode works within existing development workflows and respects enterprise security policies. Integration points are covered in the security segment of the training.
+**练习 3：提示词练习**
+- 练习编写有效的智能体提示词
+- 比较不同提示词策略的结果
+- 与培训社区分享发现
 
 ---
 
-*This training program is part of the broader Modus Create GitHub Copilot Enablement Program. For information about foundational Copilot training, see [GitHub Copilot 101](https://moduscreate.atlassian.net/wiki/spaces/QAD/pages/6372392999/GitHub+Copilot+Fundamentals+-+101) and [GitHub Copilot 201](https://moduscreate.atlassian.net/wiki/spaces/QAD/pages/6372163626/GitHub+Copilot+Intermediate+-+201).*
+## **常见问题解答**
+
+### **一般问题**
+
+**问：什么是 MCP，它与 Agent 模式有什么关系？**
+答：模型上下文协议（MCP）是一种开放协议，用于将 AI 模型连接到外部工具和数据源——例如 GitHub、Jira、Figma 或数据库。Agent 模式内置的代码库理解能力（文件读取、搜索、终端访问）与 MCP 是分离的。MCP 扩展了智能体可以访问的范围，将其延伸到本地工作区之外。
+
+**问：培训结束后，团队能多快开始使用 Agent 模式？**
+答：团队可以根据提供的配置指南立即开始实验。完整集成通常需要 1-2 周，具体取决于项目复杂度和安全需求。
+
+**问：问答模式、规划模式和智能体模式有什么区别？**
+答：**问答模式（Ask）** 是对话式的——非常适合提问、解释说明和探索选项。**规划模式（Plan）** 会生成结构化的分步实现计划，你可以在任何文件被修改之前进行审查和批准。**智能体模式（Agent）** 则自主执行——它读取文件、运行终端命令，并在整个项目中实现变更。当你希望掌控范围时使用规划模式；当任务定义明确且你信任它自主运行时使用智能体模式。
+
+### **安全与治理**
+
+**问：在 Agent 模式操作期间，敏感代码和数据是如何处理的？**
+答：Agent 模式遵循与标准 GitHub Copilot 相同的安全和数据处理策略，并为多文件操作和代码分析范围提供额外的企业控制。
+
+**问：我们可以限制 Agent 模式访问特定文件或目录吗？**
+答：可以，企业管理员可以配置文件和目录限制，确保 Agent 模式只在代码库的批准区域内运行。
+
+### **技术问题**
+
+**问：如何在现有项目中开始 MCP 集成？**
+答：培训仓库包含适用于常见开发环境的 MCP 配置分步指南。大多数团队可以在 30 分钟内完成基本集成。
+
+**问：Agent 模式能与我们现有的 CI/CD 和安全工具集成吗？**
+答：可以，Agent 模式在现有开发工作流程中运行，并遵循企业安全策略。集成点在培训的安全环节中有详细介绍。
+
+---
+
+*本培训项目是 Modus Create GitHub Copilot 赋能计划的组成部分。有关基础 Copilot 培训的信息，请参阅 [GitHub Copilot 101](https://moduscreate.atlassian.net/wiki/spaces/QAD/pages/6372392999/GitHub+Copilot+Fundamentals+-+101) 和 [GitHub Copilot 201](https://moduscreate.atlassian.net/wiki/spaces/QAD/pages/6372163626/GitHub+Copilot+Intermediate+-+201)。*

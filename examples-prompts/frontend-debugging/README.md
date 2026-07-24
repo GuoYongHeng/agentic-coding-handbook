@@ -1,84 +1,84 @@
-# Frontend Debugging Prompt
+# 前端调试提示词
 
-This prompt is designed to help engineers systematically debug frontend issues by analyzing possible causes, identifying the most likely ones, and validating assumptions before implementing fixes.
+本提示词旨在帮助工程师通过分析可能的原因、识别最可能的原因，并在实施修复之前验证假设，从而系统地调试前端问题。
 
-## Purpose
+## 用途
 
-When faced with frontend bugs, errors in the console, or unexpected application behavior, this prompt helps structure the debugging process to efficiently identify and resolve the root cause.
+当遇到前端 bug、控制台错误或意外的应用行为时，此提示词有助于构建调试流程，以高效地识别和解决根本原因。
 
-## How to Use This Prompt
+## 如何使用此提示词
 
-1. Copy the content from [PROMPT.md](./PROMPT.md)
-2. Fill in the template with specific details about your issue
-3. Submit the completed prompt to an AI assistant
+1. 复制 [PROMPT.md](./PROMPT.md) 中的内容
+2. 在模板中填入你问题的具体细节
+3. 将填写完整的提示词提交给 AI 助手
 
-## Template Sections
+## 模板各部分说明
 
-### Problem Analysis
-Describe the issue you're experiencing in detail:
-- The specific error or unexpected behavior
-- Environment details
-- Relevant code snippets
-- Recent changes that might be related
+### 问题分析
+详细描述你遇到的问题：
+- 具体的错误或意外行为
+- 环境详情
+- 相关代码片段
+- 可能相关的近期变更
 
-### Analysis Request
-Ask the AI to:
-- Consider multiple possible causes
-- Narrow down to the most likely ones
-- Suggest debugging techniques
-- Provide a systematic approach to fixing the issue
+### 分析请求
+要求 AI：
+- 考虑多种可能的原因
+- 缩小到最可能的原因
+- 建议调试技术
+- 提供系统性的修复方法
 
-## Specialized Debugging Scenarios
+## 特定调试场景
 
-For more specific frontend debugging scenarios, consider using these tailored approaches:
+对于更具体的前端调试场景，考虑使用以下定制方法：
 
-### Visual/UI Issues
-Focus on:
-- Screenshots of expected vs. actual appearance
-- CSS/component code
-- Layout and styling inconsistencies
+### 视觉/UI 问题
+关注点：
+- 预期与实际外观的截图对比
+- CSS/组件代码
+- 布局和样式不一致
 
-### Performance Issues
-Include:
-- Load time measurements
-- Memory usage data
-- Component hierarchy
-- Rendering patterns
+### 性能问题
+包含：
+- 加载时间测量
+- 内存使用数据
+- 组件层级结构
+- 渲染模式
 
-### State Management Issues
-Provide:
-- State flow diagrams
-- Component relationships
-- Data mutation points
-- State management libraries used
+### 状态管理问题
+提供：
+- 状态流图
+- 组件关系
+- 数据变更点
+- 使用的状态管理库
 
-### Browser Compatibility Issues
-Specify:
-- Affected browsers and versions
-- Behavior differences
-- Polyfills and compatibility libraries
+### 浏览器兼容性问题
+指明：
+- 受影响的浏览器及版本
+- 行为差异
+- Polyfill 和兼容性库
 
-## Integration with Model Context Protocol (MCP) Tools
+## 与模型上下文协议（MCP）工具集成
 
-When using Model Context Protocol (MCP) tools for advanced debugging:
-1. Set up the appropriate MCP tool for your browser
-2. Collect console logs, network requests, and rendering information
-3. Include this data in your prompt for more accurate analysis
+使用模型上下文协议（MCP）工具进行高级调试时：
+1. 为你的浏览器配置适当的 MCP 工具
+2. 收集控制台日志、网络请求和渲染信息
+3. 在提示词中包含这些数据，以获得更精确的分析
 
-## Example
+## 示例
 
 ```
-Issue: Login form submission not working
-Error Message: "Uncaught TypeError: Cannot read property 'value' of undefined"
-Expected Behavior: Form submits and user is authenticated
-Actual Behavior: Nothing happens on submit, error appears in console
+问题：登录表单提交无效
+错误信息："Uncaught TypeError: Cannot read property 'value' of undefined"
+预期行为：表单提交后用户通过身份验证
+实际行为：点击提交后什么都没发生，控制台出现错误
 
-Environment:
-- Browser: Chrome 118.0
-- OS: macOS 12.6
-- Framework/Library: React 18.2, Formik 2.4
+环境：
+- 浏览器：Chrome 118.0
+- 操作系统：macOS 12.6
+- 框架/库：React 18.2, Formik 2.4
 
-Code Context:
+代码上下文：
 const handleSubmit = (e) => {
   e.preventDefault();
   const username = document.getElementById('username').value;
@@ -86,6 +86,6 @@ const handleSubmit = (e) => {
   authService.login(username, password);
 }
 
-Recent Changes: Refactored form to use Formik instead of native form elements
-Troubleshooting Steps Tried: Verified form element IDs, checked authService methods
+近期变更：将表单重构为使用 Formik 而非原生表单元素
+已尝试的排查步骤：验证了表单元素 ID，检查了 authService 方法
 ```

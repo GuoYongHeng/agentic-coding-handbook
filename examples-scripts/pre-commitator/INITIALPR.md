@@ -1,44 +1,41 @@
-Pre-Commitator is a powerful pre-commit validation tool that ensures your code meets quality and security standards before it's committed. It's designed to detect
-issues at the earliest possible point in the development lifecycle while providing a smooth developer experience.
+Pre-Commitator 是一个强大的提交前验证工具，确保您的代码在提交之前符合质量和安全标准。它旨在在开发生命周期的最早阶段检测问题，同时提供流畅的开发者体验。
 
-Overview
+概述
 
-This PR introduces Pre-Commitator with a robust auto-staging feature that significantly improves the developer workflow. The tool combines multiple validation
-techniques into a unified quality gate that runs automatically before code is committed.
+本 PR 引入了 Pre-Commitator，并带有强大的自动暂存功能，显著改善了开发者工作流。该工具将多种验证技术整合到一个统一的质量门中，在代码提交之前自动运行。
 
-Key Features
+主要特性
 
-- Multi-Language Support: Works with Python, JavaScript, TypeScript, Java, and more
-- VS Code & Terminal Modes: Environment-specific configurations to prevent SSL certificate and IDE integration issues
-- Comprehensive Validation:
-  - Code complexity analysis via Lizard
-  - Security scanning via Bandit, Semgrep, and Horusec
-  - Style enforcement via Black and ESLint
-  - File hygiene checks (whitespace, EOF newlines)
-- Auto-Stage Capability: Automatically stages files modified by pre-commit hooks
-- Clear Error Messages: Designed to be understood by both humans and AI
-- Performance Optimized: Only checks files being committed
+- 多语言支持：支持 Python、JavaScript、TypeScript、Java 等语言
+- VS Code 与终端模式：针对特定环境的配置，以防止 SSL 证书和 IDE 集成问题
+- 全面验证：
+  - 通过 Lizard 进行代码复杂度分析
+  - 通过 Bandit、Semgrep 和 Horusec 进行安全扫描
+  - 通过 Black 和 ESLint 进行代码风格强制执行
+  - 文件卫生检查（空格、文件末尾换行符）
+- 自动暂存功能：自动暂存由 pre-commit 钩子修改的文件
+- 清晰的错误信息：设计为对人类和 AI 都易于理解
+- 性能优化：仅检查正在提交的文件
 
-Auto-Stage Implementation
+自动暂存实现
 
-The auto-stage feature addresses a significant pain point in the pre-commit workflow:
+自动暂存功能解决了 pre-commit 工作流中的一个重大痛点：
 
-1. When pre-commit hooks automatically fix issues (like trailing whitespace)
-2. The auto-stage hook detects these modifications
-3. Modified files are automatically staged
-4. User can simply run git commit again to complete their commit
+1. 当 pre-commit 钩子自动修复问题时（如行尾空格）
+2. 自动暂存钩子检测到这些修改
+3. 修改的文件自动被暂存
+4. 用户只需再次运行 git commit 即可完成提交
 
-This eliminates the frustrating manual step of having to git add files that were modified by hooks before committing again.
+这消除了在再次提交之前必须手动 git add 被钩子修改的文件这一令人沮丧的手动步骤。
 
-Technical Architecture
+技术架构
 
-Pre-Commitator consists of several key components:
+Pre-Commitator 由几个关键组件组成：
 
-- Quality Gate Engine (quality_gate.py): Core validation logic
-- Pre-Commit Hook Integration (pre_commit_hook.sh): Git hook integration
-- Auto-Stage Hook (auto_stage_hook.sh): Seamless commit experience
-- Mode Switcher (switch_mode.sh): Environment-specific configuration with SSL certificate issue handling
-- Command-Line Interface (run_quality_check.sh): Manual validation tool
+- 质量门引擎（quality_gate.py）：核心验证逻辑
+- Pre-Commit 钩子集成（pre_commit_hook.sh）：Git 钩子集成
+- 自动暂存钩子（auto_stage_hook.sh）：无缝提交体验
+- 模式切换器（switch_mode.sh）：带 SSL 证书问题处理的特定环境配置
+- 命令行界面（run_quality_check.sh）：手动验证工具
 
-The implementation is designed to be flexible, extensible, and developer-friendly, making code quality enforcement a seamless part of the development workflow rather
-than a hurdle.
+该实现设计灵活、可扩展且对开发者友好，使代码质量强制执行成为开发工作流的无缝部分，而非障碍。

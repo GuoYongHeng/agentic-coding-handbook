@@ -1,62 +1,62 @@
-# Code Refactoring Prompt
+# 代码重构提示词
 
-This prompt helps developers plan and execute targeted refactoring to improve code quality, maintainability, and readability without altering core behavior.
+本提示词帮助开发者规划并执行有针对性的重构，在不改变核心行为的前提下提升代码质量、可维护性和可读性。
 
-## Purpose
+## 用途
 
-The refactoring prompt assists with:
+重构提示词可用于协助：
 
-- Planning focused code improvements in specific areas of your codebase
-- Identifying issues like complexity, duplication, and code smells
-- Creating a safe, incremental approach to refactoring
-- Validating that behavior is preserved after changes
-- Integrating with static analysis tools (optional)
+- 规划代码库特定区域的集中改进
+- 识别复杂性、重复和代码异味等问题
+- 创建安全、渐进的重构方案
+- 验证变更后行为是否得到保留
+- 与静态分析工具集成（可选）
 
-## When to Use
+## 适用场景
 
-This prompt is especially useful when:
+在以下情况下，此提示词尤其有用：
 
-- You need to extend or modify legacy code and want to improve it first
-- Code reviewers have suggested improvements after a PR
-- Quality gates (e.g., Lizard or SonarQube) highlight issues in a module
-- You're improving AI-generated code before adding features
-- You're paying down technical debt in a controlled, safe manner
+- 需要扩展或修改遗留代码，并希望先对其进行改进时
+- 代码审查者在 PR 后提出改进建议时
+- 质量门控工具（如 Lizard 或 SonarQube）在某个模块中发现问题时
+- 在添加功能之前改进 AI 生成的代码时
+- 以受控、安全的方式偿还技术债务时
 
-## How to Use
+## 使用方法
 
-1. **Run the prompt**: Use [PROMPT.md](./PROMPT.md) as your prompt to Copilot or another AI assistant.
+1. **运行提示词**：将 [PROMPT.md](./PROMPT.md) 作为提示词提交给 Copilot 或其他 AI 助手。
 
-2. **Answer the initial questions**:
-   - Which part of code needs refactoring (files, directories, components)
-   - Your main concerns with the current code
+2. **回答初始问题**：
+   - 哪部分代码需要重构（文件、目录、组件）
+   - 你对当前代码的主要关切
 
-3. **Let the AI analyze your code**: The AI will:
-   - Examine your codebase structure
-   - Identify potential issues
-   - Ask clarifying questions about your priorities
+3. **让 AI 分析你的代码**：AI 将：
+   - 检查代码库结构
+   - 识别潜在问题
+   - 询问你的优先级
 
-4. **Review the refactoring plan**: The AI will propose:
-   - A step-by-step refactoring strategy
-   - Specific code changes to implement
-   - Testing approaches to verify behavior
+4. **审查重构方案**：AI 将提出：
+   - 逐步的重构策略
+   - 要实施的具体代码变更
+   - 用于验证行为的测试方法
 
-5. **Execute the plan**: Follow the suggested steps, making incremental changes and validating as you go.
+5. **执行方案**：按照建议的步骤，进行渐进式变更并边进行边验证。
 
-## MCP Integration
+## MCP 集成
 
-This prompt supports Model Context Protocol (MCP) integrations to enhance analysis with:
+本提示词支持模型上下文协议（MCP）集成，可通过以下工具增强分析：
 
-- Static analysis tools like SonarQube
-- Complexity metrics from tools like Lizard
-- Linting results from ESLint/TSLint
-- Test coverage data
+- 静态分析工具，如 SonarQube
+- 来自 Lizard 等工具的复杂度指标
+- ESLint/TSLint 的代码检查结果
+- 测试覆盖率数据
 
-If these integrations are available in your environment, the AI will automatically leverage them.
+如果这些集成在你的环境中可用，AI 将自动利用它们。
 
-## Example Usage
+## 使用示例
 
 ```
-I need help refactoring the authentication flow in my React application. It's currently spread across multiple files in src/common/auth/ and has become overly complex with duplicate logic. I want to improve its structure and testability without changing the core behavior.
+我需要帮助重构 React 应用中的身份验证流程。它目前分散在 src/common/auth/ 中的多个文件中，由于存在重复逻辑已变得过于复杂。我想在不改变核心行为的前提下改进其结构和可测试性。
 ```
 
-The AI will guide you through analyzing and improving the code in a conversational manner.
+AI 将以对话方式引导你分析和改进代码。

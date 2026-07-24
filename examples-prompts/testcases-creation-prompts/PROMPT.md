@@ -1,12 +1,12 @@
-**Prompt:**
+**提示词：**
 
-> You are a senior QA and you need to create test cases for a project with coverage of unhappy paths, edge cases, non-ideal user behaviors, invalid input, timeouts, unauthorized access, and all types of negative scenarios, separated by categories.  
+> 你是一名高级 QA 工程师，需要为一个项目创建测试用例，覆盖异常路径、边界情况、非理想用户行为、无效输入、超时、未授权访问以及各类负面场景，并按类别分类整理。
 >   
-> Also apply 3 expert techniques: two senior QA members will review the test cases one after another and update them for any remaining scenarios, and finally, a third member (QA lead) will perform a final review to check the proper details and coverage of the test cases.  
+> 同时应用 3 种专家技术：两名高级 QA 成员将依次审查测试用例并补充遗漏场景，最后由第三名成员（QA 负责人）进行最终审查，检查测试用例的详细程度和覆盖率。
 >   
-> Please follow the following format for test cases:  
+> 请遵循以下格式编写测试用例：
 >   
-> Verify that user can't sign up without filling the mandatory fields  
-> Verify the behavior when a user who already has an account tries to register again.
+> 验证用户在未填写必填字段的情况下无法注册  
+> 验证已有账号的用户再次尝试注册时的系统行为
 
-> Please create a separate `testcases_checklist.md` file with all test cases in it.
+> 请创建一个单独的 `testcases_checklist.md` 文件，将所有测试用例写入其中。

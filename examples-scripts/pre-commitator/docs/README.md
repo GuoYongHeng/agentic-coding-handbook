@@ -1,23 +1,23 @@
-# Pre-Commitator Documentation
+# Pre-Commitator 文档
 
-Welcome to the Pre-Commitator documentation! This directory contains guides and resources to help you get the most out of Pre-Commitator.
+欢迎使用 Pre-Commitator 文档！本目录包含帮助您充分利用 Pre-Commitator 的指南和资源。
 
-## Getting Started
+## 入门指南
 
-- [Quickstart Guide](quickstart.md) - Get up and running in 5 minutes
-- [Installation & Setup](../SETUP.md) - Detailed installation instructions
+- [快速入门指南](quickstart.md) - 5 分钟内快速上手
+- [安装与配置](../SETUP.md) - 详细安装说明
 
-## Troubleshooting & Help
+## 故障排除与帮助
 
-- [Troubleshooting Guide](troubleshooting.md) - Solutions to common issues
-- [Contributing Guide](../CONTRIBUTING.md) - How to contribute to the project
+- [故障排除指南](troubleshooting.md) - 常见问题的解决方案
+- [贡献指南](../CONTRIBUTING.md) - 如何为项目做贡献
 
-## Reference
+## 参考资料
 
-- [Configuration Reference](../config/README.md) - Configuration options
-- [Main README](../README.md) - Project overview
+- [配置参考](../config/README.md) - 配置选项说明
+- [主 README](../README.md) - 项目概述
 
-## Directory Structure
+## 目录结构
 
 ```
 docs/
@@ -27,13 +27,13 @@ docs/
 └── README.md            # This file
 ```
 
-## Command Reference
+## 命令参考
 
-| Command | Description |
+| 命令 | 描述 |
 |---------|-------------|
-| `./install.sh` | Install Pre-Commitator |
-| `./install.sh -y` | Non-interactive installation |
-| `./run_quality_check.sh` | Check staged files |
-| `./run_quality_check.sh file.py` | Check a specific file |
-| `./run_quality_check.sh --all` | Check all repository files |
-| `./run_quality_check.sh --help` | Show all options |
+| `./install.sh` | 安装 Pre-Commitator |
+| `./install.sh -y` | 非交互式安装 |
+| `./run_quality_check.sh` | 检查暂存文件 |
+| `./run_quality_check.sh file.py` | 检查特定文件 |
+| `./run_quality_check.sh --all` | 检查所有仓库文件 |
+| `./run_quality_check.sh --help` | 显示所有选项 |

@@ -1,183 +1,183 @@
-# NestJS Enterprise Backend Assistant
+# NestJS 企业级后端助手
 
-**AI-optimized prompt for zero-configuration NestJS backend development with hexagonal architecture and enterprise standards. Complete production-ready API with guaranteed verification.**
+**面向零配置 NestJS 后端开发的 AI 优化提示词，采用六边形架构和企业标准。完整的生产就绪 API，提供有保障的验证。**
 
-## 🚀 Quick Start
+## 快速开始
 
-### Submit to AI Assistant
-**Copy** the NestJS Enterprise Backend Assistant prompt → **Submit** to your AI:
-- **VS Code Copilot:** Agent mode for automatic backend implementation
-- **Cursor:** AI chat for guided API setup
-- **Claude/ChatGPT:** Direct conversation for step-by-step backend build
+### 提交给 AI 助手
+**复制** NestJS 企业级后端助手提示词 → **提交**给你的 AI：
+- **VS Code Copilot：** 智能体模式，自动实现后端
+- **Cursor：** AI 对话，引导 API 设置
+- **Claude/ChatGPT：** 直接对话，逐步构建后端
 
-### AI Output Guarantee
-Structured implementation with:
-✅ Latest package versions from official NestJS docs  
-✅ Complete hexagonal architecture configuration  
-✅ Working authentication & authorization system  
-✅ Comprehensive database integration  
-✅ **Full verification that everything works**
+### AI 输出保证
+结构化实现，包含：
+✅ 来自官方 NestJS 文档的最新包版本
+✅ 完整的六边形架构配置
+✅ 可用的认证和授权系统
+✅ 全面的数据库集成
+✅ **完整验证，确保一切正常运行**
 
 ---
 
-## 🎯 What You Get
+## 你将获得什么
 
-### Enterprise-Ready Backend Stack
-| Component | Benefit |
+### 企业级后端技术栈
+| 组件 | 优势 |
 |-----------|---------|
-| **NestJS + TypeScript** | Latest framework with strict type safety |
-| **Hexagonal Architecture** | Clean separation of concerns, domain-driven design |
-| **JWT Authentication** | Complete auth system with RBAC and refresh tokens |
-| **Database Integration** | TypeORM/Prisma with migrations and transactions |
-| **Production Toolchain** | ESLint, Prettier, Jest, Docker configured |
+| **NestJS + TypeScript** | 最新框架，严格类型安全 |
+| **六边形架构** | 关注点清晰分离，领域驱动设计 |
+| **JWT 认证** | 完整认证系统，支持 RBAC 和刷新令牌 |
+| **数据库集成** | TypeORM/Prisma，支持迁移和事务 |
+| **生产工具链** | 已配置 ESLint、Prettier、Jest、Docker |
 
-### Optimized Architecture
+### 优化架构
 ```
-✅ Domain-driven design          ❌ Monolithic controller structure
-✅ Layer separation              ❌ Business logic in controllers  
-✅ Interface-based repositories  ❌ Direct database calls
-✅ Dependency injection          ❌ Tight coupling
-✅ Comprehensive testing         ❌ Minimal test coverage
+✅ 领域驱动设计          ❌ 单体控制器结构
+✅ 层次分离              ❌ 控制器中包含业务逻辑
+✅ 基于接口的仓储        ❌ 直接数据库调用
+✅ 依赖注入              ❌ 紧耦合
+✅ 全面测试              ❌ 测试覆盖率极低
 ```
 
-### Production Features
-- **Authentication System:** JWT strategy with access/refresh tokens
-- **Authorization:** Role-based access control with guards and decorators
-- **Database Layer:** Repository pattern with TypeORM/Prisma support
-- **API Documentation:** Swagger with authentication schemas
-- **Security:** Rate limiting, CORS, helmet, input validation
-- **Quality Assurance:** 100% working verification with Docker deployment
+### 生产特性
+- **认证系统：** 带访问/刷新令牌的 JWT 策略
+- **授权：** 基于角色的访问控制，包含守卫和装饰器
+- **数据库层：** 支持 TypeORM/Prisma 的仓储模式
+- **API 文档：** 包含认证 Schema 的 Swagger
+- **安全：** 限流、CORS、helmet、输入验证
+- **质量保证：** 100% 可用验证，支持 Docker 部署
 
 ---
 
-## 🧠 AI Prompt Engineering Excellence
+## AI 提示词工程卓越性
 
-### Why This Prompt Works
-**Mission-Driven Structure:**
-- Clear enterprise backend assistant role with hexagonal architecture focus
-- Mandatory web verification before any package installation
-- Compatible version determination across NestJS ecosystem
-- Structured installation from official documentation sources
-- Built-in verification with API endpoint testing
+### 为何此提示词有效
+**使命驱动的结构：**
+- 以六边形架构为核心的明确企业级后端助手角色
+- 安装任何包之前强制 Web 验证
+- 跨 NestJS 生态系统的兼容版本确定
+- 从官方文档来源的结构化安装
+- 内置 API 端点测试验证
 
-**Production-Ready Focus:**
-- Zero-configuration deployment environment
-- All tools configured, tested, and verified to work perfectly
-- Hexagonal architecture with proper layer separation
-- Complete deliverables with Docker and database setup
-- Success criteria with automated verification checks
-
----
-
-## 📈 Problem Solved
-
-### Before: Manual NestJS Setup
-❌ **Days** researching compatible NestJS, TypeORM, JWT versions  
-❌ **Architecture confusion** - controllers with business logic  
-❌ **Security gaps** - incomplete authentication, missing validation  
-❌ **Database issues** - no migrations, transaction handling  
-❌ **Deployment uncertainty** - no Docker, environment configuration  
-
-### After: Enterprise Backend Assistant
-✅ **Structured approach** with mandatory official documentation verification  
-✅ **Version compatibility** - determined programmatically across ecosystem  
-✅ **Hexagonal architecture** - clean separation, domain-driven design  
-✅ **Enterprise-complete** - auth, RBAC, database, security, Docker  
-✅ **Quality guarantee** - task incomplete until all API endpoints work  
-✅ **Production-ready** - all features tested and deployment verified  
+**生产就绪焦点：**
+- 零配置部署环境
+- 所有工具均经过配置、测试并验证可完美运行
+- 具有适当层次分离的六边形架构
+- 包含 Docker 和数据库设置的完整交付物
+- 带有自动化验证检查的成功标准
 
 ---
 
-## 🏢 Enterprise Applications
+## 解决的问题
 
-### Industry Use Cases
-**Financial Services:** Transaction processing, audit trails, compliance  
-**Healthcare:** Patient data APIs, HIPAA compliance, secure authentication  
-**E-commerce:** Order management, payment processing, inventory APIs  
-**SaaS Platforms:** Multi-tenant architecture, subscription management  
+### 之前：手动 NestJS 设置
+❌ **数天**研究兼容的 NestJS、TypeORM、JWT 版本
+❌ **架构混乱** - 控制器中包含业务逻辑
+❌ **安全漏洞** - 认证不完整，缺少验证
+❌ **数据库问题** - 没有迁移，没有事务处理
+❌ **部署不确定性** - 没有 Docker，没有环境配置
 
-### Team Benefits
-**Startups:** MVP-ready API foundation with enterprise scaling  
-**Agencies:** Consistent client backend architecture  
-**Enterprises:** Standardized microservice development  
-**Education:** Modern NestJS best practices demonstration  
+### 之后：企业级后端助手
+✅ **结构化方法**，强制验证官方文档
+✅ **版本兼容性** - 以编程方式确定跨生态系统版本
+✅ **六边形架构** - 清晰分离，领域驱动设计
+✅ **企业完整** - 认证、RBAC、数据库、安全、Docker
+✅ **质量保证** - 所有 API 端点正常工作前任务未完成
+✅ **生产就绪** - 所有功能经过测试并验证部署
 
 ---
 
-## 🔧 Technical Specifications
+## 企业应用
 
-### Core Backend Stack
-| Layer | Technology | Purpose |
+### 行业用例
+**金融服务：** 事务处理、审计追踪、合规性
+**医疗健康：** 患者数据 API、HIPAA 合规、安全认证
+**电子商务：** 订单管理、支付处理、库存 API
+**SaaS 平台：** 多租户架构、订阅管理
+
+### 团队优势
+**初创公司：** 具备企业扩展能力的 MVP 就绪 API 基础
+**代理商：** 一致的客户后端架构
+**企业：** 标准化微服务开发
+**教育：** 现代 NestJS 最佳实践演示
+
+---
+
+## 技术规格
+
+### 核心后端技术栈
+| 层次 | 技术 | 用途 |
 |-------|------------|---------|
-| **Framework** | NestJS + TypeScript | Enterprise Node.js framework with decorators |
-| **Architecture** | Hexagonal/Clean | Domain-driven design with layer separation |
-| **Authentication** | JWT + Passport | Complete auth system with RBAC |
-| **Database** | TypeORM/Prisma | ORM with migrations and transaction support |
-| **Validation** | Class Validator | DTO validation with decorators |
-| **Documentation** | Swagger/OpenAPI | Auto-generated API documentation |
-| **Security** | Helmet + Throttling | Production security middleware |
-| **Testing** | Jest + Supertest | Unit and E2E testing framework |
+| **框架** | NestJS + TypeScript | 带装饰器的企业级 Node.js 框架 |
+| **架构** | 六边形/整洁架构 | 具有层次分离的领域驱动设计 |
+| **认证** | JWT + Passport | 带 RBAC 的完整认证系统 |
+| **数据库** | TypeORM/Prisma | 支持迁移和事务的 ORM |
+| **验证** | Class Validator | 带装饰器的 DTO 验证 |
+| **文档** | Swagger/OpenAPI | 自动生成 API 文档 |
+| **安全** | Helmet + 限流 | 生产安全中间件 |
+| **测试** | Jest + Supertest | 单元和 E2E 测试框架 |
 
-### Hexagonal Architecture Layers
-- **Domain Layer:** Business entities, repository interfaces, domain services
-- **Application Layer:** Use cases, DTOs, application services, commands
-- **Infrastructure Layer:** Database implementations, external adapters
-- **Presentation Layer:** Controllers, guards, middleware, API routes
+### 六边形架构层次
+- **领域层：** 业务实体、仓储接口、领域服务
+- **应用层：** 用例、DTO、应用服务、命令
+- **基础设施层：** 数据库实现、外部适配器
+- **展示层：** 控制器、守卫、中间件、API 路由
 
-### Security Features
-- **JWT Strategy:** Access/refresh token mechanism with proper expiration
-- **Role-Based Access:** Decorators and guards for endpoint protection
-- **Input Validation:** Request/response validation with class-validator
-- **Rate Limiting:** API throttling and brute-force protection
-- **Security Headers:** Helmet middleware with CORS configuration
+### 安全特性
+- **JWT 策略：** 带适当过期时间的访问/刷新令牌机制
+- **基于角色的访问：** 端点保护的装饰器和守卫
+- **输入验证：** 使用 class-validator 的请求/响应验证
+- **限流：** API 限速和防暴力破解保护
+- **安全请求头：** 带 CORS 配置的 Helmet 中间件
 
-### Quality Assurance
-- **TypeScript Strict Mode:** Maximum type safety across all layers
-- **Zero-Error Guarantee:** All verification checks must pass
-- **Database Integrity:** Migrations, seeds, and transaction support
-- **API Documentation:** Swagger with authentication examples
-- **Docker Ready:** Multi-stage Dockerfile with PostgreSQL compose
-- **Enterprise Standards:** Complete production deployment pipeline
-
----
-
-## 📊 Success Metrics
-
-**Setup Reliability:** Mandatory web verification ensures compatible NestJS ecosystem  
-**Architecture Quality:** Hexagonal design with proper layer separation enforced  
-**Security Standards:** Complete authentication, RBAC, validation, rate limiting  
-**Database Integration:** Migrations, transactions, repository pattern implemented  
-**Production Verification:** API endpoints tested, Docker deployment verified  
+### 质量保证
+- **TypeScript 严格模式：** 跨所有层次的最大类型安全
+- **零错误保证：** 所有验证检查必须通过
+- **数据库完整性：** 迁移、种子数据和事务支持
+- **API 文档：** 包含认证示例的 Swagger
+- **Docker 就绪：** 包含 PostgreSQL compose 的多阶段 Dockerfile
+- **企业标准：** 完整的生产部署流水线
 
 ---
 
-## 🔄 API Verification Commands
+## 成功指标
 
-### Development Verification
+**设置可靠性：** 强制 Web 验证确保兼容的 NestJS 生态系统
+**架构质量：** 强制实施具有适当层次分离的六边形设计
+**安全标准：** 完整认证、RBAC、验证、限流
+**数据库集成：** 已实现迁移、事务、仓储模式
+**生产验证：** 已测试 API 端点，已验证 Docker 部署
+
+---
+
+## API 验证命令
+
+### 开发验证
 ```bash
-npm run start:dev     # Development server on port 3000
-npm run build         # Production build succeeds
-npm run test          # Unit tests pass
-npm run test:e2e      # E2E tests pass
-npm run lint          # Zero ESLint errors
+npm run start:dev     # 3000 端口的开发服务器
+npm run build         # 生产构建成功
+npm run test          # 单元测试通过
+npm run test:e2e      # E2E 测试通过
+npm run lint          # 零 ESLint 错误
 ```
 
-### API Endpoint Testing
+### API 端点测试
 ```bash
-curl http://localhost:3000/health              # Health check
-curl http://localhost:3000/api                 # Swagger docs
-curl -X POST http://localhost:3000/auth/login  # Authentication
+curl http://localhost:3000/health              # 健康检查
+curl http://localhost:3000/api                 # Swagger 文档
+curl -X POST http://localhost:3000/auth/login  # 认证
 curl -H "Authorization: Bearer <token>" \
-     http://localhost:3000/users               # Protected endpoint
+     http://localhost:3000/users               # 受保护端点
 ```
 
-### Database Verification
+### 数据库验证
 ```bash
-npm run migration:run    # Database migrations
-npm run seed:run        # Seed data execution
-docker-compose up -d    # Container deployment
+npm run migration:run    # 数据库迁移
+npm run seed:run        # 种子数据执行
+docker-compose up -d    # 容器部署
 ```
 
 ---
 
-*Enterprise backend assistant using structured prompt engineering to generate production-ready NestJS APIs with hexagonal architecture, complete authentication, and guaranteed verification.*
+*企业级后端助手，使用结构化提示词工程生成具有六边形架构、完整认证和有保障验证的生产就绪 NestJS API。*

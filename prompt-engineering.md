@@ -1,39 +1,39 @@
 ---
 layout: default
-title: Prompt Engineering
+title: 提示词工程
 nav_order: 4
 has_children: true
 permalink: /prompts/
 ---
 
-# 🧠 Prompt Engineering
+# 🧠 提示词工程
 
-Learn to communicate effectively with AI coding agents. Prompt quality was one of the most critical success factors in our experiments - good prompts led to clean, scalable code, while vague prompts caused hallucinations and wasted time.
+学会与 AI 编程智能体进行有效沟通。提示词质量是我们实验中最关键的成功因素之一——好的提示词能产出干净、可扩展的代码，而模糊的提示词则会导致幻觉并浪费时间。
 
-## Why Prompt Engineering Matters
+## 为什么提示词工程很重要
 
-A prompt is the main way you feed task-level context to AI. Since the model can't guess what you're thinking, it relies entirely on what you say and how you say it.
+提示词是你向 AI 输入任务级上下文的主要方式。由于模型无法猜测你的想法，它完全依赖你说了什么以及你是如何说的。
 
-**Well-crafted prompts:**
+**精心设计的提示词能够：**
 
-- Improve accuracy and consistency
-- Reduce hallucinations
-- Make AI-generated code easier to validate
-- Save time during reviews and rework
+- 提升准确性和一致性
+- 减少幻觉
+- 让 AI 生成的代码更易于验证
+- 节省审查和返工时间
 
-## What You'll Master
+## 你将掌握的内容
 
-- **Fundamentals** - Core principles and practical techniques
-- **Advanced Methods** - Three Experts, Multiple Iterations Reasoning
-- **Shot Techniques** - Zero-shot, one-shot, and few-shot prompting
-- **Real Examples** - Templates you can use immediately
+- **基础知识** - 核心原则和实用技巧
+- **进阶方法** - 三专家法、多轮迭代推理法
+- **示例技术** - 零样本、单样本和多样本提示词
+- **真实示例** - 可立即使用的模板
 
-## Core Principles
+## 核心原则
 
-1. **Be specific** - Clear action, expected output, constraints
-2. **Provide context** - File names, project structure, dependencies
-3. **Break it down** - One focused task per prompt
-4. **Iterate** - Refine prompts based on results
-5. **Validate** - Always review and test AI output
+1. **具体明确** - 清晰的操作、预期输出和约束条件
+2. **提供上下文** - 文件名、项目结构、依赖关系
+3. **拆解任务** - 每次提示词专注于一个任务
+4. **迭代优化** - 根据结果不断改进提示词
+5. **验证结果** - 始终审查并测试 AI 的输出
 
-Think of each prompt like a task you'd hand to a junior developer: detailed but focused, with clear expectations.
+将每次提示词视为交给初级开发者的任务：详细但聚焦，且有清晰的期望。

@@ -5,29 +5,29 @@ parent: Core Workflows
 nav_order: 1
 ---
 
-# Spec-First Approach
+# 规格优先方法
 
-AI coding agents like Copilot or Cursor rely entirely on what you give them as input. If your context is vague or scattered, the AI will produce code that’s inaccurate, inconsistent, or overly generic. That’s where the Spec-First approach shines: it is a practice that allows you to feed the AI a high-quality, focused scope of work, leading to better outputs with fewer corrections.
+Copilot 或 Cursor 等 AI 编码智能体完全依赖于你提供的输入。如果上下文模糊或分散，AI 将产生不准确、不一致或过于通用的代码。这正是规格优先方法的优势所在：这是一种让你为 AI 提供高质量、聚焦工作范围的实践，从而以更少的修正获得更好的输出。
 
-Spec-First is about starting the agent conversation with clarity, not code. Instead of jumping into implementation, you begin by collaborating with the AI to generate a detailed, structured specification of the feature. This gives both you and the model a shared understanding before a single line of code is written.
+规格优先的核心是以清晰性而非代码开启智能体对话。与其直接进入实现，不如先与 AI 协作生成功能的详细结构化规格说明。这让你和模型在编写第一行代码之前就建立共同理解。
 
-But here’s the key: you don’t write the spec manually. You generate it by prompting the AI inside Copilot Agent Mode, with access to your codebase, using a reasoning-capable model.
+关键在于：你不需要手动编写规格说明。你可以通过在 Copilot 智能体模式下提示 AI 来生成规格说明，并借助可访问代码库的推理能力强的模型。
 
-## Why This Matters
+## 为何重要
 
-- LLMs don’t read your mind. They need structured, explicit context.
-- A well-written spec gives the AI a clear mental model of the feature.
-- It enables prompt modularity — breaking work into smaller, action oriented and atomic level chunks.
-- It makes AI collaboration more predictable, testable, and scalable.
+- LLM 不会读心术。它们需要结构化、明确的上下文。
+- 写得好的规格说明为 AI 提供了清晰的功能心智模型。
+- 它支持提示词模块化——将工作分解为更小的、面向行动的原子级别的块。
+- 它让 AI 协作更可预测、可测试和可扩展。
 
-## How to Apply Spec-First in Practice
+## 如何在实践中应用规格优先
 
-**Open GitHub Copilot Chat in Agent Mode:** Make sure Agent Mode is active and has access to the codebase (using #codebase or context attachments). This gives the AI visibility into file structure, dependencies, and naming conventions, making its responses more grounded and accurate.
+**在智能体模式下打开 GitHub Copilot Chat：** 确保智能体模式已激活并可访问代码库（使用 #codebase 或上下文附件）。这让 AI 能够了解文件结构、依赖关系和命名约定，使其响应更具根基和准确性。
 
-**Use a Reasoning Model:** Pick a reasoning-capable model such as Claude Sonnet 4.6 (with Thinking effort set to High), GPT-5.5, or Gemini 2.5 Pro. These models excel at multi-step thinking and structured dialogue, which is ideal for generating specs. Gemini 2.5 Pro has a particularly large context window (1M tokens), which can help when writing a plan over a very large codebase, though Claude Sonnet 4.6 (200K+) is also well-suited for most projects.
+**使用推理模型：** 选择具备推理能力的模型，如 Claude Sonnet 4.6（思考努力程度设为高）、GPT-5.5 或 Gemini 2.5 Pro。这些模型擅长多步骤思考和结构化对话，非常适合生成规格说明。Gemini 2.5 Pro 具有特别大的上下文窗口（100 万 token），在为超大代码库编写计划时很有帮助，而 Claude Sonnet 4.6（20 万+ token）也非常适合大多数项目。
 
-**Create the files plan.md and todo.md:** Creating plan.md and todo.md ensures that AI coding agents work from a clear, structured understanding of the project. plan.md captures the full implementation blueprint, while todo.md breaks it into small, promptable tasks, enabling safer, more accurate code generation, better validation checkpoints, and faster, more reliable development cycles.
+**创建 plan.md 和 todo.md 文件：** 创建 plan.md 和 todo.md 确保 AI 编码智能体从清晰、结构化的项目理解出发。plan.md 记录完整的实现蓝图，而 todo.md 将其分解为小型可提示的任务，从而实现更安全、更准确的代码生成，更好的验证检查点，以及更快、更可靠的开发周期。
 
-## Keep Reading
+## 继续阅读
 
-[Test-Driven Development](./WORKFLOW_TDD.md)
+[测试驱动开发](./WORKFLOW_TDD.md)

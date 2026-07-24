@@ -1,18 +1,18 @@
-# Pre-Commitator Demo Guide
+# Pre-Commitator 演示指南
 
-This guide provides a step-by-step demonstration of Pre-Commitator's capabilities from a completely blank slate. It's designed for training staff members on all possible use cases. This file is excluded from git to maintain a clean repository.
+本指南提供了从完全空白状态演示 Pre-Commitator 功能的分步说明。专为培训员工了解所有可能的使用场景而设计。此文件已从 git 中排除，以保持仓库整洁。
 
-## Starting from Scratch
+## 从零开始
 
-### Environment Setup
+### 环境搭建
 
-1. **Prerequisites**
+1. **前提条件**
 
-   - Ensure you have Python 3.7+ installed
-   - Ensure you have Git installed
-   - Ensure you have Node.js 14+ installed (for JavaScript validation)
+   - 确保已安装 Python 3.7+
+   - 确保已安装 Git
+   - 确保已安装 Node.js 14+（用于 JavaScript 验证）
 
-   Verify with:
+   通过以下命令验证：
 
    ```bash
    python3 --version
@@ -20,7 +20,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    node --version
    ```
 
-2. **Clone the Repository**
+2. **克隆仓库**
 
    ```bash
    # Start in a clean directory
@@ -33,7 +33,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    cd pre-commitator
    ```
 
-3. **Installation**
+3. **安装**
 
    ```bash
    # Install with interactive prompts (recommended for first-time setup)
@@ -46,24 +46,24 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    ./install.sh -v
    ```
 
-4. **Verify Installation**
+4. **验证安装**
 
    ```bash
    # Check if all dependencies are correctly installed
    python3 test_dependencies.py
    ```
 
-5. **Run Test Suite**
+5. **运行测试套件**
    ```bash
    # Verify all components work together
    ./run_tests.sh
    ```
 
-## Basic Usage Examples
+## 基本使用示例
 
-### Individual File Validation
+### 单文件验证
 
-1. **Validate a Single Python File**
+1. **验证单个 Python 文件**
 
    ```bash
    # 1. Example with a clean file (should pass)
@@ -76,7 +76,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    ./run_quality_check.sh tests/test_python_issues.py
    ```
 
-2. **Validate a Single JavaScript File**
+2. **验证单个 JavaScript 文件**
 
    ```bash
    # 1. JavaScript file with security and style issues
@@ -86,9 +86,9 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    ./run_quality_check.sh tests/test_js_issues.js
    ```
 
-### Batch Validation
+### 批量验证
 
-1. **Validate Multiple Files**
+1. **验证多个文件**
 
    ```bash
    # Check multiple specific files at once
@@ -98,22 +98,22 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    ./run_quality_check.sh src/demo.py src/demo.js
    ```
 
-2. **Validate All Files**
+2. **验证所有文件**
    ```bash
    # Validate all tracked files in the repository
    ./run_quality_check.sh --all
    ```
 
-## Command Line Options
+## 命令行选项
 
-1. **Help Command**
+1. **帮助命令**
 
    ```bash
    # Display all available options
    ./run_quality_check.sh --help
    ```
 
-2. **Output Options**
+2. **输出选项**
 
    ```bash
    # Verbose output
@@ -123,9 +123,9 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    ./run_quality_check.sh --quiet tests/test_clean.py
    ```
 
-## Git Integration Workflow
+## Git 集成工作流
 
-1. **Setup Pre-commit Hook**
+1. **设置 Pre-commit 钩子**
 
    ```bash
    # Ensure pre-commit is installed
@@ -135,7 +135,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    pre-commit install
    ```
 
-2. **Staged Files Validation**
+2. **暂存文件验证**
 
    ```bash
    # Clear any staged files
@@ -148,7 +148,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    ./run_quality_check.sh
    ```
 
-3. **Failed Validation Workflow**
+3. **验证失败工作流**
 
    ```bash
    # Stage a file with issues
@@ -161,7 +161,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    ./src/pre_commit_hook.sh
    ```
 
-4. **Bypassing Validation (Emergency Use Only)**
+4. **绕过验证（仅限紧急情况）**
 
    ```bash
    # Note: This would be used in a real scenario
@@ -171,26 +171,26 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    echo "In emergency situations only: git commit --no-verify"
    ```
 
-## Advanced Use Cases
+## 高级用例
 
-### Custom Configurations
+### 自定义配置
 
-1. **Examine Configuration**
+1. **查看配置**
 
    ```bash
    # View existing configuration examples
    cat config/settings.yaml
    ```
 
-2. **Project-Specific Settings** (for future demonstration)
+2. **项目专属设置**（供未来演示）
    ```bash
    # Coming soon: Project-specific configuration
    # ./run_quality_check.sh --config custom_config.yaml
    ```
 
-### Working with AI-Generated Code
+### 与 AI 生成代码配合使用
 
-1. **Create Example AI-Generated Code**
+1. **创建示例 AI 生成代码**
 
    ```bash
    # Create a new file simulating AI-generated code with issues
@@ -242,14 +242,14 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    EOF
    ```
 
-2. **Validate AI-Generated Code**
+2. **验证 AI 生成的代码**
 
    ```bash
    # Run validation on the AI-generated file
    ./run_quality_check.sh ai_generated.py
    ```
 
-3. **Fix Issues Based on Feedback**
+3. **根据反馈修复问题**
 
    ```bash
    # Create fixed version based on Pre-Commitator feedback
@@ -311,37 +311,37 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    EOF
    ```
 
-4. **Validate Fixed Code**
+4. **验证修复后的代码**
    ```bash
    # Run validation on the fixed file
    ./run_quality_check.sh ai_generated_fixed.py
    ```
 
-### Language-Specific Features
+### 特定语言功能
 
-1. **Python-Specific Features**
+1. **Python 专属功能**
 
    ```bash
    # Demonstrate Python-specific security checks (bandit)
    ./run_quality_check.sh --verbose tests/test_python_issues.py | grep "bandit"
    ```
 
-2. **JavaScript-Specific Features**
+2. **JavaScript 专属功能**
    ```bash
    # Demonstrate JavaScript-specific security checks (ESLint)
    ./run_quality_check.sh --verbose tests/test_js_issues.js | grep "ESLint"
    ```
 
-## Real-World Workflow Example
+## 真实世界工作流示例
 
-1. **Create a New Feature Branch**
+1. **创建新功能分支**
 
    ```bash
    # Create and checkout a feature branch
    git checkout -b feature/new-calculation
    ```
 
-2. **Create a New File with an Issue**
+2. **创建一个有问题的新文件**
 
    ```bash
    # Create a new Python file with an issue
@@ -365,7 +365,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    EOF
    ```
 
-3. **Try to Commit (Should Fail)**
+3. **尝试提交（应该失败）**
 
    ```bash
    # Stage the new file
@@ -375,7 +375,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    git commit -m "Add new calculation function"
    ```
 
-4. **Fix the Issue**
+4. **修复问题**
 
    ```bash
    # Fix the file based on feedback
@@ -399,7 +399,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    EOF
    ```
 
-5. **Commit Successfully**
+5. **成功提交**
 
    ```bash
    # Stage the fixed file
@@ -412,16 +412,16 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
    git commit -m "Add new calculation function"
    ```
 
-6. **Cleanup**
+6. **清理**
    ```bash
    # Discard the feature branch
    git checkout main
    git branch -D feature/new-calculation
    ```
 
-## Troubleshooting During Demo
+## 演示期间的故障排除
 
-- **Missing Dependencies**
+- **缺少依赖**
 
   ```bash
   # If Python dependencies are missing
@@ -431,14 +431,14 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
   npm install
   ```
 
-- **Permission Issues**
+- **权限问题**
 
   ```bash
   # Make scripts executable
   chmod +x *.sh src/*.sh
   ```
 
-- **Virtual Environment**
+- **虚拟环境**
 
   ```bash
   # Create and activate virtual environment
@@ -446,7 +446,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
   source venv/bin/activate
   ```
 
-- **SSL Certificate Issues**
+- **SSL 证书问题**
 
   ```bash
   # Option 1: Use our certificate fix scripts
@@ -465,7 +465,7 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
   ./switch_mode.sh vscode
   ```
 
-- **Pre-commit SSL Errors**
+- **Pre-commit SSL 错误**
 
   ```bash
   # If pre-commit has SSL errors when downloading Node.js
@@ -484,11 +484,11 @@ This guide provides a step-by-step demonstration of Pre-Commitator's capabilitie
   export PYTHONPATH=$PWD
   ```
 
-## Presenter Notes
+## 演讲者备注
 
-- Highlight the clear error messages designed for both humans and AI
-- Emphasize language-agnostic capabilities
-- Show how security issues are prioritized as errors
-- Demonstrate how the tool integrates into the git workflow
-- Explain how AI-friendly error messages help improve AI-generated code
-- Show how the modular architecture allows for future extension
+- 重点介绍专为人类和 AI 设计的清晰错误信息
+- 强调与语言无关的能力
+- 展示安全问题如何被优先标记为错误
+- 演示该工具如何集成到 git 工作流中
+- 解释 AI 友好的错误信息如何帮助改进 AI 生成的代码
+- 展示模块化架构如何支持未来扩展

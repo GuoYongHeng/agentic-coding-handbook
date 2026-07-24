@@ -6,28 +6,28 @@ has_children: true
 permalink: /workflows/
 ---
 
-# 🔄 Core Workflows
+# 核心工作流
 
-Master the fundamental patterns that make agentic coding effective. These workflows are battle-tested approaches that our teams use daily to deliver high-quality software with AI assistance.
+掌握让智能体编码高效运作的基本模式。这些工作流是我们团队每天用于在 AI 辅助下交付高质量软件的经过实战检验的方法。
 
-## Essential Workflows
+## 核心工作流概览
 
-Each workflow addresses a specific challenge in AI-assisted development:
+每个工作流都针对 AI 辅助开发中的特定挑战：
 
-- **Spec-First** - Start with clear specifications before coding
-- **Test-Driven Development** - TDD adapted for AI collaboration
-- **Memory Bank** - Maintain context across sessions
-- **Visual Feedback** - Iterate with visual confirmation
-- **Exploratory** - Understand unfamiliar codebases
-- **Debug** - Systematic problem-solving with AI
-- **Auto Validations** - Automated quality gates
+- **规格优先** - 在编码前先明确规格说明
+- **测试驱动开发** - 适配 AI 协作的 TDD 方法
+- **记忆库** - 跨会话保持上下文
+- **视觉反馈** - 通过视觉确认进行迭代
+- **探索式** - 理解陌生代码库
+- **调试** - 与 AI 协作系统性解决问题
+- **自动验证** - 自动化质量门禁
 
-## How to Use These Workflows
+## 如何使用这些工作流
 
-1. **Start with Spec-First** for any new feature
-2. **Use Memory Bank** for complex, multi-session projects
-3. **Apply TDD** when quality is critical
-4. **Use Debug Workflow** when things go wrong
-5. **Combine workflows** as needed for your specific context
+1. **任何新功能都从规格优先开始**
+2. **复杂的多会话项目使用记忆库**
+3. **质量要求高时采用 TDD**
+4. **出现问题时使用调试工作流**
+5. **根据具体场景按需组合工作流**
 
-Each workflow includes practical examples, common pitfalls, and step-by-step guidance.
+每个工作流都包含实践示例、常见陷阱和分步指导。

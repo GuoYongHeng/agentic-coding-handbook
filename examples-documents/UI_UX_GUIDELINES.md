@@ -1,222 +1,222 @@
-# Detailed Style Guide for AI
+# AI 详细样式指南
 
-## Overview
+## 概述
 
-This document provides comprehensive guidelines for interpreting and implementing the MedAI Report analyzer app design created in Figma. It is a reference for AI agents to understand the design system, component behaviors, and user experience patterns.
+本文档为 AI 智能体提供全面的指南，用于解读和实现在 Figma 中设计的 MedAI 报告分析器应用设计。这是 AI 智能体理解设计系统、组件行为和用户体验模式的参考资料。
 
-This resource should be used in conjunction with the original Figma file where the app was designed and the business requirements. These materials will help guide the Agent in the app development process.
+本资源应与最初设计应用的 Figma 原文件以及业务需求文档配合使用。这些材料将指导智能体完成应用开发过程。
 
-> **Note:** AI should soon be able to interpret Figma prototypes, drastically improving AI's capacity to analyze a project and build the product.
-
----
-
-## Design Philosophy
-
-### Core Principles
-
-- **Patient Empowerment:** Design that helps patients understand and take control of their health  
-- **Plain Language First:** Complex medical terms explained in simple, understandable language  
-- **Anxiety Reduction:** Calming visual design that reduces medical anxiety and fear  
-- **Educational Focus:** Every interaction is an opportunity to educate and inform patients  
-
-### Target Users
-
-- **Primary:** Patients seeking to understand their medical reports  
-- **Secondary:** Caregivers and family members assisting patients  
-- **Tertiary:** Healthcare professionals reviewing patient understanding  
+> **注意：** AI 即将能够解读 Figma 原型，这将极大地提升 AI 分析项目和构建产品的能力。
 
 ---
 
-## Interpreting UI Components
+## 设计理念
 
-### Navigational Menu
+### 核心原则
 
-**Purpose:** Allow the user to access different pages in the app  
-**Elements:**
+- **患者赋权：** 帮助患者理解和掌控自身健康的设计
+- **通俗语言优先：** 用简单易懂的语言解释复杂的医学术语
+- **减少焦虑：** 平静的视觉设计，减少对医疗的焦虑和恐惧
+- **教育导向：** 每次交互都是教育和告知患者的机会
 
-- 1 featured button (blue centered CTA) → Triggers the upload file flow  
-- 4 secondary buttons:  
-  - **Home** – Takes the user back to the home screen  
-  - **Reports** – Displays all uploaded and analyzed files  
-  - **AI Chat** – Opens chat modal to ask AI about anything  
-  - **Account** – Access all user data  
+### 目标用户
 
----
-
-### Home Screen
-
-**Purpose:** Welcome the user and display the latest uploaded reports (if any)  
-**Elements:**
-
-- Welcome message  
-- 3 Latest Reports (includes date and categories)  
-- Floating main menu with icon buttons (Home, Reports, Upload, AI Chat, Account Details)  
-- Overall screen padding: `32, 20, 20, 20`  
+- **主要用户：** 寻求理解医疗报告的患者
+- **次要用户：** 协助患者的护理人员和家庭成员
+- **第三类用户：** 审查患者理解情况的医疗专业人员
 
 ---
 
-### Login Screen
+## 解读 UI 组件
 
-**Purpose:** User authentication and registration  
-**Elements:**
+### 导航菜单
 
-- Initial animation (animated Splash screen with beating heart)  
-- Input fields: `286px × 48px`  
-- Medium buttons: `60px` height  
-- Login card: `350px × 709.5px`  
-- Card padding: `32px`  
-- Scroll element activates when content exceeds card height  
+**用途：** 允许用户访问应用中的不同页面
+**元素：**
 
----
-
-### AI Chat
-
-**Purpose:** Assist the user with questions  
-**Elements:**
-
-- Initial popup: `350px × 160px`  
-- Secondary popup: `350px × 610px`  
-- Size increases by 100px on Y-axis after user input  
-- Full-screen Chat Module (expandable)  
-- General padding: `20px`  
+- 1 个特色按钮（蓝色居中 CTA）→ 触发文件上传流程
+- 4 个次要按钮：
+  - **主页** – 将用户带回主屏幕
+  - **报告** – 显示所有已上传和已分析的文件
+  - **AI 对话** – 打开聊天弹窗，可向 AI 提问
+  - **账户** – 访问所有用户数据
 
 ---
 
-### Upload Modal
+### 主屏幕
 
-**Purpose:** Allow report upload for AI interpretation  
-**Elements:**
+**用途：** 欢迎用户并显示最新上传的报告（如有）
+**元素：**
 
-- Blue background card: centered, `100px` from top, `350px × 527px`  
-- Internal dashed box: centered, `310px × 411px`, Y-position `184px`  
-
----
-
-### Processing Screen
-
-**Purpose:** Show animation during AI analysis  
-**Elements:**
-
-- Central rotating animated orb  
-
-**Error Conditions:**
-
-- Unable to extract meaningful data  
-- Other processing problems  
-- Display error message and allow retry or new upload  
+- 欢迎消息
+- 3 份最新报告（包含日期和分类）
+- 带图标按钮的浮动主菜单（主页、报告、上传、AI 对话、账户详情）
+- 整体屏幕内边距：`32, 20, 20, 20`
 
 ---
 
-### Results Analysis
+### 登录屏幕
 
-**Purpose:** Present AI-interpreted and original report content  
-**Elements:**
+**用途：** 用户认证和注册
+**元素：**
 
-- **Tabs:**  
-  1. **AI Insights:** Interpreted document content ordered by severity  
-  2. **Original Report:** Raw content as in uploaded file  
-
-- **Buttons:**  
-  - **Discard:** Deletes file, returns to upload screen (bottom sheet confirmation)  
-  - **New Upload:** Starts new upload, replaces current one (bottom sheet confirmation)  
-
-**Value Display Logic:**
-
-- First: **Flagged Values** (collapsible)  
-  - **High (Critical):** Well outside reference ranges  
-  - **Low (Moderately Concerning):** Just over/under acceptable zones  
-- Second: **Normal Values** (collapsible)  
-  - Shown when no flagged values exist  
-
-**Info Boxes:**
-
-- Red warning box for critical values  
-- Info box when AI lacks enough info to interpret  
+- 初始动画（带跳动心脏的动态启动屏幕）
+- 输入框：`286px × 48px`
+- 中型按钮：`60px` 高度
+- 登录卡片：`350px × 709.5px`
+- 卡片内边距：`32px`
+- 当内容超出卡片高度时激活滚动元素
 
 ---
 
-### Results Page
+### AI 对话
 
-**Purpose:** Store all uploaded and uploading files  
-**Elements:**
+**用途：** 协助用户解答问题
+**元素：**
 
-- **Category icons** – quick recognition  
-- **Bookmark button** – add/remove bookmarks  
-- **Sort**  
-- **Filter:** Category-only  
-  - Filter chips appear above when active  
-- **Tabs:**  
-  - **All / Bookmarked** – further filter reports  
+- 初始弹窗：`350px × 160px`
+- 次级弹窗：`350px × 610px`
+- 用户输入后沿 Y 轴增加 100px
+- 全屏聊天模块（可展开）
+- 通用内边距：`20px`
 
 ---
 
-### Account Settings
+### 上传弹窗
 
-**Purpose:** Display user account details  
-**Elements:**
+**用途：** 允许上传报告供 AI 解读
+**元素：**
 
-- First name input  
-- Last name input  
-- Save changes button  
-
----
-
-### Empty States
-
-**Purpose:** Inform user of missing content  
-**Elements:**
-
-- **Icons** – affordance  
-- **Message** – context explanation  
-- **Actions** – suggestions of what user can do  
-
-**Where:**
-
-- Home page – No reports  
-- Reports page – No reports in list or after filtering  
+- 蓝色背景卡片：居中，距顶部 `100px`，`350px × 527px`
+- 内部虚线框：居中，`310px × 411px`，Y 位置 `184px`
 
 ---
 
-## Color System
+### 处理屏幕
 
-### Primary Palette
+**用途：** 在 AI 分析期间显示动画
+**元素：**
 
-- **Stable Blue:** `#435FF0` – Primary actions, trust  
-- **Grey Radial Gradient:** `#FAFAFF` (83%) → `#F9FCFF` (100%) – Background  
-- **Light Grey:** `#FAFAFF` – Card backgrounds, highlights  
-- **Dark Gray:** `#313E4C` – Text color  
-- **Accent Pink:** `#FD7BF4` – Alternative highlight  
+- 中央旋转动画球
 
-### Semantic Colors
+**错误条件：**
 
-| Color Name                     | Light Mode       | Dark Mode Alternative | Usage                              |
+- 无法提取有意义的数据
+- 其他处理问题
+- 显示错误消息，允许重试或重新上传
+
+---
+
+### 结果分析
+
+**用途：** 展示 AI 解读的内容和原始报告内容
+**元素：**
+
+- **标签页：**
+  1. **AI 洞察：** 按严重程度排序的解读文档内容
+  2. **原始报告：** 上传文件中的原始内容
+
+- **按钮：**
+  - **丢弃：** 删除文件，返回上传屏幕（底部表单确认）
+  - **新上传：** 开始新上传，替换当前内容（底部表单确认）
+
+**数值显示逻辑：**
+
+- 首先：**标记数值**（可折叠）
+  - **高（危急）：** 远超参考范围
+  - **低（中度关注）：** 略超/低于可接受区间
+- 其次：**正常数值**（可折叠）
+  - 当没有标记数值时显示
+
+**信息框：**
+
+- 危急数值的红色警告框
+- AI 缺乏足够信息进行解读时的信息框
+
+---
+
+### 结果页面
+
+**用途：** 存储所有已上传和正在上传的文件
+**元素：**
+
+- **分类图标** – 快速识别
+- **书签按钮** – 添加/删除书签
+- **排序**
+- **筛选：** 仅按分类
+  - 激活时在上方显示筛选标签
+- **标签页：**
+  - **全部 / 已书签** – 进一步筛选报告
+
+---
+
+### 账户设置
+
+**用途：** 显示用户账户详情
+**元素：**
+
+- 名字输入框
+- 姓氏输入框
+- 保存更改按钮
+
+---
+
+### 空状态
+
+**用途：** 告知用户缺少内容
+**元素：**
+
+- **图标** – 视觉提示
+- **消息** – 上下文说明
+- **操作建议** – 建议用户可以执行的操作
+
+**出现位置：**
+
+- 主页 – 没有报告时
+- 报告页面 – 列表中没有报告或筛选后没有结果时
+
+---
+
+## 颜色系统
+
+### 主色板
+
+- **稳定蓝：** `#435FF0` – 主要操作、信任感
+- **灰色径向渐变：** `#FAFAFF`（83%）→ `#F9FCFF`（100%）– 背景
+- **浅灰：** `#FAFAFF` – 卡片背景、高亮
+- **深灰：** `#313E4C` – 文字颜色
+- **强调粉：** `#FD7BF4` – 替代高亮色
+
+### 语义颜色
+
+| 颜色名称                     | 浅色模式       | 深色模式替代 | 用途                              |
 |-------------------------------|------------------|------------------------|-------------------------------------|
-| Reassuring Green              | `#AEEABF`         | `#36A656`              | Normal values, good news           |
-| Gentle Orange                 | `#FEAD7F`         | —                      | Recommendations, watch values      |
-| Alarming Red                 | `#AF1B3F`         | `#FF9CB4`              | Critical alerts                    |
+| 安心绿                        | `#AEEABF`         | `#36A656`              | 正常数值、好消息           |
+| 温和橙                        | `#FEAD7F`         | —                      | 建议、需关注数值      |
+| 警示红                        | `#AF1B3F`         | `#FF9CB4`              | 危急警报                    |
 
-### Usage Guidelines
+### 使用指南
 
-- Minimum contrast ratio: **4.5:1**
-- Pair colors with plain-language text
-- Consider accessibility for elderly and visually impaired users  
+- 最低对比度：**4.5:1**
+- 颜色与通俗语言文字配合使用
+- 考虑老年用户和视觉障碍用户的无障碍性
 
 ---
 
-## Typography
+## 字体排版
 
-### Font Hierarchy
+### 字体层级
 
-- **Primary:** Inter  
-  *(Fallbacks: `-apple-system`, `BlinkMacSystemFont`, `'Segoe UI'`)*  
-- **Secondary:** Merriweather  
-  *(Fallbacks: `'Georgia'`, `'Times New Roman'`)*  
+- **主要字体：** Inter
+  *（备选：`-apple-system`、`BlinkMacSystemFont`、`'Segoe UI'`）*
+- **次要字体：** Merriweather
+  *（备选：`'Georgia'`、`'Times New Roman'`）*
 
-### Text Styles
+### 文字样式
 
-#### Titles
+#### 标题
 
-| Style | Font    | Size | Weight | Line Height |
+| 样式 | 字体    | 大小 | 字重 | 行高 |
 |-------|---------|------|--------|-------------|
 | H1    | Inter   | 28px | 600    | normal      |
 | H2    | Inter   | 22px | 600    | normal      |
@@ -224,9 +224,9 @@ This resource should be used in conjunction with the original Figma file where t
 | H4    | Inter   | 16px | 600    | normal      |
 | H5    | Inter   | 13px | 600    | normal      |
 
-#### Label Text
+#### 标签文字
 
-| Style | Font    | Size | Weight | Line Height |
+| 样式 | 字体    | 大小 | 字重 | 行高 |
 |-------|---------|------|--------|-------------|
 | L1    | Inter   | 18px | 600    | 1           |
 | L2    | Inter   | 16px | 600    | normal      |
@@ -234,60 +234,60 @@ This resource should be used in conjunction with the original Figma file where t
 | L4    | Inter   | 13px | 600    | normal      |
 | L5    | Inter   | 12px | 600    | normal      |
 
-#### Body Text
+#### 正文文字
 
-| Style | Font    | Size | Weight | Line Height |
+| 样式 | 字体    | 大小 | 字重 | 行高 |
 |-------|---------|------|--------|-------------|
 | B1    | Inter   | 16px | 400    | normal      |
 | B2    | Inter   | 14px | 400    | 1.57        |
 | B3    | Inter   | 13px | 400    | 1.54        |
 | B4    | Inter   | 12px | 400    | 1.58        |
 
-#### Accent Text
+#### 强调文字
 
-| Style | Font        | Size | Weight | Line Height |
+| 样式 | 字体        | 大小 | 字重 | 行高 |
 |-------|-------------|------|--------|-------------|
 | G1    | Merriweather| 17px | 400    | normal      |
 | G2    | Merriweather| 14px | 400    | 1.71        |
 
 ---
 
-## Buttons
+## 按钮
 
-### Primary Button
+### 主要按钮
 
-- Background: `#435FF0`  
-- Text: White  
-- Padding: `12px 32px`  
+- 背景色：`#435FF0`
+- 文字颜色：白色
+- 内边距：`12px 32px`
 
-### Secondary Button
+### 次要按钮
 
-- Background: none  
-- Text: `#435FF0`  
-- Padding: `12px 32px`  
-- Border Radius: `1px`  
-- Border Color: `#435FF0`  
-
----
-
-## Text Fields
-
-### Light Mode
-
-- Border: `1px solid #838B94`  
-- Padding: `13px 16px`  
-- Background: none  
-
-### Dark Mode
-
-- Border: `1px solid #ABBCCD`  
-- Padding: `13px 16px`  
-- Background: none  
+- 背景色：无
+- 文字颜色：`#435FF0`
+- 内边距：`12px 32px`
+- 圆角：`1px`
+- 边框颜色：`#435FF0`
 
 ---
 
-## Icons
+## 文本输入框
 
-- General usage: `24px`  
-- Secondary menu buttons: `28px`  
-- Upload button: `32px`  
+### 浅色模式
+
+- 边框：`1px solid #838B94`
+- 内边距：`13px 16px`
+- 背景色：无
+
+### 深色模式
+
+- 边框：`1px solid #ABBCCD`
+- 内边距：`13px 16px`
+- 背景色：无
+
+---
+
+## 图标
+
+- 通用尺寸：`24px`
+- 次级菜单按钮：`28px`
+- 上传按钮：`32px`

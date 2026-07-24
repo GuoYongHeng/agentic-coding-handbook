@@ -1,20 +1,20 @@
-# 🧠 AI Planning Agents
+# AI 规划智能体
 
-Breaks a Jira user story (with Gherkin-style acceptance criteria) into small, scoped tasks for delivery. Each task includes:
-- Title, Goal, Scope, Dependencies
-- Clear validation steps
-- Logical execution order
-- Parallelization guidance
+将 Jira 用户故事（包含 Gherkin 风格验收标准）拆解为小型、范围明确的可交付任务。每个任务包含：
+- 标题、目标、范围、依赖关系
+- 清晰的验证步骤
+- 逻辑执行顺序
+- 并行化指导
 
-Output is cleanly structured for use in Jira comments.
+输出结构清晰，适合用于 Jira 评论。
 
-See [`PROMPT.md`](./PROMPT.md) for full prompt details.
+完整提示词详情请参见 [`PROMPT.md`](./PROMPT.md)。
 
 ---
 
-## 📎 How to Use
+## 使用方法
 
-1. Copy the appropriate `PROMPT.md` into your agent config (ROVO).
-2. Provide the user story or ticket input as described.
-3. Review the agent’s output for clarity and alignment.
-4. Edit if needed, then post to Jira or proceed to implementation.
+1. 将适当的 `PROMPT.md` 复制到你的智能体配置中（ROVO）。
+2. 按照描述提供用户故事或工单输入。
+3. 审查智能体的输出，确认其清晰度和一致性。
+4. 如需要，进行编辑，然后发布到 Jira 或继续实施。

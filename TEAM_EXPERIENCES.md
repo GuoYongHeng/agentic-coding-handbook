@@ -1,23 +1,23 @@
 ---
 layout: default
-title: Team Experiences
-parent: Getting Started
+title: 团队经验
+parent: 入门指南
 nav_order: 3
 ---
 
-# Team's Experiences
+# 团队经验
 
-Please create a page under this page and share your experiences from applying the learnings from this handbook and overall learnings from your own experiments.
+请在本页下创建子页面，分享你在应用本手册学习内容以及自身实验中的经验与收获。
 
-## Questions that are are key to be answered:
+## 需要回答的关键问题：
 
-- What are the main use cases where you see value using coding agents?
-- What tools have you used? (Cursor, Copilot, Windsurf, Claude, Codex)
-- What are the major pain points you faced and how you have overcome it?
-- What are the major interesting things you learned?
-- Share any rules, instructions, scripts, MCPs or other tools you have approached.
-- Please make sure to share screenshots and looms to ease the understanding.
+- 你认为使用编程智能体最有价值的主要场景是什么？
+- 你使用过哪些工具？（Cursor、Copilot、Windsurf、Claude、Codex）
+- 你遇到的主要痛点是什么？你是如何克服的？
+- 你学到了哪些有趣的东西？
+- 请分享你使用过的任何规则、指令、脚本、MCP 或其他工具。
+- 请务必附上截图和 Loom 视频，以便他人更好地理解。
 
-## Keep Reading
+## 继续阅读
 
-[Core Workflows](./core-workflows.md)
+[核心工作流程](./core-workflows.md)

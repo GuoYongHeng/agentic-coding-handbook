@@ -1,32 +1,32 @@
-# Troubleshooting Guide
+# 故障排除指南
 
-This document provides solutions for common issues you might encounter when using Pre-Commitator.
+本文档提供了使用 Pre-Commitator 时可能遇到的常见问题的解决方案。
 
-## Installation Issues
+## 安装问题
 
-### Python Not Found
+### 找不到 Python
 
-**Error**: `Python 3 is required but not installed`
+**错误**：`Python 3 is required but not installed`
 
-**Solution**:
-1. Install Python 3.7 or newer from [python.org](https://www.python.org/downloads/)
-2. Ensure Python is added to your PATH
-3. Verify with `python3 --version`
+**解决方案**：
+1. 从 [python.org](https://www.python.org/downloads/) 安装 Python 3.7 或更新版本
+2. 确保 Python 已添加到您的 PATH
+3. 使用 `python3 --version` 进行验证
 
-### Permission Denied Running Scripts
+### 运行脚本时权限被拒绝
 
-**Error**: `Permission denied: ./install.sh`
+**错误**：`Permission denied: ./install.sh`
 
-**Solution**:
+**解决方案**：
 ```bash
 chmod +x *.sh src/*.sh src/*.py
 ```
 
-### Line Ending Issues on Windows
+### Windows 上的行尾问题
 
-**Error**: `bad interpreter: /bin/bash^M: no such file or directory`
+**错误**：`bad interpreter: /bin/bash^M: no such file or directory`
 
-**Solution**:
+**解决方案**：
 ```bash
 # Option 1: Using sed
 sed -i 's/\r$//' *.sh src/*.sh
@@ -35,25 +35,25 @@ sed -i 's/\r$//' *.sh src/*.sh
 dos2unix *.sh src/*.sh
 ```
 
-## Operation Mode Issues
+## 运行模式问题
 
-### VS Code Commit Issues
+### VS Code 提交问题
 
-**Error**: SSL certificate errors when committing from VS Code
+**错误**：从 VS Code 提交时出现 SSL 证书错误
 
-**Solution**:
+**解决方案**：
 ```bash
 # Switch to VS Code mode
 ./switch_mode.sh vscode
 ```
 
-This mode disables ESLint, Lizard, Bandit, and Semgrep to prevent SSL certificate issues and "command not found" errors in VS Code.
+此模式禁用 ESLint、Lizard、Bandit 和 Semgrep，以防止 VS Code 中的 SSL 证书问题和"命令未找到"错误。
 
-### Pre-commit's Script is Installed in Migration Mode
+### Pre-commit 脚本以迁移模式安装
 
-**Error**: `Running in migration mode with existing hooks at .git/hooks/pre-commit.legacy`
+**错误**：`Running in migration mode with existing hooks at .git/hooks/pre-commit.legacy`
 
-**Solution**:
+**解决方案**：
 ```bash
 # Completely reinstall pre-commit hooks
 pre-commit uninstall
@@ -66,13 +66,13 @@ pre-commit install -f
 ./src/auto_stage_hook.sh
 ```
 
-This error occurs when pre-commit detects multiple hook installations or leftovers from previous installations. The solution is to completely uninstall and then force a clean reinstallation of the hooks. After that, remember to reinstall the auto-stage hook to enable automatic staging of files modified by hooks.
+当 pre-commit 检测到多个钩子安装或之前安装的遗留物时，会出现此错误。解决方法是完全卸载，然后强制重新安装钩子。之后，请记得重新安装自动暂存钩子，以启用钩子修改文件的自动暂存功能。
 
-### SSL Certificate Errors
+### SSL 证书错误
 
-**Error**: `[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed`
+**错误**：`[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed`
 
-**Solution**:
+**解决方案**：
 ```bash
 # Option 1: Fix certificates
 ./fix_certificates.sh
@@ -81,25 +81,25 @@ This error occurs when pre-commit detects multiple hook installations or leftove
 ./switch_mode.sh vscode
 ```
 
-## Auto-Stage Issues
+## 自动暂存问题
 
-### Pre-commit Fixes Issues But Requires Manual Staging
+### Pre-commit 修复问题但需要手动暂存
 
-**Issue**: Pre-commit hooks fix issues (like trailing whitespace) but you have to manually stage them
+**问题**：pre-commit 钩子修复了问题（如行尾空格），但您必须手动暂存它们
 
-**Solution**:
+**解决方案**：
 ```bash
 # Install the auto-stage hook
 ./src/auto_stage_hook.sh
 ```
 
-This will automatically stage files modified by pre-commit hooks, allowing you to just run `git commit` again to complete the commit.
+这将自动暂存由 pre-commit 钩子修改的文件，让您只需再次运行 `git commit` 即可完成提交。
 
-### Auto-Stage Hook Not Working
+### 自动暂存钩子不工作
 
-**Issue**: Files modified by pre-commit hooks are not automatically staged
+**问题**：由 pre-commit 钩子修改的文件未自动暂存
 
-**Solution**:
+**解决方案**：
 ```bash
 # Check if auto-stage hook is installed
 ls -la .git/hooks/pre-commit.original
@@ -108,35 +108,35 @@ ls -la .git/hooks/pre-commit.original
 ./src/auto_stage_hook.sh
 ```
 
-## Horusec Issues
+## Horusec 问题
 
-### Horusec Installation Failures
+### Horusec 安装失败
 
-**Error**: `Horusec installation could not be completed`
+**错误**：`Horusec installation could not be completed`
 
-**Solution**:
-This is normal and won't affect other validations. Horusec is designed to be optional, and the hooks will skip it if not installed. If you want to try installing it manually:
+**解决方案**：
+这是正常的，不会影响其他验证。Horusec 被设计为可选的，如果未安装，钩子将跳过它。如果您想手动安装，可以尝试：
 
 ```bash
 # Manual installation attempt
 ./src/install_horusec.sh
 ```
 
-## Runtime Issues
+## 运行时问题
 
-### No Files to Check
+### 没有要检查的文件
 
-**Error**: `No files to check` or `No staged files found`
+**错误**：`No files to check` 或 `No staged files found`
 
-**Solution**:
-1. Make sure you've staged files with `git add`
-2. Specify files explicitly: `./run_quality_check.sh path/to/file.py`
+**解决方案**：
+1. 确保已使用 `git add` 暂存文件
+2. 明确指定文件：`./run_quality_check.sh path/to/file.py`
 
-### Pre-commit Not Initialized
+### Pre-commit 未初始化
 
-**Error**: `pre-commit: command not found` or hook not running on commit
+**错误**：`pre-commit: command not found` 或提交时钩子未运行
 
-**Solution**:
+**解决方案**：
 ```bash
 # Install pre-commit
 pip install pre-commit
@@ -145,11 +145,11 @@ pip install pre-commit
 pre-commit install
 ```
 
-### Missing Dependencies
+### 缺少依赖
 
-**Error**: `Warning: Lizard not found` or similar messages about missing tools
+**错误**：`Warning: Lizard not found` 或类似关于缺少工具的信息
 
-**Solution**:
+**解决方案**：
 ```bash
 # Install Python dependencies
 pip install -r requirements.txt
@@ -161,16 +161,16 @@ npm install
 ./switch_mode.sh vscode
 ```
 
-## Validation Issues
+## 验证问题
 
-### Complexity Errors
+### 复杂度错误
 
-**Error**: `warning: someFunction has 25 NLOC, 15 CCN...`
+**错误**：`warning: someFunction has 25 NLOC, 15 CCN...`
 
-**Solution**:
-1. Refactor complex functions into smaller, focused functions
-2. Reduce nested conditionals, consider early returns
-3. Or adjust thresholds in `.pre-commit-config.yaml`:
+**解决方案**：
+1. 将复杂函数重构为更小、更专注的函数
+2. 减少嵌套条件，考虑使用提前返回
+3. 或在 `.pre-commit-config.yaml` 中调整阈值：
    ```yaml
    - repo: local
      hooks:
@@ -181,11 +181,11 @@ npm install
            ]
    ```
 
-### Security Issues
+### 安全问题
 
-**Error**: `Security: subprocess call with shell=True identified`
+**错误**：`Security: subprocess call with shell=True identified`
 
-**Solution**:
+**解决方案**：
 ```python
 # Bad
 subprocess.check_output(command, shell=True)
@@ -194,9 +194,9 @@ subprocess.check_output(command, shell=True)
 subprocess.check_output(command.split())
 ```
 
-**Error**: `Use of possibly insecure function - consider using safer ast.literal_eval`
+**错误**：`Use of possibly insecure function - consider using safer ast.literal_eval`
 
-**Solution**:
+**解决方案**：
 ```python
 # Bad
 result = eval(user_input)
@@ -206,11 +206,11 @@ import ast
 result = ast.literal_eval(user_input)
 ```
 
-### JavaScript Security Issues
+### JavaScript 安全问题
 
-**Error**: `ESLint: Object injection vulnerability detected`
+**错误**：`ESLint: Object injection vulnerability detected`
 
-**Solution**:
+**解决方案**：
 ```javascript
 // Bad
 const userData = users[userInput];
@@ -222,19 +222,19 @@ if (allowedUsers.includes(userInput)) {
 }
 ```
 
-## Advanced Troubleshooting
+## 高级故障排除
 
-### Debug Mode
+### 调试模式
 
-To get more detailed output, use the verbose flag:
+要获取更详细的输出，请使用 verbose 标志：
 
 ```bash
 ./run_quality_check.sh --verbose
 ```
 
-### Environment Variables
+### 环境变量
 
-To check which environment variables are being used to control validators:
+要检查哪些环境变量用于控制验证器：
 
 ```bash
 # View the .env file content
@@ -244,39 +244,39 @@ cat .env
 export -p | grep DISABLE
 ```
 
-### Git Hook Not Running
+### Git 钩子未运行
 
-If the pre-commit hook isn't running automatically:
+如果 pre-commit 钩子未自动运行：
 
-1. Check if hooks are installed:
+1. 检查钩子是否已安装：
    ```bash
    ls -la .git/hooks/
    ```
 
-2. Reinstall hooks:
+2. 重新安装钩子：
    ```bash
    pre-commit install
    ```
 
-3. Verify pre-commit is configured:
+3. 验证 pre-commit 是否已配置：
    ```bash
    pre-commit --version
    ```
 
-### Custom Rules Not Working
+### 自定义规则不起作用
 
-If your custom validation rules are not being applied:
+如果您的自定义验证规则未被应用：
 
-1. Check the format in `.pre-commit-config.yaml`
-2. Run with verbose output to see detailed errors
-3. Test individual hooks:
+1. 检查 `.pre-commit-config.yaml` 中的格式
+2. 使用 verbose 输出运行以查看详细错误
+3. 测试单个钩子：
    ```bash
    pre-commit run lizard --verbose
    ```
 
-## Mode Switching
+## 模式切换
 
-If you need to switch between VS Code and terminal modes:
+如果需要在 VS Code 和终端模式之间切换：
 
 ```bash
 # Check current mode
@@ -289,11 +289,11 @@ If you need to switch between VS Code and terminal modes:
 ./switch_mode.sh terminal
 ```
 
-## Getting More Help
+## 获取更多帮助
 
-If your issue isn't resolved here:
+如果您的问题在此处未得到解决：
 
-1. Check the `.pre-commit-config.yaml` file for configuration issues
-2. Review the logs in verbose mode
-3. Consult the documentation for pre-commit and individual validation tools
-4. Open an issue on our GitHub repository
+1. 检查 `.pre-commit-config.yaml` 文件是否有配置问题
+2. 在 verbose 模式下查看日志
+3. 查阅 pre-commit 和各验证工具的文档
+4. 在我们的 GitHub 仓库上提交 issue

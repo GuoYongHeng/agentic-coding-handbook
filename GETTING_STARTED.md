@@ -5,27 +5,27 @@ parent: Getting Started
 nav_order: 1
 ---
 
-# Getting Started
+# 快速入门
 
-To work effectively with AI coding agents at Modus Create, your first step is setting up GitHub Copilot Agent inside Visual Studio Code.
+要在 Modus Create 高效使用 AI 编程智能体，第一步是在 Visual Studio Code 中配置 GitHub Copilot Agent。
 
-- **Install Visual Studio Code**: If you’re not already using VS Code, [download and install it](https://code.visualstudio.com/docs/setup/setup-overview);
+- **安装 Visual Studio Code**：如果你尚未使用 VS Code，请[下载并安装](https://code.visualstudio.com/docs/setup/setup-overview)；
 
-- **Request Your GitHub Copilot Subscription**: Modus provides GitHub Copilot licenses for all engineers. Before setting up Copilot, you must request your subscription by opening a ticket at the Modus IT Service Desk Portal;
+- **申请 GitHub Copilot 订阅**：Modus 为所有工程师提供 GitHub Copilot 许可证。在配置 Copilot 之前，你需要通过 Modus IT 服务台门户提交工单来申请订阅；
 
-- **Install GitHub Copilot Extension**: Install the GitHub Copilot extension by following the guide at [GitHub Copilot for VS Code](https://code.visualstudio.com/docs/copilot/setup);
+- **安装 GitHub Copilot 扩展**：按照 [GitHub Copilot for VS Code](https://code.visualstudio.com/docs/copilot/setup) 的指南安装 GitHub Copilot 扩展；
 
-- **Enable GitHub Copilot Agent Mode**: As of April 28th 2025, Agent mode requires to be manually enabled by following the guidance at [Copilot Agent Mode Setup](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode);
+- **启用 GitHub Copilot Agent 模式**：自 2025 年 4 月 28 日起，Agent 模式需要按照 [Copilot Agent Mode Setup](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode) 的指引手动启用；
 
-After going through the above steps, you should be able to see the agent option:
+完成上述步骤后，你应该能看到 Agent 选项：
 
 ![Agent Mode Enabled](./assets/agent_mode.png)
 
-## References
+## 参考资料
 
-- [Copilot agent mode new features in Visual Studio Code](https://www.youtube.com/watch?v=aKx5I0Mrr9g)
-- [VS Code Agent Mode Just Changed Everything](https://www.youtube.com/watch?v=dutyOc_cAEU)
+- [Visual Studio Code 中 Copilot Agent 模式的新功能](https://www.youtube.com/watch?v=aKx5I0Mrr9g)
+- [VS Code Agent 模式彻底改变了一切](https://www.youtube.com/watch?v=dutyOc_cAEU)
 
-## Keep Reading
+## 继续阅读
 
-[Vibe Coding Philosophy](./VIBE_CODING.md)
+[Vibe Coding 理念](./VIBE_CODING.md)

@@ -1,67 +1,67 @@
-# Three Experts Prompt - README
+# 三位专家提示词 - 使用说明
 
-## Overview
+## 概述
 
-The "Three Experts" prompt is a structured framework designed to help you get comprehensive, multi-perspective analysis on complex software engineering problems. By simulating three different experts, each with a distinct viewpoint, you'll receive a more thorough analysis than you might get from a single perspective.
+"三位专家"提示词是一个结构化框架，旨在帮助你获得对复杂软件工程问题的全面、多视角分析。通过模拟三位具有不同视角的专家，你将获得比单一视角更为深入的分析。
 
-## When to Use This Prompt
+## 适用场景
 
-This prompt is particularly valuable when:
+此提示词在以下情况下特别有价值：
 
-- You're facing architectural decisions with significant long-term implications
-- You're unsure which of several approaches is optimal
-- You need to understand trade-offs between different solutions
-- You want to ensure you've considered edge cases and potential issues
-- You're implementing a complex system and need structured thinking
+- 面临具有重大长期影响的架构决策时
+- 不确定几种方案中哪种最优时
+- 需要理解不同解决方案之间的权衡时
+- 想确保已考虑边界情况和潜在问题时
+- 实现复杂系统并需要结构化思考时
 
-## How to Use the Prompt
+## 如何使用提示词
 
-1. **Copy the prompt**: Copy the entire content from the PROMPT.md file.
+1. **复制提示词**：从 PROMPT.md 文件中复制完整内容。
 
-2. **Fill in the tagged sections**:
-   - Replace the text in `<task_description>` with a detailed explanation of your problem
-   - (Optional) Fill in `<current_approach>` with any existing implementation details
-   - (Optional) Add any `<specific_concerns>` you want addressed
+2. **填写标记的部分**：
+   - 将 `<task_description>` 中的文字替换为对你问题的详细说明
+   - （可选）在 `<current_approach>` 中填写任何现有的实现细节
+   - （可选）添加你希望被分析的 `<specific_concerns>`
 
-3. **Submit to an AI assistant**: Paste the completed prompt into your preferred AI assistant (like Claude).
+3. **提交给 AI 助手**：将完整的提示词粘贴到你首选的 AI 助手中（如 Claude）。
 
-4. **Review the multi-perspective analysis**: You'll receive analysis from three different expert perspectives, followed by a collaborative recommendation.
+4. **审查多视角分析**：你将收到来自三位不同专家视角的分析，以及协作推荐的解决方案。
 
-## Tips for Getting the Best Results
+## 获得最佳结果的技巧
 
-- **Be specific and detailed** in your task description. Vague queries get vague responses.
-- **Include relevant code snippets** when applicable to give the experts concrete material to work with.
-- **Mention your technology stack** and any constraints you're working under.
-- **Specify performance requirements** or other non-functional requirements that matter for your use case.
-- **Ask follow-up questions** if you need clarification on any part of the response.
+- 在任务描述中**具体且详细**。模糊的问题会得到模糊的回答。
+- **包含相关代码片段**（如适用），为专家提供具体材料。
+- **提及你的技术栈**以及你所处的任何约束条件。
+- **指定性能需求**或其他对你的用例重要的非功能性需求。
+- 如果需要对响应的某部分进行澄清，可以**提出追问**。
 
-## Example Usage
+## 使用示例
 
-Instead of asking:
-> "What's the best way to implement caching in my app?"
+不要这样提问：
+> "在我的应用中实现缓存的最佳方式是什么？"
 
-Use the prompt with:
+而应在提示词中填写：
 > "<task_description>
-> I need to implement a caching system for a Node.js e-commerce API that handles approximately 5,000 requests per minute. The data being cached includes product information, user preferences, and shopping cart contents. Currently, our database queries are creating a bottleneck, especially during peak hours. Cache invalidation is particularly challenging since product data is updated from multiple services.
+> 我需要为一个每分钟处理约 5,000 个请求的 Node.js 电商 API 实现缓存系统。缓存的数据包括产品信息、用户偏好和购物车内容。目前，数据库查询造成了瓶颈，在高峰时段尤为明显。缓存失效尤其具有挑战性，因为产品数据会从多个服务更新。
 > </task_description>
 > 
 > <current_approach>
-> We're currently using Redis for session management but not for data caching. We've experimented with in-memory caching using Node.js Map objects, but this doesn't work well in our clustered environment.
+> 我们目前使用 Redis 进行会话管理，但未用于数据缓存。我们尝试过使用 Node.js Map 对象进行内存缓存，但这在我们的集群环境中效果不佳。
 > </current_approach>
 > 
 > <specific_concerns>
-> - How should we handle cache invalidation across multiple services?
-> - What's the appropriate TTL strategy for different types of data?
-> - Should we use a write-through or write-behind caching pattern?
-> - How do we monitor cache hit/miss rates?
+> - 如何处理多服务间的缓存失效？
+> - 针对不同类型的数据，适合的 TTL 策略是什么？
+> - 我们应该使用写穿透还是写回缓存模式？
+> - 如何监控缓存命中/未命中率？
 > </specific_concerns>"
 
-## Customization
+## 自定义
 
-Feel free to modify the experts' roles based on your specific needs. For example, you might want:
-- A security expert
-- A DevOps specialist
-- A domain-specific expert (e.g., ML engineer, database specialist)
-- A UX-focused developer
+你可以根据具体需求自由修改专家的角色。例如，你可能需要：
+- 安全专家
+- DevOps 专家
+- 特定领域专家（如 ML 工程师、数据库专家）
+- 注重 UX 的开发者
 
-You can adjust the prompt to specify exactly what type of expertise you need for your particular problem.
+你可以调整提示词，明确指定你的特定问题所需的专业背景。

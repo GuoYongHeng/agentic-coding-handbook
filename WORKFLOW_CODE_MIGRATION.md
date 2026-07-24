@@ -1,59 +1,59 @@
-# Migration Workflow
+# 迁移工作流
 
-*A structured approach to modernizing legacy code with the help of AI*
+*借助 AI 现代化遗留代码的结构化方法*
 
-## Overview
+## 概述
 
-This workflow builds on the [Refactoring Workflow](./WORKFLOW_REFACTORING.md) but is focused on **larger migrations** — moving from legacy codebases to modern architectures. Code migration often involves not just cleaning up code but rethinking architecture, decoupling responsibilities, and introducing tests and observability where none existed.
+该工作流建立在[重构工作流](./WORKFLOW_REFACTORING.md)的基础上，但专注于**大型迁移**——从遗留代码库迁移到现代架构。代码迁移通常不仅仅是清理代码，还涉及重新思考架构、解耦职责，以及在原本缺失的地方引入测试和可观测性。
 
-This guide outlines how to combine agentic tools (e.g., Copilot Chat, Cursor, Claude) with deliberate human design to migrate legacy systems safely, incrementally, and with confidence.
+本指南概述了如何将智能体工具（如 Copilot Chat、Cursor、Claude）与深思熟虑的人工设计相结合，安全、增量地迁移遗留系统，并对结果充满信心。
 
-> **Important:** Avoid treating migration as a big-bang rewrite. Break the scope into manageable, well-defined chunks. This reduces risk, accelerates feedback, and allows the new system to deliver value earlier.
+> **重要：** 避免将迁移视为大爆炸式重写。将范围分解为可管理的、定义明确的块。这降低了风险，加速了反馈，并让新系统更早地交付价值。
 
 ---
 
-## Step 1: Understand the Legacy Codebase
+## 第一步：理解遗留代码库
 
-Before touching anything, build a mental model of how the legacy app works.
+在触碰任何东西之前，先建立对遗留应用如何工作的心智模型。
 
-### Use AI agents to:
+### 使用 AI 智能体来：
 
-* Extract business rules from old source files
-* Generate high-level summaries of legacy files (e.g. `main.cob`, `operations.cob`)
-* Identify relationships between components and dependencies
-* Search for legacy patterns and undocumented logic through comments, unused paths, or inline configuration
-* Suggest boundaries or seams that can be used to insert logging or adapter logic later on
-* Identify potential migration challenges (e.g., lack of tests, complex dependencies, custom functions or modules)
+* 从旧源文件中提取业务规则
+* 生成遗留文件的高级摘要（如 `main.cob`、`operations.cob`）
+* 识别组件之间的关系和依赖关系
+* 通过注释、未使用路径或内联配置搜索遗留模式和未文档化的逻辑
+* 建议可用于后续插入日志或适配器逻辑的边界或接缝
+* 识别潜在的迁移挑战（如缺少测试、复杂依赖关系、自定义函数或模块）
 
-#### Suggested Prompt:
+#### 建议的提示词：
 
 ```
 @workspace explain how the system works, including data flow and file responsibilities.
 ```
 
-Repeat this per module to reduce hallucination risk. Use chain-of-thought Q\&A if the system is large.
+对每个模块重复此操作以降低幻觉风险。如果系统较大，使用思维链问答方式。
 
 ---
 
-## Step 2: Plan the Migration Strategy
+## 第二步：规划迁移策略
 
-Avoid rewriting everything at once. Instead, define a **gradual migration plan**.
+避免一次性重写所有内容。相反，定义一个**渐进式迁移计划**。
 
-* Use the **strangler pattern** to incrementally replace legacy modules
-* Introduce **adapters** to allow coexistence of old and new logic
-* Prioritize domains based on risk, impact, and churn
-* Define **migration slices** (e.g., by domain, UI route, service boundary) and plan deliverables for each
+* 使用**绞杀者模式**逐步替换遗留模块
+* 引入**适配器**允许新旧逻辑共存
+* 根据风险、影响和变更频率确定领域优先级
+* 定义**迁移切片**（如按领域、UI 路由、服务边界划分）并为每个切片规划可交付成果
 
-### Use AI agents to:
+### 使用 AI 智能体来：
 
-* Generate draft migration plans based on the code structure and identified responsibilities
-* Suggest natural slicing strategies by analyzing module responsibilities and coupling
-* Draft adapter layers to connect legacy components with new interfaces
-* Prioritize migration items using change frequency, error history, and business importance
-* Cluster files by feature, dependency, or frequency of change using embedding-based semantic similarity
-* Evaluate compatibility between old and new code contracts (function signatures, object shapes)
+* 根据代码结构和已识别的职责生成迁移计划草稿
+* 通过分析模块职责和耦合度建议自然的切片策略
+* 起草适配器层以连接遗留组件与新接口
+* 使用变更频率、错误历史和业务重要性确定迁移项目的优先级
+* 使用基于嵌入的语义相似性按功能、依赖关系或变更频率对文件进行聚类
+* 评估新旧代码合同之间的兼容性（函数签名、对象结构）
 
-#### Suggested Prompts:
+#### 建议的提示词：
 
 ```
 Based on this codebase, can you suggest a migration plan that replaces modules incrementally?
@@ -63,29 +63,29 @@ Based on this codebase, can you suggest a migration plan that replaces modules i
 Given these legacy modules, which parts should be migrated first to reduce risk and unlock quick wins?
 ```
 
-Document the plan and revisit it regularly.
+定期记录并回顾计划。
 
 ---
 
-## Step 3: Establish Stakeholder Communication
+## 第三步：建立干系人沟通机制
 
-**Most migrations fail due to misaligned expectations, not code quality.** Establish clear communication channels early.
+**大多数迁移失败是因为期望不一致，而非代码质量问题。** 尽早建立清晰的沟通渠道。
 
-### Key Communication Elements
+### 关键沟通要素
 
-* **Progress Dashboard**: Visual representation of migration status (% complete, modules migrated, risks identified)
-* **Regular Updates**: Weekly/bi-weekly reports with concrete progress metrics
-* **Risk Communication**: Transparent about potential disruptions, timelines, and mitigation strategies
-* **Business Impact Translation**: Convert technical progress into business value metrics
+* **进度仪表板**：迁移状态的可视化呈现（完成百分比、已迁移模块、已识别风险）
+* **定期更新**：包含具体进度指标的每周/双周报告
+* **风险沟通**：透明地说明潜在干扰、时间表和缓解策略
+* **业务影响转化**：将技术进度转化为业务价值指标
 
-### Use AI agents for stakeholder communication to
+### 使用 AI 智能体进行干系人沟通：
 
-* Generate executive summaries from technical progress reports
-* Create visual progress dashboards using migration metrics
-* Draft stakeholder-friendly explanations of technical decisions
-* Suggest communication templates for different audience types (executives, product managers, end users)
+* 从技术进度报告生成执行摘要
+* 使用迁移指标创建可视化进度仪表板
+* 起草技术决策的干系人友好解释
+* 为不同受众类型（高管、产品经理、最终用户）建议沟通模板
 
-#### Suggested Communication Template
+#### 建议的沟通模板
 
 ```markdown
 Migration Progress Update - Week X
@@ -98,102 +98,102 @@ Migration Progress Update - Week X
 
 ---
 
-## Step 4: Introduce Tests on the Legacy Side
+## 第四步：在遗留端引入测试
 
-Before any migration or analysis begins, build a safety net.
+在任何迁移或分析开始之前，建立安全网。
 
-Legacy systems often lack test coverage — use that to your advantage.
+遗留系统通常缺乏测试覆盖——利用这一点。
 
-* Write **unit tests** around critical logic
-* Write **end-to-end (e2e) tests** around user-facing flows
-* Derive tests from **real input/output examples** in the existing system
+* 围绕关键逻辑编写**单元测试**
+* 围绕面向用户的流程编写**端到端（e2e）测试**
+* 从现有系统中的**真实输入/输出示例**推导测试
 
-These tests will serve as contracts to validate the new implementation, making sure you're not rewriting blindly.
+这些测试将作为合同来验证新实现，确保你不是在盲目重写。
 
-> **Note:** Make sure to cover the critical paths and edge cases. If, for some reason, there are functionalities that are not being used, consider removing them to reduce complexity or rewriting unnecessary parts.
+> **注意：** 确保覆盖关键路径和边界情况。如果某些功能没有被使用，考虑删除它们以降低复杂性或重写不必要的部分。
 
-### Use AI agents to:
+### 使用 AI 智能体来：
 
-* Generate boilerplate test cases from existing code
-* Translate manually verified inputs and outputs into regression test cases
-* Suggest mocking strategies to decouple legacy components
-* Validate whether a test exercises all paths (line coverage vs. branch coverage)
+* 从现有代码生成样板测试用例
+* 将手动验证的输入和输出转化为回归测试用例
+* 建议模拟策略以解耦遗留组件
+* 验证测试是否覆盖了所有路径（行覆盖率与分支覆盖率）
 
-### Optional:
+### 可选：
 
-Use AI to bootstrap test scaffolding from existing code snippets.
+使用 AI 从现有代码片段引导测试脚手架。
 
 ---
 
-## Step 5: Map the Functional and Data Flows
+## 第五步：映射功能和数据流
 
-Once files are understood individually, map how they interact.
+一旦单独理解了各个文件，就映射它们之间的交互方式。
 
-### Use Copilot or Cursor to:
+### 使用 Copilot 或 Cursor 来：
 
-* Create **sequence diagrams** or **Mermaid flowcharts**
-* Identify key interactions between services, APIs, and DBs
-* Infer undocumented flows between DB tables, queues, and REST calls
-* Visualize hidden or indirect coupling via shared global state or side effects
+* 创建**序列图**或 **Mermaid 流程图**
+* 识别服务、API 和数据库之间的关键交互
+* 推断数据库表、队列和 REST 调用之间未文档化的流程
+* 通过共享全局状态或副作用可视化隐藏或间接的耦合
 
-#### Suggested Prompt:
+#### 建议的提示词：
 
 ```
 Can you create a Mermaid sequence diagram showing how data flows across modules X, Y, Z?
 ```
 
-Save this as living documentation. Use it to guide architectural decisions.
+将其保存为活文档，用于指导架构决策。
 
 ---
 
-## Step 6: Define the Target Architecture
+## 第六步：定义目标架构
 
-Migration without a destination is just refactoring chaos.
+没有目标的迁移只是重构的混乱。
 
-Use this step to define:
+使用此步骤定义：
 
-* Modular structure (monolith, modular monolith, or microservices)
-* Domain boundaries
-* Responsibilities per service/module
-* Clean Architecture layers (UI / Application / Domain / Infra)
+* 模块结构（单体、模块化单体或微服务）
+* 领域边界
+* 每个服务/模块的职责
+* 整洁架构层（UI / 应用层 / 领域层 / 基础设施层）
 
-### Use AI agents to:
+### 使用 AI 智能体来：
 
-* Generate candidate modular splits based on current code clustering
-* Propose service decomposition plans that reflect domain boundaries
-* Map legacy files to future layers and suggest transitional interfaces
-* Highlight logic that should move to domain vs. infra
+* 根据当前代码聚类生成候选模块拆分方案
+* 提出反映领域边界的服务分解计划
+* 将遗留文件映射到未来的层级并建议过渡接口
+* 指出哪些逻辑应该移到领域层与基础设施层
 
-This doesn’t need to be exhaustive, but it must provide **direction**.
+这不需要面面俱到，但必须提供**方向**。
 
 ---
 
-## Step 7: Plan Rollback & Fallback Mechanisms
+## 第七步：规划回滚和回退机制
 
-Legacy systems often have implicit assumptions that need explicit safety nets during migration.
+遗留系统通常有隐式假设，在迁移过程中需要明确的安全网。
 
-### Critical Rollback Considerations
+### 关键回滚注意事项
 
-* **Feature Flags**: Use toggles to switch between legacy and new implementations
-* **Data Synchronization**: Ensure data consistency during rollbacks
-* **Traffic Routing**: Ability to redirect users back to legacy systems
-* **Security Context**: Handle authentication/authorization state transitions
+* **功能开关**：使用切换在遗留实现和新实现之间切换
+* **数据同步**：确保回滚期间的数据一致性
+* **流量路由**：能够将用户重定向回遗留系统
+* **安全上下文**：处理认证/授权状态转换
 
-### Security Migration Gotchas
+### 安全迁移的注意事项
 
-* **Hardcoded Secrets**: Legacy systems often embed credentials directly in code
-* **Legacy Auth Patterns**: Session-based auth vs. modern token-based systems
-* **Permission Models**: Role-based access may need translation layers
+* **硬编码密钥**：遗留系统通常将凭证直接嵌入代码中
+* **遗留认证模式**：基于会话的认证与现代基于令牌的系统
+* **权限模型**：基于角色的访问控制可能需要转换层
 
-### Use AI agents for rollback planning to
+### 使用 AI 智能体进行回滚规划：
 
-* Identify hardcoded secrets and suggest secure alternatives
-* Generate feature flag implementations for gradual rollouts
-* Create rollback checklists and procedures
-* Analyze authentication flows and suggest migration paths
-* Design data synchronization strategies between old and new systems
+* 识别硬编码密钥并建议安全替代方案
+* 为渐进式发布生成功能开关实现
+* 创建回滚清单和程序
+* 分析认证流程并建议迁移路径
+* 设计新旧系统之间的数据同步策略
 
-#### Rollback Checklist Template
+#### 回滚清单模板
 
 ```markdown
 Pre-Migration:
@@ -217,44 +217,44 @@ Post-Migration:
 
 ---
 
-## Step 8: Identify and Isolate Technical Debt
+## 第八步：识别和隔离技术债务
 
-Migration is the perfect moment to surface — and kill — hidden debt.
+迁移是暴露并消除隐藏债务的绝佳时机。
 
-### Use Cursor or Copilot to:
+### 使用 Cursor 或 Copilot 来：
 
-1. Build a file/module inventory
-2. Spot common signs of debt: huge functions, global state, complex branching
-3. Annotate components needing full rewrites vs. light refactors
-4. Measure complexity scores (e.g., cyclomatic complexity) and surface hot spots
-5. Estimate how long it will take to rewrite vs. isolate
+1. 构建文件/模块清单
+2. 发现债务的常见迹象：巨型函数、全局状态、复杂分支
+3. 标注需要完全重写与轻量重构的组件
+4. 测量复杂度分数（如圈复杂度）并找出热点
+5. 估算重写与隔离各自所需的时间
 
-#### Suggested Prompt Chain:
+#### 建议的提示词链：
 
 ```
 Explain structure → Identify modules → List technical debt areas
 ```
 
-Validate AI suggestions manually.
+手动验证 AI 的建议。
 
 ---
 
-## Step 9: Prompt Engineering for Migration
+## 第九步：迁移的提示词工程
 
-Agents need context. That means:
+智能体需要上下文。这意味着：
 
-* Referencing legacy files directly (`#file:...`)
-* Asking for output in reusable chunks
-* Guiding with architectural goals (e.g., decoupling, layering)
+* 直接引用遗留文件（`#file:...`）
+* 要求以可复用的块形式输出
+* 以架构目标为导向（如解耦、分层）
 
-### Use AI agents to:
+### 使用 AI 智能体来：
 
-* Enforce style and architecture rules in rewritten code
-* Refactor legacy logic using modern patterns
-* Incrementally build new APIs that are compatible with legacy contracts
-* Generate transitional interfaces (adapter, proxy, anti-corruption layer)
+* 在重写的代码中强制执行风格和架构规则
+* 使用现代模式重构遗留逻辑
+* 增量构建与遗留合同兼容的新 API
+* 生成过渡接口（适配器、代理、防腐层）
 
-#### Example Prompt:
+#### 示例提示词：
 
 ```
 Based on the legacy function `processLegacyTransaction()`, can you extract the business rule and propose a cleaner version using service/repository layers?
@@ -262,33 +262,33 @@ Based on the legacy function `processLegacyTransaction()`, can you extract the b
 
 ---
 
-## Step 10: Modernize Toolchain & Infrastructure
+## 第十步：现代化工具链和基础设施
 
-**Migration isn't just code** — it often includes modernizing the entire development and deployment ecosystem. Plan these updates to run **parallel** to code migration where possible.
+**迁移不仅仅是代码**——通常还包括现代化整个开发和部署生态系统。尽可能将这些更新与代码迁移**并行**推进。
 
-### Infrastructure Modernization Areas
+### 基础设施现代化领域
 
-* **CI/CD Pipelines**: Jenkins → GitHub Actions, CircleCI, or similar
-* **Observability Stack**: Legacy monitoring → OpenTelemetry, structured logging
-* **Deployment Strategy**: Manual deploys → Infrastructure as Code (Terraform, CDK)
-* **Development Tools**: IDE setup, linting, testing frameworks
+* **CI/CD 流水线**：Jenkins → GitHub Actions、CircleCI 或类似工具
+* **可观测性栈**：遗留监控 → OpenTelemetry、结构化日志
+* **部署策略**：手动部署 → 基础设施即代码（Terraform、CDK）
+* **开发工具**：IDE 设置、Lint 检查、测试框架
 
-### Use AI agents for infrastructure migration to
+### 使用 AI 智能体进行基础设施迁移：
 
-* Generate GitHub Actions workflows from existing Jenkins pipelines
-* Create Infrastructure as Code templates for current manual deployments
-* Suggest observability improvements and instrumentation points
-* Generate migration scripts for database schemas and data
-* Design monitoring dashboards for both legacy and new systems
+* 从现有 Jenkins 流水线生成 GitHub Actions 工作流
+* 为当前手动部署创建基础设施即代码模板
+* 建议可观测性改进和埋点位置
+* 生成数据库模式和数据的迁移脚本
+* 为遗留系统和新系统设计监控仪表板
 
-### Migration Timeline Priorities
+### 迁移时间线优先级
 
-1. **Development tools first** - improves developer velocity immediately
-2. **CI/CD next** - ensures safe, repeatable deployments
-3. **Observability early** - provides visibility into migration progress
-4. **Infrastructure last** - once code patterns are established
+1. **首先是开发工具** - 立即提升开发者效率
+2. **其次是 CI/CD** - 确保安全、可重复的部署
+3. **尽早引入可观测性** - 提供迁移进度的可见性
+4. **最后是基础设施** - 等代码模式确立后再进行
 
-#### Infrastructure Migration Checklist
+#### 基础设施迁移清单
 
 ```markdown
 Development Environment:
@@ -318,51 +318,51 @@ Infrastructure:
 
 ---
 
-## Step 11: Define Success Metrics
+## 第十一步：定义成功指标
 
-Define KPIs before starting:
+在开始之前定义 KPI：
 
-* How will you know migration is working?
-* How will you measure regressions?
+* 你如何知道迁移是否有效？
+* 你如何衡量回归？
 
-Examples:
+示例：
 
-* Error rate in new stack vs. old
-* Time to deliver new features
-* Coverage of legacy code replaced
-* Test pass rate on migrated vs. legacy logic
-* Developer confidence score for each new release
+* 新旧技术栈的错误率对比
+* 交付新功能的时间
+* 已替换的遗留代码覆盖率
+* 迁移逻辑与遗留逻辑的测试通过率
+* 每次新版本发布时开发者信心评分
 
-### Use AI agents to:
+### 使用 AI 智能体来：
 
-* Compare logs and metrics across legacy and new systems
-* Automatically tag commits as "migration-related" and track velocity
-* Detect regressions by analyzing test snapshots, logs, or API diffs
+* 比较遗留系统和新系统的日志和指标
+* 自动将提交标记为"迁移相关"并追踪速度
+* 通过分析测试快照、日志或 API 差异检测回归
 
-Track these over time to justify the investment.
+随时间追踪这些指标以证明投入的价值。
 
 ---
 
-## Step 12: Prepare Developer Onboarding Documentation
+## 第十二步：准备开发者入职文档
 
-**New developers joining mid-migration need context fast.** Create living documentation that captures decisions and rationale.
+**中途加入迁移的新开发者需要快速了解上下文。** 创建记录决策和理由的活文档。
 
-### Essential Onboarding Materials
+### 必要的入职材料
 
-* **Migration Decision Log**: Why certain approaches were chosen over alternatives
-* **Architecture Decision Records (ADRs)**: Document significant technical decisions
-* **Code Map**: Visual guide showing what's been migrated, what's in progress, and what's legacy
-* **Local Development Setup**: How to run both legacy and new systems locally
+* **迁移决策日志**：为何选择某些方法而不是替代方案
+* **架构决策记录（ADR）**：记录重要的技术决策
+* **代码地图**：显示已迁移、进行中和遗留内容的可视化指南
+* **本地开发设置**：如何在本地同时运行遗留系统和新系统
 
-### Use AI agents for onboarding to
+### 使用 AI 智能体进行入职：
 
-* Generate ADRs from code changes and migration decisions
-* Create visual code maps showing migration progress
-* Draft onboarding checklists for new team members
-* Maintain up-to-date setup instructions based on current codebase state
-* Generate context-rich code comments explaining migration-specific patterns
+* 从代码变更和迁移决策生成 ADR
+* 创建展示迁移进度的可视化代码地图
+* 为新团队成员起草入职清单
+* 根据当前代码库状态维护最新的设置说明
+* 生成解释迁移特定模式的富含上下文的代码注释
 
-#### Sample ADR Template
+#### ADR 模板示例
 
 ```markdown
 # ADR-001: Migration Strategy for User Authentication
@@ -387,17 +387,17 @@ Implement JWT-based authentication with refresh token rotation.
 
 ---
 
-## Final Notes
+## 最终说明
 
-Migration is as much about **understanding and documentation** as it is about coding. By combining prompt engineering, test-driven safety nets, and architecture-guided planning, you can modernize legacy systems without going blind.
+迁移与其说是编码，不如说是**理解和文档化**。通过结合提示词工程、测试驱动的安全网和以架构为导向的规划，你可以在不盲目前行的情况下现代化遗留系统。
 
-Start small. Plan big. Ship in pieces. And always let the agents help where they can — but never go fully autopilot.
+从小处着手。宏观规划。分批交付。始终让智能体在力所能及的地方提供帮助——但永远不要完全进入自动驾驶模式。
 
 ---
 
-## Related Workflows
+## 相关工作流
 
-* [Refactoring Workflow](./WORKFLOW_REFACTORING.md)
-* [Prompt Engineering](./PROMPT_ENGINEERING.md)
-* [Debugging Workflow](./WORKFLOW_DEBUG.md)
-* [Spec-First Development](./WORKFLOW_SPEC_FIRST_APPROACH.md)
+* [重构工作流](./WORKFLOW_REFACTORING.md)
+* [提示词工程](./PROMPT_ENGINEERING.md)
+* [调试工作流](./WORKFLOW_DEBUG.md)
+* [规格优先开发](./WORKFLOW_SPEC_FIRST_APPROACH.md)

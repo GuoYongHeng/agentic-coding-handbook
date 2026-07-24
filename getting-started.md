@@ -6,16 +6,16 @@ has_children: true
 permalink: /getting-started/
 ---
 
-# 🚀 Getting Started
+# 🚀 快速入门
 
-Welcome to agentic coding! This section will get you up and running with AI-powered development.
+欢迎来到智能体编程！本章节将帮助你快速上手 AI 驱动的开发。
 
-In early 2025, we discovered that AI-assisted teams delivered projects 45% faster with high code quality. The key was learning a new mindset: writing clear prompts, breaking work into smaller steps, and maintaining strong code review discipline.
+2025 年初，我们发现 AI 辅助团队在保持高代码质量的同时，项目交付速度提升了 45%。关键在于学会一种新的思维方式：编写清晰的提示词、将工作分解为更小的步骤，以及保持严格的代码审查纪律。
 
-## What You'll Learn
+## 你将学到
 
-- **Quick Start** - Your first steps with agentic coding tools
-- **Vibe Coding** - Understanding the mindset shift required for AI collaboration
-- **Real Examples** - Success stories from our team experiments
+- **快速开始** - 使用智能体编程工具的第一步
+- **Vibe Coding** - 理解 AI 协作所需的思维转变
+- **真实案例** - 来自我们团队实验的成功故事
 
-Ready to transform how you build software? Let's begin! 🚀
+准备好改变你构建软件的方式了吗？让我们开始吧！🚀

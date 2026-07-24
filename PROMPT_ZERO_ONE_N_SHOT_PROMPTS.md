@@ -1,60 +1,60 @@
 ---
 layout: default
-title: Zero/One/N-Shot Prompts
-parent: Prompt Engineering
+title: 零/单/多样本提示词
+parent: 提示词工程
 nav_order: 4
 ---
 
-# Zero-Shot, One-Shot, and Multi-Shot Prompts
+# 零样本、单样本和多样本提示词
 
-Prompting is the language of AI. In agentic coding, how you structure your prompts determines not just the quality of the code — but whether the model understands your intent at all.
+提示词是与 AI 交流的语言。在智能体编程中，你构建提示词的方式不仅决定代码的质量——还决定模型是否真正理解你的意图。
 
-This page breaks down three foundational prompting methods — Zero-Shot, One-Shot, and Multi-Shot — and demonstrates how to apply them strategically, using real-world engineering use cases with practical, reusable prompt examples.
+本页介绍三种基础的提示词方法——零样本、单样本和多样本——并展示如何在真实工程场景中策略性地应用它们，同时提供实用的、可复用的提示词示例。
 
-## N-Shot Prompting
+## 样本提示词技术
 
-### Zero-Shot Prompting
+### 零样本提示词
 
-- Tell the AI what to do without giving examples.
-- Best when the task is well-known or model has strong prior knowledge.
-- Risk of hallucination increases when task is ambiguous or implementation-sensitive.
+- 直接告诉 AI 要做什么，不提供示例。
+- 当任务广为人知或模型具备强大先验知识时效果最佳。
+- 当任务模糊或对实现方式敏感时，幻觉风险增加。
 
-### One-Shot Prompting
+### 单样本提示词
 
-- Tell the AI what to do and give one example of how to do it.
-- Best when you want consistency with an established pattern or want to reuse a known implementation format.
+- 告诉 AI 要做什么，并给出一个操作示例。
+- 当你希望与已有模式保持一致，或想复用已知的实现格式时效果最佳。
 
-### Multi-Shot Prompting
+### 多样本提示词
 
-- Give the AI multiple examples before asking it to continue the pattern.
-- Best for generating multiple similar outputs (e.g., test cases, validators, endpoints) with consistent structure or formatting.
+- 在提问前给 AI 提供多个示例，让其继续模式。
+- 对于需要生成多个类似输出（如测试用例、验证器、端点）且要求结构或格式一致时效果最佳。
 
-## Common use cases
+## 常见使用场景
 
-| **Prompt Type** | **Ideal Use Case**                                                                                                   |
+| **提示词类型** | **理想使用场景**                                                                                                   |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Zero-Shot       | Quick code snippets, refactors, doc generation, error analysis                                                       |
-| One-Shot        | Repeating logic (e.g., endpoint structure, naming conventions, form components)                                      |
-| Multi-Shot      | Bulk generation of tests, translation of logic across modules, repo-wide consistency (e.g., DTOs, service contracts) |
+| 零样本       | 快速代码片段、重构、文档生成、错误分析                                                                |
+| 单样本        | 重复性逻辑（如端点结构、命名规范、表单组件）                      |
+| 多样本      | 批量生成测试、跨模块转换逻辑、全仓库一致性（如 DTO、服务契约） |
 
-## Examples
+## 示例
 
-### Writing a New API Endpoint with Specific Project Conventions
+### 使用项目特定约定编写新的 API 端点
 
-**Goal**: Create a new POST /users/invite endpoint using the same pattern as other endpoints in the project.
+**目标**：创建一个新的 POST /users/invite 端点，使用与项目中其他端点相同的模式。
 
-Zero-Shot Prompt
+零样本提示词
 
 ```txt
 Write a NestJS controller method to handle POST /users/invite. It should accept email and name, call UserInviteService.inviteUser(), and return a success response or validation error.
 ```
 
-Risk: Output may drift from project-specific naming, decorators, or DTO structure.
+风险：输出可能偏离项目特定的命名规范、装饰器或 DTO 结构。
 
-One-Shot Prompt
+单样本提示词
 
 ```txt
-Here’s how we write our endpoints:
+Here's how we write our endpoints:
 
 @Post('/users/register')
 registerUser(@Body() body: RegisterUserDto) {
@@ -64,9 +64,9 @@ registerUser(@Body() body: RegisterUserDto) {
 Now create an endpoint for POST /users/invite that follows the same pattern, usingInviteUserDto and inviteUser().
 ```
 
-Benefit: Ensures consistency in decorators, naming, and structure.
+优势：确保装饰器、命名和结构的一致性。
 
-Multi-Shot Prompt
+多样本提示词
 
 ```txt
 Here's how we write our endpoints:
@@ -84,8 +84,8 @@ resetPassword(@Body() body: ResetPasswordDto) {
 Now write a controller method for POST /users/invite.
 ```
 
-Benefit: Enables the AI to model based on pattern, not just one instance. Useful for generating a series of aligned endpoints.
+优势：让 AI 基于模式建模，而不仅仅是单个实例。适用于生成一系列对齐的端点。
 
-## Keep Reading
+## 继续阅读
 
-[Core Workflows](./core-workflows.md)
+[核心工作流程](./core-workflows.md)

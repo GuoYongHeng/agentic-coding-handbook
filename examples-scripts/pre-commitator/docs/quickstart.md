@@ -1,42 +1,42 @@
-# Quickstart Guide for New Developers
+# 新开发者快速入门指南
 
-Welcome to the Pre-Commitator project! This guide will get you up and running in under 5 minutes.
+欢迎使用 Pre-Commitator 项目！本指南将帮助您在 5 分钟内快速上手。
 
-## Instant Setup
+## 即时配置
 
 ```bash
 # One command setup (copy & paste this)
 git clone https://github.com/yourusername/pre-commitator.git && cd pre-commitator && ./install.sh -y
 ```
 
-## What Does Pre-Commitator Do?
+## Pre-Commitator 的作用是什么？
 
-Pre-Commitator automatically checks your code for:
-- Security vulnerabilities
-- Code complexity issues
-- Formatting problems
-- Best practices
+Pre-Commitator 自动检查您的代码是否存在：
+- 安全漏洞
+- 代码复杂度问题
+- 格式问题
+- 最佳实践违规
 
-It runs these checks **before** code is committed to your repository, preventing problematic code from ever being committed.
+它在代码提交到仓库**之前**运行这些检查，防止有问题的代码被提交。
 
-## Basic Commands
+## 基本命令
 
-| Command | Description |
+| 命令 | 描述 |
 |---------|-------------|
-| `./run_quality_check.sh file.py` | Check a specific file |
-| `./run_quality_check.sh` | Check staged files |
-| `./run_quality_check.sh --all` | Check all repository files |
-| `./run_quality_check.sh --help` | Show all options |
+| `./run_quality_check.sh file.py` | 检查特定文件 |
+| `./run_quality_check.sh` | 检查暂存文件 |
+| `./run_quality_check.sh --all` | 检查所有仓库文件 |
+| `./run_quality_check.sh --help` | 显示所有选项 |
 
-## Common Workflow
+## 常见工作流
 
-1. Write some code
-2. Stage it with `git add myfile.py`
-3. Run `./run_quality_check.sh` to check for issues
-4. Fix any issues that are found
-5. Commit your code with `git commit -m "Your message"`
+1. 编写代码
+2. 使用 `git add myfile.py` 暂存文件
+3. 运行 `./run_quality_check.sh` 检查问题
+4. 修复发现的所有问题
+5. 使用 `git commit -m "您的提交信息"` 提交代码
 
-## Example Output
+## 示例输出
 
 ```
 🔍 Running Code Quality Gate...
@@ -51,11 +51,11 @@ It runs these checks **before** code is committed to your repository, preventing
 ❌ Quality gate failed! Please fix the errors above.
 ```
 
-## How to Fix Common Issues
+## 如何修复常见问题
 
-### Security Issues
+### 安全问题
 
-- **subprocess with shell=True**:
+- **subprocess 使用 shell=True**：
   ```python
   # Bad
   subprocess.call("command", shell=True)
@@ -64,7 +64,7 @@ It runs these checks **before** code is committed to your repository, preventing
   subprocess.call(["command", "arg1", "arg2"])
   ```
 
-- **eval() usage**:
+- **eval() 的使用**：
   ```python
   # Bad
   result = eval(user_input)
@@ -74,17 +74,17 @@ It runs these checks **before** code is committed to your repository, preventing
   result = ast.literal_eval(user_input)
   ```
 
-### Complexity Issues
+### 复杂度问题
 
-- Break large functions into smaller ones
-- Reduce nesting levels by using early returns
-- Extract complex logic into helper functions
+- 将大型函数拆分成更小的函数
+- 通过使用提前返回来减少嵌套层级
+- 将复杂逻辑提取到辅助函数中
 
-## Getting Help
+## 获取帮助
 
-For more detailed information:
-- Read the full [README.md](../README.md)
-- Check the [SETUP.md](../SETUP.md) for configuration options
-- Visit the [troubleshooting](./troubleshooting.md) guide
+更多详细信息：
+- 阅读完整的 [README.md](../README.md)
+- 查看 [SETUP.md](../SETUP.md) 了解配置选项
+- 访问[故障排除](./troubleshooting.md)指南
 
-Happy coding!
+祝您编码愉快！

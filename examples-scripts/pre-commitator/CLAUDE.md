@@ -1,39 +1,39 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+本文件为 Claude Code（claude.ai/code）在此仓库中工作时提供指引。
 
-## Commands
+## 命令
 
-- Install: `pip install pre-commit && pre-commit install`
-- Run pre-commit: `pre-commit run` (staged files) or `pre-commit run --all-files`
-- Run tests: `./run_tests.sh` (all) or `./run_quality_check.sh tests/test_file.py` (single)
-- Quality check: `./run_quality_check.sh` (staged) or `./run_quality_check.sh --all` (all files)
-- Lint Python: `black src/` (auto-formats Python code)
-- Lint JS/TS: `npx eslint src/**/*.{js,ts,tsx}` or `npm run lint` (all) or `npm run lint:ts` (TS only)
-- TypeScript check: `./run_ts_check.sh` (single file) or `npx tsc --noEmit` or `npm run typecheck` (all)
-- Security scan: `bandit -r src/ --configfile=.bandit.yml`
-- Code metrics: `lizard -l 5 .` (measures complexity)
-- NPM scripts: `npm run check` (staged files) or `npm run check:all` (all files)
+- 安装：`pip install pre-commit && pre-commit install`
+- 运行 pre-commit：`pre-commit run`（暂存文件）或 `pre-commit run --all-files`
+- 运行测试：`./run_tests.sh`（全部）或 `./run_quality_check.sh tests/test_file.py`（单个文件）
+- 质量检查：`./run_quality_check.sh`（暂存文件）或 `./run_quality_check.sh --all`（所有文件）
+- Python 代码检查：`black src/`（自动格式化 Python 代码）
+- JS/TS 代码检查：`npx eslint src/**/*.{js,ts,tsx}` 或 `npm run lint`（全部）或 `npm run lint:ts`（仅 TS）
+- TypeScript 检查：`./run_ts_check.sh`（单个文件）或 `npx tsc --noEmit` 或 `npm run typecheck`（全部）
+- 安全扫描：`bandit -r src/ --configfile=.bandit.yml`
+- 代码指标：`lizard -l 5 .`（衡量复杂度）
+- NPM 脚本：`npm run check`（暂存文件）或 `npm run check:all`（所有文件）
 
-## Style Guidelines
+## 代码风格规范
 
-- **Python**:
-  - Follow Black formatting (line length 88)
-  - Type annotations required
-  - Complexity limits: CCN<10, function length<100, args<5
-  - PEP 8 style guide with isort for imports
+- **Python**：
+  - 遵循 Black 格式化规范（行长度 88）
+  - 必须使用类型注解
+  - 复杂度限制：CCN<10，函数长度<100，参数数量<5
+  - 遵循 PEP 8 风格指南，使用 isort 整理导入
 
-- **JavaScript/TypeScript**:
-  - Follow security rules in .eslintrc.json
-  - Utilize security plugins and TypeScript-specific rules
-  - Single quotes for strings, semicolons required
-  - 2-space indentation
-  - Strict null checks and noImplicitAny enabled
+- **JavaScript/TypeScript**：
+  - 遵循 .eslintrc.json 中的安全规则
+  - 使用安全插件和 TypeScript 专用规则
+  - 字符串使用单引号，必须加分号
+  - 2 个空格缩进
+  - 启用严格空值检查和 noImplicitAny
 
-- **General**:
-  - YAML validation required
-  - No trailing whitespace
-  - Files must end with newline
-  - Run security checks (Bandit, Horusec, Semgrep)
-  - Avoid hardcoded secrets
-  - Error messages must be clear for both humans and AI
+- **通用**：
+  - 必须通过 YAML 验证
+  - 不允许行尾空格
+  - 文件必须以换行符结尾
+  - 运行安全检查（Bandit、Horusec、Semgrep）
+  - 避免硬编码密钥
+  - 错误信息必须对人类和 AI 都清晰易懂

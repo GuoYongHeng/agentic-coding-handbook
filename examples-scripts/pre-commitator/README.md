@@ -4,34 +4,34 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Verified Sources](https://img.shields.io/badge/dependencies-verified-brightgreen)
 
-A powerful pre-commit quality validation tool that ensures your code meets quality and security standards before it's committed.
+一个强大的提交前代码质量验证工具，确保您的代码在提交之前符合质量和安全标准。
 
-## Overview
+## 概述
 
-Pre-Commitator is designed to detect code quality and security issues at the earliest possible point in development - before code is committed to your repository. It's particularly useful for validating AI-generated code and ensuring all code contributions meet your project's quality standards.
+Pre-Commitator 旨在在开发过程中的最早阶段——代码提交到仓库之前——检测代码质量和安全问题。它特别适用于验证 AI 生成的代码，并确保所有代码贡献符合项目的质量标准。
 
-> **Security Note**: Pre-Commitator uses only verified, trusted sources for all dependencies. All tools are from official repositories (PyPI, npm) and well-established organizations like PSF (Black), PyCQA (Bandit, Flake8), and r2c (Semgrep).
+> **安全说明**：Pre-Commitator 仅使用经过验证的可信来源作为所有依赖项。所有工具均来自官方仓库（PyPI、npm）以及 PSF（Black）、PyCQA（Bandit、Flake8）和 r2c（Semgrep）等知名组织。
 
-## Features
+## 功能特性
 
-- **✅ Multiple Language Support**: Fully supports Python, JavaScript, and TypeScript, with architecture ready for other languages
-- **⚡ Fast Execution**: Only scans files staged for commit or specific files you select
-- **🧠 AI-Friendly**: Provides clear error messages that both humans and AI can understand
-- **🔍 Comprehensive Validation**:
-  - Code complexity analysis
-  - Security vulnerability detection
-  - Code style and formatting
-  - Best practices enforcement
+- **✅ 多语言支持**：完全支持 Python、JavaScript 和 TypeScript，架构已准备好支持其他语言
+- **⚡ 快速执行**：仅扫描已暂存待提交的文件或您选择的特定文件
+- **🧠 AI 友好**：提供人类和 AI 都能理解的清晰错误信息
+- **🔍 全面验证**：
+  - 代码复杂度分析
+  - 安全漏洞检测
+  - 代码风格和格式
+  - 最佳实践强制执行
 
-## Requirements
+## 系统要求
 
 - Python 3.7+
 - Git
-- Node.js 14+ (optional, for JavaScript validation)
+- Node.js 14+（可选，用于 JavaScript 验证）
 
-## Quick Start
+## 快速开始
 
-### For New Developers (90-Second Setup)
+### 新开发者（90 秒安装）
 
 ```bash
 # One command setup (copy & paste this)
@@ -40,7 +40,7 @@ git clone https://github.com/yourusername/pre-commitator.git && cd pre-commitato
 
 ![Getting Started Diagram](docs/images/getting-started.png)
 
-### Installation Options
+### 安装选项
 
 ```bash
 # Interactive installation (recommended for first-time users)
@@ -53,14 +53,14 @@ git clone https://github.com/yourusername/pre-commitator.git && cd pre-commitato
 ./install.sh -v
 ```
 
-The installer will:
+安装程序将会：
 
-- Install required Python dependencies
-- Set up pre-commit hooks
-- Configure the tool for immediate use
-- Ask if you want to use VS Code mode or terminal mode
+- 安装所需的 Python 依赖
+- 设置 pre-commit 钩子
+- 配置工具以供立即使用
+- 询问您是否要使用 VS Code 模式或终端模式
 
-### Basic Usage
+### 基本使用
 
 ```bash
 # Check staged files (files about to be committed)
@@ -80,151 +80,151 @@ The installer will:
 ./switch_mode.sh terminal  # For terminal users (enables all validators)
 ```
 
-### Check Out Our Docs
+### 查看我们的文档
 
-- [Quick Start Guide](docs/quickstart.md) - Get up and running in 5 minutes
-- [Troubleshooting](docs/troubleshooting.md) - Solutions to common issues
-- [Contributing Guide](CONTRIBUTING.md) - Learn how to contribute
+- [快速入门指南](docs/quickstart.md) - 5 分钟内快速上手
+- [故障排除](docs/troubleshooting.md) - 常见问题的解决方案
+- [贡献指南](CONTRIBUTING.md) - 了解如何贡献
 
-## Operation Modes
+## 运行模式
 
-Pre-Commitator offers two operation modes to accommodate different development environments:
+Pre-Commitator 提供两种运行模式，以适应不同的开发环境：
 
-### VS Code Mode
+### VS Code 模式
 
 ```bash
 ./switch_mode.sh vscode
 ```
 
-VS Code mode disables certain validators that may cause issues when using VS Code's source control integration:
+VS Code 模式禁用了在使用 VS Code 的源代码控制集成时可能导致问题的某些验证器：
 
-- Disables **ESLint** to prevent SSL certificate errors when installing from pre-commit
-- Disables **Bandit** to prevent SSL certificate errors and "command not found" errors
-- Disables **Lizard** and **Semgrep** to prevent "command not found" errors
-- Ensures smooth Git operations within VS Code
-- Still runs basic checks like trailing whitespace, end-of-file newlines, etc.
+- 禁用 **ESLint**，防止从 pre-commit 安装时出现 SSL 证书错误
+- 禁用 **Bandit**，防止 SSL 证书错误和"命令未找到"错误
+- 禁用 **Lizard** 和 **Semgrep**，防止"命令未找到"错误
+- 确保在 VS Code 内 Git 操作顺畅
+- 仍运行行尾空格、文件末尾换行等基本检查
 
-This mode is recommended for developers who primarily use VS Code for Git operations.
+推荐主要使用 VS Code 进行 Git 操作的开发者使用此模式。
 
-### Terminal Mode
+### 终端模式
 
 ```bash
 ./switch_mode.sh terminal
 ```
 
-Terminal mode enables all validators for comprehensive code quality and security checking:
+终端模式启用所有验证器，以进行全面的代码质量和安全检查：
 
-- Enables **ESLint** for JavaScript/TypeScript validation
-- Enables **Lizard** for code complexity analysis
-- Enables **Bandit** for Python security checking
-- Enables **Semgrep** for multi-language security scanning
-- Enables **Horusec** for additional security scanning (if installed)
+- 启用 **ESLint** 用于 JavaScript/TypeScript 验证
+- 启用 **Lizard** 用于代码复杂度分析
+- 启用 **Bandit** 用于 Python 安全检查
+- 启用 **Semgrep** 用于多语言安全扫描
+- 启用 **Horusec** 用于额外的安全扫描（如果已安装）
 
-This mode is recommended for developers who use terminal commands for Git operations and want the full range of validations.
+推荐使用终端命令进行 Git 操作并希望获得全范围验证的开发者使用此模式。
 
-## Detailed Documentation
+## 详细文档
 
-### Validation Types
+### 验证类型
 
-Pre-Commitator performs several types of validations:
+Pre-Commitator 执行多种类型的验证：
 
-1. **Code Complexity**
+1. **代码复杂度**
 
-   - Cyclomatic complexity (CCN < 10)
-   - Function length (< 100 lines)
-   - Function parameters (< 5 parameters)
+   - 圈复杂度（CCN < 10）
+   - 函数长度（< 100 行）
+   - 函数参数（< 5 个参数）
 
-2. **Security Vulnerabilities**
+2. **安全漏洞**
 
-   - Python: Bandit identifies common security issues (from PyCQA)
-   - JavaScript: ESLint security plugin detects web vulnerabilities (official ESLint plugin)
-   - Multi-language: Semgrep scans for broader security concerns (from r2c)
-   - Multi-language: Horusec detects security vulnerabilities across multiple languages (optional)
+   - Python：Bandit 识别常见安全问题（来自 PyCQA）
+   - JavaScript：ESLint 安全插件检测 Web 漏洞（官方 ESLint 插件）
+   - 多语言：Semgrep 扫描更广泛的安全问题（来自 r2c）
+   - 多语言：Horusec 检测多种语言的安全漏洞（可选）
 
-3. **Code Style**
-   - Python: Black formatting checks
-   - JavaScript/TypeScript: ESLint for style enforcement
-   - General: Trailing whitespace, end-of-file newlines
+3. **代码风格**
+   - Python：Black 格式化检查
+   - JavaScript/TypeScript：ESLint 用于风格强制执行
+   - 通用：行尾空格、文件末尾换行符
 
-### Configuration
+### 配置
 
-Pre-Commitator uses pre-commit's configuration system. Edit `.pre-commit-config.yaml` to:
+Pre-Commitator 使用 pre-commit 的配置系统。编辑 `.pre-commit-config.yaml` 以：
 
-- Adjust thresholds (complexity, length, etc.)
-- Add or remove validation hooks
-- Configure language-specific tools
+- 调整阈值（复杂度、长度等）
+- 添加或删除验证钩子
+- 配置特定语言的工具
 
-For mode-specific configurations, use the pre-defined templates:
+对于特定模式的配置，请使用预定义的模板：
 
-- `config/pre-commit-vscode.yaml` - Configuration for VS Code mode
-- `config/pre-commit-terminal.yaml` - Configuration for terminal mode
+- `config/pre-commit-vscode.yaml` - VS Code 模式的配置
+- `config/pre-commit-terminal.yaml` - 终端模式的配置
 
-## Environment Variables
+## 环境变量
 
-Pre-Commitator uses environment variables to selectively enable or disable specific validators:
+Pre-Commitator 使用环境变量来有选择地启用或禁用特定验证器：
 
-- `DISABLE_ESLINT=1` - Disables ESLint JavaScript validation
-- `DISABLE_LIZARD=1` - Disables Lizard complexity analysis
-- `DISABLE_BANDIT=1` - Disables Bandit Python security checks
-- `DISABLE_SEMGREP=1` - Disables Semgrep security scanning
+- `DISABLE_ESLINT=1` - 禁用 ESLint JavaScript 验证
+- `DISABLE_LIZARD=1` - 禁用 Lizard 复杂度分析
+- `DISABLE_BANDIT=1` - 禁用 Bandit Python 安全检查
+- `DISABLE_SEMGREP=1` - 禁用 Semgrep 安全扫描
 
-These environment variables are automatically set by the `switch_mode.sh` script based on the selected mode. In VS Code mode, these validators are disabled to prevent issues with SSL certificates and command not found errors.
+这些环境变量由 `switch_mode.sh` 脚本根据选择的模式自动设置。在 VS Code 模式下，这些验证器被禁用以防止 SSL 证书和"命令未找到"错误。
 
-## Auto-Stage Feature
+## 自动暂存功能
 
-Pre-Commitator includes an auto-stage feature that automatically stages files modified by pre-commit hooks:
+Pre-Commitator 包含一个自动暂存功能，可以自动暂存由 pre-commit 钩子修改的文件：
 
 ```bash
 # Install the auto-stage hook
 ./src/auto_stage_hook.sh
 ```
 
-This feature addresses a common pain point where pre-commit hooks fix issues (like trailing whitespace) but require you to manually stage these changes before committing again.
+此功能解决了一个常见痛点：pre-commit 钩子修复问题（如行尾空格），但需要您在再次提交之前手动暂存这些更改。
 
-With the auto-stage hook enabled:
+启用自动暂存钩子后：
 
-1. Pre-commit hooks run and may modify files
-2. Modified files are automatically staged
-3. You only need to run `git commit` once more to complete the commit
+1. pre-commit 钩子运行并可能修改文件
+2. 修改的文件自动被暂存
+3. 您只需再次运行 `git commit` 即可完成提交
 
-## Using with AI-Generated Code
+## 与 AI 生成代码配合使用
 
-Pre-Commitator works exceptionally well with AI coding assistants:
+Pre-Commitator 与 AI 编程助手配合效果极佳：
 
-1. Generate code with your AI assistant
-2. Save the code to a file
-3. Run `./run_quality_check.sh filename` to validate
-4. If issues are found, ask the AI to fix based on the specific error messages
-5. Re-run validation until all issues are resolved
+1. 使用 AI 助手生成代码
+2. 将代码保存到文件
+3. 运行 `./run_quality_check.sh filename` 进行验证
+4. 如果发现问题，请 AI 根据具体错误信息进行修复
+5. 重新运行验证，直到所有问题得到解决
 
-## Troubleshooting
+## 故障排除
 
-### Common Issues
+### 常见问题
 
-**Q: The pre-commit hook isn't running when I commit.**
-A: Make sure you've installed pre-commit hooks with `pre-commit install` or by running the installer.
+**Q：提交时 pre-commit 钩子没有运行。**
+A：确保已使用 `pre-commit install` 或运行安装程序安装了 pre-commit 钩子。
 
-**Q: I get "command not found" errors.**
-A: Ensure all dependencies are installed. Run `./install.sh` again.
+**Q：我收到"命令未找到"错误。**
+A：确保所有依赖均已安装。重新运行 `./install.sh`。
 
-**Q: How do I temporarily bypass checks?**
-A: Use `git commit --no-verify` (not recommended for production code).
+**Q：如何临时绕过检查？**
+A：使用 `git commit --no-verify`（不推荐用于生产代码）。
 
-**Q: Pre-commit hook fixes issues but I have to manually stage the fixed files before committing again.**
-A: Install the auto-stage hook: `./src/auto_stage_hook.sh`. This will automatically stage files modified by pre-commit hooks.
+**Q：Pre-commit 钩子修复了问题，但我必须在再次提交之前手动暂存修复后的文件。**
+A：安装自动暂存钩子：`./src/auto_stage_hook.sh`。这将自动暂存由 pre-commit 钩子修改的文件。
 
-**Q: I get SSL certificate errors like `[SSL: CERTIFICATE_VERIFY_FAILED]` when installing eslint environment or running other pre-commit hooks.**
-A: This is a common issue on macOS with Python's SSL certificate verification. You have three options:
+**Q：安装 eslint 环境或运行其他 pre-commit 钩子时出现 SSL 证书错误，如 `[SSL: CERTIFICATE_VERIFY_FAILED]`。**
+A：这是 macOS 上 Python SSL 证书验证的常见问题。您有三个选项：
 
-- Run `./fix_certificates.sh` or `./fix_certificates_unix.sh` to fix Python SSL certificate verification
-  - This creates a temporary SSL context fix and sets PYTHONPATH environment variable
-- Set PYTHONPATH manually: `export PYTHONPATH=/path/to/pre-commitator`
-- Switch to VS Code mode: `./switch_mode.sh vscode` (disables problematic validators that require network access)
+- 运行 `./fix_certificates.sh` 或 `./fix_certificates_unix.sh` 修复 Python SSL 证书验证
+  - 这将创建一个临时 SSL 上下文修复并设置 PYTHONPATH 环境变量
+- 手动设置 PYTHONPATH：`export PYTHONPATH=/path/to/pre-commitator`
+- 切换到 VS Code 模式：`./switch_mode.sh vscode`（禁用需要网络访问的有问题验证器）
 
-The VS Code mode option is the most reliable solution as it completely bypasses the certificate validation issues.
+VS Code 模式选项是最可靠的解决方案，因为它完全绕过了证书验证问题。
 
-**Q: I see a warning about "pre-commit's script is installed in migration mode".**
-A: This happens when multiple pre-commit hooks are installed. Fix it with:
+**Q：我看到关于"pre-commit 脚本以迁移模式安装"的警告。**
+A：当安装了多个 pre-commit 钩子时会发生这种情况。解决方法如下：
 
 ```bash
 pre-commit uninstall
@@ -232,13 +232,13 @@ pre-commit install -f
 ./switch_mode.sh vscode  # Or terminal, depending on your preference
 ```
 
-**Q: How do I install Horusec?**
-A: Horusec installation is handled by the `./src/install_horusec.sh` script, which will be called when you run `./switch_mode.sh`. If installation fails, Horusec hooks will be skipped without breaking other validations.
+**Q：如何安装 Horusec？**
+A：Horusec 的安装由 `./src/install_horusec.sh` 脚本处理，运行 `./switch_mode.sh` 时会调用该脚本。如果安装失败，Horusec 钩子将被跳过，而不会影响其他验证。
 
-## Contributing
+## 贡献
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+欢迎贡献！请随时提交 Pull Request。
 
-## License
+## 许可证
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+本项目采用 MIT 许可证 - 详情请参阅 LICENSE 文件。

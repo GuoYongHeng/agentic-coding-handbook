@@ -5,67 +5,67 @@ parent: Core Workflows
 nav_order: 5
 ---
 
-# Exploratory & Refactoring Workflow
+# 探索与重构工作流
 
-> **_Explore → Plan → Code → Commit_**
+> **_探索 → 规划 → 编码 → 提交_**
 
-AI tools like Claude, Cursor, and GitHub Copilot are not just code generators — they are reasoning engines. When used intentionally, they can help engineers dissect complex problems, map systems, and implement safe, scalable solutions. This workflow focuses on using AI for exploration and strategy before coding begins.
+Claude、Cursor 和 GitHub Copilot 等 AI 工具不仅仅是代码生成器，更是推理引擎。有意识地使用时，它们能帮助工程师剖析复杂问题、绘制系统地图并实现安全、可扩展的解决方案。该工作流专注于在编码开始前使用 AI 进行探索和策略制定。
 
-## Explore – Understand the Problem & Codebase
+## 探索——理解问题与代码库
 
-Before jumping into implementation, prompt the AI to explore the system like a senior engineer would. Ask it to:
+在进入实现之前，提示 AI 像资深工程师一样探索系统。让它：
 
-- Summarize how a module or flow works: `How does the authentication middleware interact with the session manager?`
-- Trace dependencies or call hierarchies: `Which services rely on PaymentService?`
-- Review relevant files without writing any code: `Read the files related to logging, but do not write any code yet. Just summarize what they do.`
-- Visualize architecture: `Generate a component diagram showing the flow from createInvoice() to downstream services.`
+- 总结模块或流程的工作方式：`How does the authentication middleware interact with the session manager?`
+- 追踪依赖关系或调用层次：`Which services rely on PaymentService?`
+- 审查相关文件但不编写任何代码：`Read the files related to logging, but do not write any code yet. Just summarize what they do.`
+- 可视化架构：`Generate a component diagram showing the flow from createInvoice() to downstream services.`
 
-This builds context and exposes unknowns before planning a solution.
+这在规划解决方案之前建立上下文并暴露未知因素。
 
-## Plan – Reason Through the Solution
+## 规划——推理解决方案
 
-Once the problem is understood, ask the AI to make a plan:
+理解问题后，让 AI 制定计划：
 
-- Break down the problem: `What steps are required to decouple the billing module from user management?`
-- Think before acting: Use prompts like `Think hard before answering` or `Ultrathink mode: what are the tradeoffs of each solution path?`
-- Identify risks or impact: `If we refactor NotificationService, what might break downstream?`
-- Generate a step-by-step implementation roadmap: `Write a plan to migrate this legacy feature without regressions.`
+- 分解问题：`What steps are required to decouple the billing module from user management?`
+- 先思考再行动：使用 `Think hard before answering` 或 `Ultrathink mode: what are the tradeoffs of each solution path?` 等提示词
+- 识别风险或影响：`If we refactor NotificationService, what might break downstream?`
+- 生成分步实现路线图：`Write a plan to migrate this legacy feature without regressions.`
 
-Encourage the AI to validate assumptions and propose alternative solutions when appropriate.
+鼓励 AI 在适当时验证假设并提出替代解决方案。
 
-## Code – Build Safely and Iteratively
+## 编码——安全而迭代地构建
 
-With a plan in place, start coding:
+有了计划后，开始编码：
 
-- Prompt the AI to write code one slice at a time, aligned to the plan. `Implement step 1 of the plan: extract logging into a standalone module.`
-- Use safety net practices:
-  - Write or run unit tests before and after each change
-  - Use AI to generate test cases for edge behaviors
-  - Refactor in small chunks, validating at each step
-  - Ask for help in keeping scope clean: `Refactor this method but keep all existing tests green.`
+- 提示 AI 按计划逐步编写代码。`Implement step 1 of the plan: extract logging into a standalone module.`
+- 使用安全网实践：
+  - 在每次更改前后编写或运行单元测试
+  - 使用 AI 为边界行为生成测试用例
+  - 以小块重构，在每一步进行验证
+  - 寻求帮助保持范围清晰：`Refactor this method but keep all existing tests green.`
 
-## Commit – Finalize, Document, and Share
+## 提交——完成、记录并分享
 
-Once the solution is complete:
+解决方案完成后：
 
-- Ask the AI to summarize changes:
+- 让 AI 总结更改：
   "Generate a changelog summary and commit message based on the last 3 modified files."
-- Auto-update documentation:
+- 自动更新文档：
   "Update the README and Swagger docs to reflect changes to GET /users."
-- Push and open a PR, optionally using Claude/Cursor commands like /commit, /pr, or GitHub CLI integration.
+- 推送并开启 PR，可选择使用 Claude/Cursor 命令如 /commit、/pr 或 GitHub CLI 集成。
 
-## Benefits of the Exploratory Workflow
+## 探索工作流的优势
 
-- Reduces blind spots before writing code
-- Improves reasoning, planning, and system understanding
-- Supports safer, modular implementations
-- Boosts onboarding speed for unfamiliar codebases
-- Encourages discipline without blocking creativity
+- 在编写代码前减少盲点
+- 改善推理、规划和系统理解
+- 支持更安全、模块化的实现
+- 提升对陌生代码库的熟悉速度
+- 在不阻碍创造力的前提下培养纪律性
 
-## References
+## 参考资料
 
 - [Refactoring Code with AI Assistance](https://www.loom.com/share/bc30c068b8c54038aaa02697ea69a9bd?sid=9ba2d4db-239a-4017-838d-c3195e67fc38)
 
-## Keep Reading
+## 继续阅读
 
-[Visual Feedback Workflow](./WORKFLOW_VISUAL_FEEDBACK.md)
+[视觉反馈工作流](./WORKFLOW_VISUAL_FEEDBACK.md)

@@ -1,145 +1,145 @@
-# React Enterprise Setup Assistant
+# React 企业级设置助手
 
-**AI-optimized prompt for zero-configuration React development environments with enterprise standards. Complete toolchain setup with guaranteed verification.**
+**面向零配置 React 开发环境的 AI 优化提示词，采用企业标准。提供有保障验证的完整工具链设置。**
 
-## 🚀 Quick Start
+## 快速开始
 
-### Submit to AI Assistant
-**Copy** [PROMPT.md](./PROMPT.md) → **Submit** to your AI:
-- **VS Code Copilot:** Agent mode for automatic implementation
-- **Cursor:** AI chat for guided setup
-- **Claude/ChatGPT:** Direct conversation for step-by-step build
+### 提交给 AI 助手
+**复制** [PROMPT.md](./PROMPT.md) → **提交**给你的 AI：
+- **VS Code Copilot：** 智能体模式，自动实现
+- **Cursor：** AI 对话，引导式设置
+- **Claude/ChatGPT：** 直接对话，逐步构建
 
-### AI Output Guarantee
-Structured implementation with:
-✅ Latest package versions from official docs  
-✅ Complete configuration files  
-✅ Working code examples  
-✅ Comprehensive test setup  
-✅ **Full verification that everything works**
+### AI 输出保证
+结构化实现，包含：
+✅ 来自官方文档的最新包版本
+✅ 完整配置文件
+✅ 可用的代码示例
+✅ 全面的测试设置
+✅ **完整验证，确保一切正常运行**
 
 ---
 
-## 🎯 What You Get
+## 你将获得什么
 
-### Enterprise-Ready Stack
-| Component | Benefit |
+### 企业级技术栈
+| 组件 | 优势 |
 |-----------|---------|
-| **React + TypeScript** | Latest stable features with full type safety |
-| **Vite** | Compatible version verified with all packages |
-| **Shadcn/ui + Tailwind** | Pre-built accessible components, utility-first styling |
-| **TanStack Query** | Server state management with devtools |
-| **Complete Toolchain** | ESLint, Prettier, Vitest, Storybook configured |
+| **React + TypeScript** | 最新稳定特性，完整类型安全 |
+| **Vite** | 已验证与所有包兼容的版本 |
+| **Shadcn/ui + Tailwind** | 预构建的无障碍组件，实用优先的样式 |
+| **TanStack Query** | 服务器状态管理，带开发者工具 |
+| **完整工具链** | 已配置 ESLint、Prettier、Vitest、Storybook |
 
-### Optimized Architecture
+### 优化架构
 ```
-✅ Scalable folder structure     ❌ Flat component organization
-✅ Co-located test files         ❌ Separate test directories
-✅ One hook per file            ❌ Monolithic hook files
-✅ Page subdirectories          ❌ Single page directory
-✅ No barrel files              ❌ Re-export everything
+✅ 可扩展的文件夹结构     ❌ 扁平的组件组织
+✅ 同位测试文件           ❌ 独立的测试目录
+✅ 每个文件一个 Hook     ❌ 单体 Hook 文件
+✅ 页面子目录            ❌ 单一页面目录
+✅ 无桶文件              ❌ 全部重新导出
 ```
 
-### Production Features
-- **Form System:** React Hook Form + Zod validation
-- **Data Layer:** TanStack Query with error boundaries
-- **UI Components:** Shadcn/ui with variant system
-- **Internationalization:** i18next with language switching
-- **Quality Assurance:** 100% working verification
+### 生产特性
+- **表单系统：** React Hook Form + Zod 验证
+- **数据层：** TanStack Query，带错误边界
+- **UI 组件：** 带变体系统的 Shadcn/ui
+- **国际化：** i18next，支持语言切换
+- **质量保证：** 100% 可用验证
 
 ---
 
-## 🧠 AI Prompt Engineering Excellence
+## AI 提示词工程卓越性
 
-### Why This Prompt Works
-**Mission-Driven Structure:**
-- Clear enterprise assistant role with specific objectives
-- Mandatory web verification before any installation
-- Compatible version determination process
-- Structured package installation from official docs
-- Built-in verification and quality guarantee
+### 为何此提示词有效
+**使命驱动的结构：**
+- 明确的企业级助手角色，具有具体目标
+- 任何安装前强制 Web 验证
+- 兼容版本确定流程
+- 从官方文档的结构化包安装
+- 内置验证和质量保证
 
-**Production-Ready Focus:**
-- Zero-configuration development environment
-- All tools configured, tested, and verified to work perfectly
-- Co-located tests and architectural best practices
-- Complete deliverables with documentation requirements
-- Success criteria with automated verification checks
-
----
-
-## 📈 Problem Solved
-
-### Before: Manual React Setup
-❌ **Hours** researching compatible package versions  
-❌ **Configuration conflicts** between Vite, Storybook, tools  
-❌ **Architecture inconsistency** - barrel files, scattered tests  
-❌ **Missing enterprise features** (proper testing, quality gates)  
-❌ **Setup uncertainty** - no verification of working state  
-
-### After: Enterprise Setup Assistant
-✅ **Structured approach** with mandatory official documentation verification  
-✅ **Version compatibility** - determined programmatically before installation  
-✅ **Optimized architecture** - no barrel files, co-located tests, page subdirectories  
-✅ **Enterprise-complete** - full toolchain with verification commands  
-✅ **Quality guarantee** - task incomplete until all checks pass  
-✅ **Production-ready** - all features tested and working  
+**生产就绪焦点：**
+- 零配置开发环境
+- 所有工具均经过配置、测试并验证可完美运行
+- 同位测试和架构最佳实践
+- 包含文档要求的完整交付物
+- 带自动化验证检查的成功标准
 
 ---
 
-## 🏢 Enterprise Applications
+## 解决的问题
 
-### Industry Use Cases
-**Financial Services:** Accessibility compliance, security patterns  
-**Healthcare:** Data privacy, HIPAA-ready architecture  
-**E-commerce:** Performance optimization, conversion tracking  
-**SaaS Platforms:** Scalable multi-tenant architecture  
+### 之前：手动 React 设置
+❌ **数小时**研究兼容的包版本
+❌ Vite、Storybook、工具之间的**配置冲突**
+❌ **架构不一致** - 桶文件、测试分散
+❌ **缺少企业特性**（适当的测试、质量门控）
+❌ **设置不确定性** - 没有验证工作状态
 
-### Team Benefits
-**Startups:** MVP-ready foundation with enterprise scaling  
-**Agencies:** Consistent client project structure  
-**Enterprises:** Standardized development environment  
-**Education:** Current React best practices demonstration  
+### 之后：企业级设置助手
+✅ **结构化方法**，强制验证官方文档
+✅ **版本兼容性** - 安装前以编程方式确定
+✅ **优化架构** - 无桶文件、同位测试、页面子目录
+✅ **企业完整** - 带验证命令的完整工具链
+✅ **质量保证** - 所有检查通过前任务未完成
+✅ **生产就绪** - 所有功能经过测试并正常运行
 
 ---
 
-## 🔧 Technical Specifications
+## 企业应用
 
-### Core Stack
-| Layer | Technology | Purpose |
+### 行业用例
+**金融服务：** 无障碍合规、安全模式
+**医疗健康：** 数据隐私、HIPAA 就绪架构
+**电子商务：** 性能优化、转化追踪
+**SaaS 平台：** 可扩展的多租户架构
+
+### 团队优势
+**初创公司：** 具备企业扩展能力的 MVP 就绪基础
+**代理商：** 一致的客户项目结构
+**企业：** 标准化开发环境
+**教育：** 当前 React 最佳实践演示
+
+---
+
+## 技术规格
+
+### 核心技术栈
+| 层次 | 技术 | 用途 |
 |-------|------------|---------|
-| **Framework** | React + TypeScript | Type-safe React development environment |
-| **Build** | Vite | Compatible version verified with React, Tailwind, Storybook |
-| **UI** | Shadcn/ui | Pre-built accessible component library |
-| **Styling** | Tailwind CSS | Utility-first styling system |
-| **Data** | TanStack Query | Server state management with devtools |
-| **Forms** | React Hook Form + Zod | Type-safe form validation |
-| **Testing** | Vitest + Testing Library | Co-located testing framework |
-| **Quality** | ESLint + Prettier | Flat config with Tailwind plugin |
+| **框架** | React + TypeScript | 类型安全的 React 开发环境 |
+| **构建** | Vite | 已验证与 React、Tailwind、Storybook 兼容的版本 |
+| **UI** | Shadcn/ui | 预构建的无障碍组件库 |
+| **样式** | Tailwind CSS | 实用优先的样式系统 |
+| **数据** | TanStack Query | 带开发者工具的服务器状态管理 |
+| **表单** | React Hook Form + Zod | 类型安全的表单验证 |
+| **测试** | Vitest + Testing Library | 同位测试框架 |
+| **质量** | ESLint + Prettier | 带 Tailwind 插件的平铺配置 |
 
-### Performance Features
-- **Tree Shaking Optimized:** Explicit avoidance of barrel files for optimal imports
-- **Architecture Guidelines:** Page subdirectories, co-located tests, one hook per file
-- **Verification Commands:** Complete automated testing of dev, build, test, lint, storybook
-- **MSW Integration:** Test mocking only (not development) for better AI implementation
+### 性能特性
+- **Tree Shaking 优化：** 明确避免桶文件，实现最优导入
+- **架构指南：** 页面子目录、同位测试、每个文件一个 Hook
+- **验证命令：** 对 dev、build、test、lint、storybook 进行完整自动化测试
+- **MSW 集成：** 仅用于测试的模拟（非开发模式），便于更好的 AI 实现
 
-### Quality Assurance
-- **TypeScript Strict Mode:** Maximum type safety enforcement
-- **Zero-Error Guarantee:** ESLint flat config, Prettier, all verification checks pass
-- **Co-located Tests:** Maintainable test structure avoiding separate test folders
-- **Storybook Documentation:** Component showcase with CVA variants
-- **Enterprise Standards:** Complete toolchain configured and verified to work perfectly
-
----
-
-## 📊 Success Metrics
-
-**Setup Reliability:** Mandatory web verification ensures compatible versions  
-**Code Quality:** TypeScript strict mode, ESLint flat config, zero warnings  
-**Architecture Standards:** No barrel files, co-located tests, page subdirectories enforced  
-**Team Consistency:** Standardized patterns with explicit DO/AVOID guidelines  
-**Production Verification:** Complete automated checks guarantee working deployment  
+### 质量保证
+- **TypeScript 严格模式：** 最大类型安全强制
+- **零错误保证：** ESLint 平铺配置、Prettier，所有验证检查通过
+- **同位测试：** 可维护的测试结构，避免独立测试目录
+- **Storybook 文档：** 带 CVA 变体的组件展示
+- **企业标准：** 经过完整配置和验证的完整工具链
 
 ---
 
-*Enterprise setup assistant using structured prompt engineering to generate production-ready React applications with zero-configuration development environments and guaranteed verification.*
+## 成功指标
+
+**设置可靠性：** 强制 Web 验证确保兼容版本
+**代码质量：** TypeScript 严格模式、ESLint 平铺配置、零警告
+**架构标准：** 强制执行无桶文件、同位测试、页面子目录
+**团队一致性：** 带明确 DO/AVOID 指南的标准化模式
+**生产验证：** 完整的自动化检查保证可用部署
+
+---
+
+*企业级设置助手，使用结构化提示词工程生成具有零配置开发环境和有保障验证的生产就绪 React 应用。*

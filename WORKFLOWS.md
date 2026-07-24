@@ -1,39 +1,39 @@
-# Workflows
+# 工作流
 
-Agentic coding is not just about writing code faster with AI — it’s about adopting a new way of thinking and working. It shifts the developer’s role from line-by-line author to high-leverage problem solver, using AI tools to explore, plan, scaffold, validate, and iterate. To make this shift effective and repeatable, we rely on structured workflows grounded in a set of core principles.
+智能体编码不仅仅是借助 AI 更快地编写代码，更是一种全新的思维和工作方式。它将开发者的角色从逐行编写者转变为高效能问题解决者，利用 AI 工具进行探索、规划、构建、验证和迭代。为了让这种转变高效且可重复，我们依赖于以一套核心原则为基础的结构化工作流。
 
-## Core Principles of Agentic Coding Workflows
+## 智能体编码工作流的核心原则
 
-Prompting is the new coding interface: You don’t tell the AI just what to do — you show it how to think. Clear, scoped, and iterative prompts are essential.
+提示词是新的编码接口：你不只是告诉 AI 做什么，而是展示它如何思考。清晰、有范围、迭代式的提示词至关重要。
 
-Work in small, testable units: Break down tasks into vertical slices. The smaller the prompt scope, the better the quality of the AI’s response.
+以小型可测试单元工作：将任务分解为垂直切片。提示词范围越小，AI 响应的质量越高。
 
-Context is everything: AI doesn’t “know” your project unless you tell it. Use tools like prompt plans, spec.md, MCPs, and .copilot-instructions.md to load the right information.
+上下文就是一切：除非你告诉 AI，否则它不"了解"你的项目。使用提示词计划、spec.md、MCP 和 .copilot-instructions.md 等工具来加载正确的信息。
 
-Validate early, validate often: TDD, pre-commit hooks, and self-correction loops turn validation into part of the coding loop — not an afterthought.
+早验证，常验证：TDD、预提交钩子和自我修正循环将验证变成编码循环的一部分，而不是事后补救。
 
-AI is a collaborator, not a replacement: Human judgment is still required for architecture, edge cases, and code reviews. The AI is there to scale your intent, not to replace it.
+AI 是协作者，而非替代者：架构决策、边界情况和代码审查仍然需要人类判断。AI 的作用是放大你的意图，而不是取代你。
 
-Use Git to keep track of changes: Work with AI to chunk the work in smaller batches and keep the practice of committing to git after coding, reviewing and testing each one of the batches. If changes are made to the wrong file due hallucinations, reverting the step is easy.
+使用 Git 追踪变更：与 AI 协作将工作拆分为更小的批次，并在编码、审查和测试每个批次后坚持提交到 git。如果因幻觉而对错误文件进行了修改，回滚该步骤非常容易。
 
-## Workflows are
+## 工作流列表
 
-- **[Spec-First Approach](./WORKFLOW_SPEC_FIRST_APPROACH.md):** AI coding agents like Copilot or Cursor rely entirely on what you give them as input. If your context is vague or scattered, the AI will produce code that’s inaccurate, inconsistent, or overly generic. That’s where Spec-First approach shines: it is an practice that allows you to feed the AI a high-quality, focused scope of work, leading to better outputs with fewer corrections.
+- **[规格优先方法](./WORKFLOW_SPEC_FIRST_APPROACH.md)：** Copilot 或 Cursor 等 AI 编码智能体完全依赖于你提供的输入。如果上下文模糊或分散，AI 将产生不准确、不一致或过于通用的代码。这正是规格优先方法的优势所在：这是一种让你为 AI 提供高质量、聚焦工作范围的实践，从而以更少的修正获得更好的输出。
 
-- **[Automatic Code Validations](./WORKFLOW_AUTO_VALIDATIONS.md):** A powerful capability of AI coding agents is their ability to run code validation tools, analyze the feedback, and self-correct the code until it meets all defined quality standards. This turns your prompting loop into a smarter, more reliable workflow, where the AI not only writes code but also learns from validation outputs and fixes issues automatically.
+- **[自动代码验证](./WORKFLOW_AUTO_VALIDATIONS.md)：** AI 编码智能体的一项强大能力是运行代码验证工具、分析反馈并自我修正代码，直到满足所有定义的质量标准。这将你的提示词循环变成更智能、更可靠的工作流，AI 不仅编写代码，还从验证输出中学习并自动修复问题。
 
-- **[Test Driven Development](./WORKFLOW_TDD.md):** Test-Driven Development (TDD) and Agentic Coding may seem like opposites — one is structured and disciplined, the other fluid and intuitive. But when paired, they create a powerful feedback loop: TDD gives structure to your flow, and Agentic coding gives speed to your structure.This combination shines when you’re working with complex logic files, such as pricing engines, rules-based validators, or multi-condition workflows. Instead of prompting the AI to generate everything at once, you describe one behavior at a time through tests — and let the AI build up the logic incrementally, safely, and cleanly.
+- **[测试驱动开发](./WORKFLOW_TDD.md)：** 测试驱动开发（TDD）和智能体编码看似相反——前者结构化而严谨，后者流畅而直觉驱动。但两者结合时，能创造出强大的反馈循环：TDD 为你的流程提供结构，智能体编码为你的结构提供速度。当处理复杂逻辑文件时，这种组合尤为出色，例如定价引擎、基于规则的验证器或多条件工作流。不必一次性提示 AI 生成所有内容，而是通过测试逐一描述行为，让 AI 以增量、安全、清晰的方式构建逻辑。
 
-- **[Exploratory & Refactoring Workflow](./WORKFLOW_EXPLORATORY.md):** Explore → Plan → Code → Commit, AI tools like Claude, Cursor, and GitHub Copilot are not just code generators — they are reasoning engines. When used intentionally, they can help engineers dissect complex problems, map systems, and implement safe, scalable solutions. This workflow focuses on using AI for exploration and strategy before coding begins.
+- **[探索与重构工作流](./WORKFLOW_EXPLORATORY.md)：** 探索 → 规划 → 编码 → 提交，Claude、Cursor 和 GitHub Copilot 等 AI 工具不仅仅是代码生成器，更是推理引擎。有意识地使用时，它们能帮助工程师剖析复杂问题、绘制系统地图并实现安全、可扩展的解决方案。该工作流专注于在编码开始前使用 AI 进行探索和策略制定。
 
-- **[Visual Feedback Workflow with AI Agents](./WORKFLOW_VISUAL_FEEDBACK.md):** When working on frontends, code alone doesn’t always tell the full story. What users see — and how the UI behaves across screen sizes, states, and interactions — is critical to quality. This workflow introduces how to use screenshots and browser context as inputs for AI-assisted iteration. By pairing screenshots with prompts and augmenting context via browser-based MCPs, developers can give AI direct visibility into what’s wrong — and receive precise, design-aligned suggestions for improvement.
+- **[AI 智能体视觉反馈工作流](./WORKFLOW_VISUAL_FEEDBACK.md)：** 在处理前端时，代码并不总能呈现全貌。用户所见的内容——以及 UI 在不同屏幕尺寸、状态和交互中的表现——对质量至关重要。该工作流介绍如何将截图和浏览器上下文作为 AI 辅助迭代的输入。通过将截图与提示词配对，并通过基于浏览器的 MCP 增强上下文，开发者可以让 AI 直接看到问题所在，并收到精准的、符合设计意图的改进建议。
 
-- **[Debugging Workflow for Agentic Coding](./WORKFLOW_DEBUG.md):** Debugging in a Agentic coding workflow is not about blindly fixing bugs — it’s about building a feedback loop where AI helps identify, explain, and resolve issues systematically. This page outlines the core techniques to debug efficiently with AI agents, using tools like Cursor, Claude, and Model Context Providers (MCPs), while maintaining speed, quality, and confidence.
+- **[智能体编码调试工作流](./WORKFLOW_DEBUG.md)：** 智能体编码工作流中的调试不是盲目修复错误，而是构建一个反馈循环，让 AI 系统性地帮助识别、解释和解决问题。本页概述了使用 Cursor、Claude 和模型上下文提供者（MCP）等工具高效进行 AI 调试的核心技术，同时保持速度、质量和信心。
 
-- **[Memory Bank](./WORKFLOW_MEMORY_BANK.md):** AI models like Copilot and Cursor don’t have persistent memory. They forget everything when you close the tab. That’s where the Memory Bank comes in. A Memory Bank is a structured, markdown-based documentation system that acts as long-term memory for your AI agent. It allows the assistant to “remember” your project context, decisions, and progress across.
+- **[记忆库](./WORKFLOW_MEMORY_BANK.md)：** Copilot 和 Cursor 等 AI 模型没有持久记忆。关闭标签页后，它们会忘记一切。这就是记忆库的用武之地。记忆库是一个基于 Markdown 的结构化文档系统，充当 AI 智能体的长期记忆。它让助手能够跨会话"记住"你的项目上下文、决策和进度。
 
-- **[Code Migration](./WORKFLOW_CODE_MIGRATION.md)**: A structured approach to modernizing legacy code with AI assistance. This workflow focuses on larger migrations that move from legacy codebases to modern architectures. It emphasizes understanding the legacy system first, planning incremental migration strategies using patterns like the strangler pattern, introducing tests as safety nets, and defining clear target architectures. The workflow combines AI agents for code analysis, migration planning, and incremental refactoring while maintaining human oversight for architectural decisions and validation.
+- **[代码迁移](./WORKFLOW_CODE_MIGRATION.md)**：借助 AI 现代化遗留代码的结构化方法。该工作流专注于从遗留代码库迁移到现代架构的大型迁移。它强调首先理解遗留系统、使用绞杀者模式等规划增量迁移策略、引入测试作为安全网，以及定义清晰的目标架构。该工作流结合 AI 智能体进行代码分析、迁移规划和增量重构，同时保持人类对架构决策和验证的监督。
 
-## Keep Reading
+## 继续阅读
 
-[MCP Use Cases](./MCPS.md)
+[MCP 用例](./MCPS.md)

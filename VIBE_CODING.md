@@ -1,84 +1,84 @@
 ---
 layout: default
-title: Vibe Coding Philosophy
-parent: Getting Started
+title: 极速编程理念
+parent: 入门指南
 nav_order: 2
 ---
 
-# Agentic Coding vs Vibe Coding
+# 智能体编程 vs 极速编程
 
-## Our Rule of Thumb
+## 我们的经验法则
 
-> If you wouldn’t merge code from a human dev without reading it, don’t do it for an LLM either.
+> 如果你不会在没有阅读的情况下合并一个人类开发者的代码，那么对 LLM 生成的代码也不应该这样做。
 
-“Vibe coding” is a term popularized by Andrej Karpathy to describe a casual, intuition-led approach to programming with AI, where developers rely heavily on code suggestions and iterations without overthinking or deeply reviewing each step. It's most commonly used for:
+"极速编程（Vibe Coding）"是由 Andrej Karpathy 推广的一个术语，描述的是一种随性的、以直觉为主导的 AI 编程方式——开发者在很大程度上依赖代码建议和迭代，而不深入思考或仔细审查每个步骤。它最常用于：
 
-- Exploration and prototyping: you lean into the AI’s suggestions, quickly iterating on ideas or building throwaway features.
-- Rapid UIs and scripts: when time-to-value matters more than polish.
-- Learning and discovery: trying absurd ideas, seeing what sticks, and building intuition for how LLMs behave.
+- 探索和原型开发：你顺着 AI 的建议走，快速迭代想法，或构建一次性功能。
+- 快速构建 UI 和脚本：当交付速度比打磨质量更重要时。
+- 学习和探索：尝试奇思妙想，看看哪些能行，并培养对 LLM 行为的直觉。
 
-A typical vibe coding session might look like:
-
-```
-“Make the button redder.”
-```
+一次典型的极速编程会话可能是这样的：
 
 ```
-“Now fetch the data from that API.”
+"把按钮颜色改得更红一些。"
 ```
 
 ```
-“Oops, that didn’t work — here’s the error message, fix it.”
+"现在从那个 API 获取数据。"
 ```
 
-> It’s fast. It's fun. But it’s not a production workflow.
+```
+"哎，出错了——这是错误信息，帮我修一下。"
+```
 
-## Our definition
+> 很快。很有趣。但这不是生产工作流。
 
-> Agentic Coding is not about giving up control. It’s about shifting your mindset from manually writing every line of code to collaborating with AI agents to move faster, stay in flow, and reduce cognitive load — without compromising on quality or safety.
+## 我们的定义
 
-### What Agentic Coding is
+> 智能体编程并非放弃控制权。它是一种思维方式的转变——从手动编写每一行代码，转变为与 AI 智能体协作，以更快的速度推进、保持专注状态，并减少认知负担——同时不牺牲质量和安全性。
 
-- A way to speed up development using AI tools (like Copilot, Cursor, Claude, etc.) to generate scaffolds, functions, test cases, and boilerplate.
-- A workflow focused on goal-driven prompting and quick iterations, reducing time spent on syntax and boilerplate so you can focus on product logic.
-- A creative, exploratory process where developers guide the AI with clear intentions and validate the results critically.
-- A team-level practice that works best when paired with strong code review, automated tests, and shared engineering standards.
-- A mindset of "pairing with AI" — not replacing your thinking, but accelerating it.
+### 智能体编程是什么
 
-### What Agentic Coding is not
+- 一种利用 AI 工具（如 Copilot、Cursor、Claude 等）加速开发的方式，用于生成脚手架、函数、测试用例和样板代码。
+- 一种以目标驱动的提示词和快速迭代为核心的工作流程，减少花在语法和样板代码上的时间，让你专注于产品逻辑。
+- 一种创造性的、探索性的过程，开发者带着明确意图引导 AI，并批判性地验证结果。
+- 一种团队级实践，与严格的代码审查、自动化测试和共享的工程标准相结合时效果最佳。
+- 一种"与 AI 结对编程"的思维方式——不是替代你的思考，而是加速它。
 
-- It's not about accepting AI suggestions blindly without review or testing.
-- It's not an excuse to skip documentation, validation, or best practices.
-- It’s not a replacement for design discussions, team alignment, or system thinking.
-- It’s not a solo act — it benefits from shared learnings, reusable prompts, and peer review.
-- It’s not a shortcut to skip understanding — it’s a tool to speed up understanding and execution.
+### 智能体编程不是什么
 
-Agentic Coding is not a license for careless software engineering. When AI becomes your coding partner, the developer's role shifts — not disappears. On our team:
+- 它不是不经审查和测试就盲目接受 AI 建议。
+- 它不是跳过文档、验证或最佳实践的借口。
+- 它不能替代设计讨论、团队对齐或系统思考。
+- 它不是单打独斗——它得益于共享学习、可复用提示词和同行评审。
+- 它不是跳过理解的捷径——它是加速理解和执行的工具。
 
-- We never accept code blindly from an LLM.
-- We enforce code reviews — AI-generated or not.
-- We test everything. If the code hasn’t run, it doesn’t exist.
-- We document AI usage decisions and implementation tradeoffs.
+智能体编程不是粗心软件工程的许可证。当 AI 成为你的编程搭档时，开发者的角色是转变——而非消失。在我们团队：
 
-## Core Principles of Agentic Coding
+- 我们绝不盲目接受 LLM 生成的代码。
+- 我们强制执行代码审查——无论是否由 AI 生成。
+- 我们测试所有内容。如果代码没有运行过，它就不存在。
+- 我们记录 AI 使用决策和实现中的权衡。
 
-To code with agents effectively — and responsibly — developers must adopt a mindset that balances speed with structure. The following principles guide how we approach AI-assisted software development at Modus Create:
+## 智能体编程的核心原则
 
-- **Prompt with intent**: Every coding session begins with clear goals. You don’t just "ask the AI to code" — you guide it with purpose. Good prompting is focused, testable, and grounded in real requirements.
-- **Work in small, shippable units**: AI is most effective when given scoped, incremental tasks. Break work down into vertical slices and implement one behavior at a time. Large, vague prompts lead to hallucination and low-quality output.
-- **Stay in flow, but don’t skip validation**: Agentic coding is about reducing cognitive load — not cutting corners. Test early. Validate output. Use pre-commit hooks, linters, and self-correction loops to enforce quality along the way.
-- **Use version control deliberately**: Reset when stuck. Commit often. Don’t stack partial attempts or let unclear state accumulate — clean starts are cheaper than debugging bloated AI output.
-- **AI is a collaborator, not a replacement**: Your job doesn’t disappear — it evolves. You review the code, manage the plan, and make the architectural decisions. If you wouldn’t accept sloppy work from a developer, don’t accept it from a model either.
-- **Exploration is encouraged — with boundaries**: Use common vibe coding for prototyping, learning, and generating ideas. But when you move to production, apply rigor. Reuse what works, test what matters, and document what changes.
-- **Structure beats speed in the long run**: Following structured workflows (like “Explore → Plan → Code → Commit”) leads to better outcomes than fast, unstructured iteration. The fastest way to ship is building clean, testable, maintainable code — even with AI.
+要高效且负责任地与智能体协作编程，开发者必须采纳一种在速度与结构之间取得平衡的思维方式。以下原则指导着我们在 Modus Create 进行 AI 辅助软件开发的方式：
 
-## References
+- **带着意图提示：** 每次编程会话都以明确的目标开始。你不只是"让 AI 写代码"——你有目的地引导它。好的提示词是聚焦的、可测试的，并基于真实需求。
+- **以小而可交付的单元工作：** AI 在被赋予有范围的、渐进式任务时最有效。将工作拆解为纵向切片，每次只实现一个行为。宏大、模糊的提示词会导致幻觉和低质量输出。
+- **保持专注，但不跳过验证：** 智能体编程是为了减少认知负担——而不是走捷径。尽早测试。验证输出。使用预提交钩子、代码检查工具和自我修正循环来保证过程中的质量。
+- **有意识地使用版本控制：** 遇到困境时回滚。频繁提交。不要堆积不完整的尝试，也不要让不清晰的状态积累——干净的重新开始比调试臃肿的 AI 输出成本更低。
+- **AI 是协作者，而非替代者：** 你的工作不会消失——它在进化。你审查代码、管理计划、做出架构决策。如果你不会接受一个开发者的粗糙工作，那也不要接受模型的。
+- **鼓励探索——但要有边界：** 在原型开发、学习和生成创意时使用极速编程。但当你进入生产环境时，要严格执行规范。复用有效的内容，测试重要的内容，记录变更的内容。
+- **从长远来看，结构胜于速度：** 遵循结构化工作流程（如"探索 → 规划 → 编码 → 提交"）比快速、无结构的迭代带来更好的结果。交付的最快方式是构建干净、可测试、可维护的代码——即使借助 AI。
 
-![YC thoughts on Vibe Coding](./assets/yc_vibe_coding.png)
+## 参考资料
+
+![YC 对极速编程的看法](./assets/yc_vibe_coding.png)
 
 - [Vibe Coding Is The Future](https://www.ycombinator.com/library/ME-vibe-coding-is-the-future)
 - [How To Get The Most Out Of Vibe Coding](https://www.ycombinator.com/library/MN-how-to-get-the-most-out-of-vibe-coding)
 
-## Keep Reading
+## 继续阅读
 
-[Team Experiences](./TEAM_EXPERIENCES.md)
+[团队经验](./TEAM_EXPERIENCES.md)

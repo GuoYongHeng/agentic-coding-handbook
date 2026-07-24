@@ -1,66 +1,66 @@
-# Frontend Debugging Process Guide
+# 前端调试流程指南
 
-## Problem Analysis
+## 问题分析
 
-I'm facing a frontend issue with the following details:
+我遇到了一个前端问题，具体情况如下：
 
-**Issue**: [Brief description of the problem]
+**问题**：[问题的简要描述]
 
-**Error Message**: 
+**错误信息**：
 ```
-[Exact error message if available]
+[如有错误信息，请填写准确的错误信息]
 ```
 
-**Expected Behavior**: [What should happen]
+**预期行为**：[应该发生什么]
 
-**Actual Behavior**: [What's actually happening]
+**实际行为**：[实际发生了什么]
 
-**Environment**:
-- Browser: [Browser name and version]
-- OS: [Operating system]
-- Framework/Library: [React/Vue/Angular/etc. and version]
+**环境**：
+- 浏览器：[浏览器名称和版本]
+- 操作系统：[操作系统]
+- 框架/库：[React/Vue/Angular/等及版本]
 
-**Code Context**: 
+**代码上下文**：
 ```jsx
-[Relevant code snippets]
+[相关代码片段]
 ```
 
-**Recent Changes**: [Any recent changes that might be related]
+**近期变更**：[任何可能相关的近期变更]
 
-**Troubleshooting Steps Tried**: [What I've already attempted]
+**已尝试的排查步骤**：[我已经尝试过的方法]
 
-## Analysis Request
+## 分析请求
 
-Please help me debug this issue by:
+请通过以下方式帮助我调试此问题：
 
-1. Considering 5-7 possible sources of the problem
-2. Narrowing down to the 1-2 most likely causes 
-3. Suggesting specific logging statements or debugging techniques to validate these assumptions
-4. Providing a systematic approach to fix the issue once validated
+1. 考虑 5-7 个可能的问题来源
+2. 缩小到 1-2 个最可能的原因
+3. 建议具体的日志语句或调试技术来验证这些假设
+4. 提供一个系统性的方法，在验证后修复问题
 
-## Additional Context
+## 补充信息
 
-[Include any other relevant information such as:]
+[在此包含其他相关信息，例如：]
 
-**Application Architecture**: 
-[Overview of application architecture, key dependencies, or specific technical constraints]
+**应用架构**：
+[应用架构概述、关键依赖项或特定技术约束]
 
-**Visual Evidence**: 
-I've attached screenshots showing:
-1. The expected behavior with no console errors after component unmount
-2. The actual behavior showing continuous console messages after unmount
-3. The React warning in the Console tab of Chrome DevTools
+**视觉证据**：
+我已附上截图，显示：
+1. 组件卸载后没有控制台错误的预期行为
+2. 卸载后持续出现控制台消息的实际行为
+3. Chrome DevTools 控制台标签页中的 React 警告
 
-[Note: Attach relevant screenshots or recordings when submitting this prompt]
+[注意：提交此提示词时请附上相关截图或录屏]
 
-**Performance Metrics** (if performance-related):
-- Load time: [e.g., "3.5 seconds on average"]
-- Memory usage: [e.g., "Memory grows to 500MB after 5 minutes of use"]
-- Network activity: [e.g., "Multiple redundant API calls occurring"]
-- Rendering metrics: [e.g., "Component re-renders 20+ times when value changes"]
+**性能指标**（如果与性能相关）：
+- 加载时间：[例如，"平均 3.5 秒"]
+- 内存使用：[例如，"使用 5 分钟后内存增长至 500MB"]
+- 网络活动：[例如，"发生了多个冗余 API 调用"]
+- 渲染指标：[例如，"值变化时组件重新渲染 20+ 次"]
 
-**State Management**: 
-[Description of state flow, global state structure, or specific state management libraries in use]
+**状态管理**：
+[状态流描述、全局状态结构或使用的特定状态管理库]
 
-**Browser/Device Specific**:
-[Any browser or device-specific information if the issue only occurs in certain environments]
+**浏览器/设备特定**：
+[如果问题只在特定环境下出现，提供浏览器或设备特定信息]

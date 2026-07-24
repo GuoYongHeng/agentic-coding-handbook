@@ -1,36 +1,36 @@
-# Operation Modes
+# 运行模式
 
-Pre-Commitator supports two operation modes to accommodate different development environments: VS Code mode and Terminal mode. This document explains how these modes work and how to switch between them.
+Pre-Commitator 支持两种运行模式，以适应不同的开发环境：VS Code 模式和终端模式。本文档解释这两种模式的工作原理以及如何在它们之间切换。
 
-## Mode Overview
+## 模式概述
 
-### VS Code Mode
+### VS Code 模式
 
-VS Code mode is designed for developers who use Visual Studio Code's integrated source control features. It disables certain validators that may cause issues when using VS Code, particularly those related to SSL certificates and command not found errors.
+VS Code 模式专为使用 Visual Studio Code 集成源代码控制功能的开发者设计。它禁用了在 VS Code 中可能导致问题的某些验证器，特别是与 SSL 证书和"命令未找到"错误相关的问题。
 
-In VS Code mode:
-- **ESLint** is disabled to prevent SSL certificate errors when pre-commit installs the Node.js environment
-- **Bandit** is disabled to prevent both SSL certificate errors and command not found errors
-- **Lizard** is disabled to prevent command not found errors
-- **Semgrep** is disabled to prevent command not found errors
-- Basic checks like trailing whitespace, end-of-file newlines, etc. are still enabled
-- Horusec is still configured but will be skipped if not installed
+在 VS Code 模式下：
+- **ESLint** 被禁用，以防止 pre-commit 安装 Node.js 环境时出现 SSL 证书错误
+- **Bandit** 被禁用，以防止 SSL 证书错误和"命令未找到"错误
+- **Lizard** 被禁用，以防止"命令未找到"错误
+- **Semgrep** 被禁用，以防止"命令未找到"错误
+- 行尾空格、文件末尾换行等基本检查仍然启用
+- Horusec 仍然被配置，但如果未安装则会被跳过
 
-### Terminal Mode
+### 终端模式
 
-Terminal mode is designed for developers who use terminal commands for Git operations. It enables all validators for comprehensive code quality and security checking.
+终端模式专为使用终端命令进行 Git 操作的开发者设计。它启用所有验证器，以进行全面的代码质量和安全检查。
 
-In Terminal mode:
-- **ESLint** is enabled for JavaScript/TypeScript validation
-- **Lizard** is enabled for code complexity analysis
-- **Bandit** is enabled for Python security checking
-- **Semgrep** is enabled for security scanning
-- **Horusec** is enabled for additional security scanning (if installed)
-- All basic checks are also enabled
+在终端模式下：
+- **ESLint** 已启用，用于 JavaScript/TypeScript 验证
+- **Lizard** 已启用，用于代码复杂度分析
+- **Bandit** 已启用，用于 Python 安全检查
+- **Semgrep** 已启用，用于安全扫描
+- **Horusec** 已启用，用于额外的安全扫描（如果已安装）
+- 所有基本检查也已启用
 
-## Switching Modes
+## 切换模式
 
-You can switch between modes using the `switch_mode.sh` script:
+您可以使用 `switch_mode.sh` 脚本在模式之间切换：
 
 ```bash
 # Switch to VS Code mode
@@ -43,32 +43,32 @@ You can switch between modes using the `switch_mode.sh` script:
 ./switch_mode.sh
 ```
 
-## How It Works
+## 工作原理
 
-### Configuration Files
+### 配置文件
 
-The mode switching is implemented using two configuration templates:
-- `config/pre-commit-vscode.yaml` - Configuration for VS Code mode
-- `config/pre-commit-terminal.yaml` - Configuration for Terminal mode
+模式切换通过两个配置模板实现：
+- `config/pre-commit-vscode.yaml` - VS Code 模式的配置
+- `config/pre-commit-terminal.yaml` - 终端模式的配置
 
-When you switch modes, the appropriate configuration file is copied to `.pre-commit-config.yaml`.
+切换模式时，相应的配置文件会被复制为 `.pre-commit-config.yaml`。
 
-### Environment Variables
+### 环境变量
 
-In addition to the configuration file, VS Code mode uses environment variables to selectively disable validators in the quality gate:
+除配置文件外，VS Code 模式还使用环境变量来有选择地禁用质量门中的验证器：
 
-- `DISABLE_ESLINT=1` - Disables ESLint JavaScript validation
-- `DISABLE_LIZARD=1` - Disables Lizard complexity analysis
-- `DISABLE_BANDIT=1` - Disables Bandit Python security checks
-- `DISABLE_SEMGREP=1` - Disables Semgrep security scanning
+- `DISABLE_ESLINT=1` - 禁用 ESLint JavaScript 验证
+- `DISABLE_LIZARD=1` - 禁用 Lizard 复杂度分析
+- `DISABLE_BANDIT=1` - 禁用 Bandit Python 安全检查
+- `DISABLE_SEMGREP=1` - 禁用 Semgrep 安全扫描
 
-These environment variables are set in a `.env` file that is created by the `switch_mode.sh` script. The pre-commit hook loads these environment variables at runtime.
+这些环境变量设置在由 `switch_mode.sh` 脚本创建的 `.env` 文件中。pre-commit 钩子在运行时加载这些环境变量。
 
-This is especially helpful for preventing SSL certificate errors that commonly occur on macOS when tools like ESLint and Bandit need to make HTTPS requests. The VS Code mode effectively bypasses these error-prone operations.
+这对于防止 macOS 上常见的 SSL 证书错误特别有效，因为当 ESLint 和 Bandit 等工具需要发出 HTTPS 请求时会发生这些错误。VS Code 模式可以有效绕过这些容易出错的操作。
 
-### .env File
+### .env 文件
 
-In VS Code mode, a `.env` file is created with contents similar to:
+在 VS Code 模式下，将创建内容类似如下的 `.env` 文件：
 
 ```
 # Created by switch_mode.sh
@@ -80,15 +80,15 @@ DISABLE_BANDIT=1  # Prevents both SSL certificate errors and "command not found"
 DISABLE_SEMGREP=1 # Prevents "command not found" errors
 ```
 
-This file is read by the pre-commit hook and the environment variables are passed to the Python quality gate script.
+此文件由 pre-commit 钩子读取，环境变量被传递给 Python 质量门脚本。
 
-In Terminal mode, the `.env` file is removed, allowing all validators to run.
+在终端模式下，`.env` 文件会被删除，允许所有验证器运行。
 
-## Implementation Details
+## 实现细节
 
-### Quality Gate Script
+### 质量门脚本
 
-The quality gate script (`src/quality_gate.py`) checks for these environment variables and skips the corresponding validators if they are set:
+质量门脚本（`src/quality_gate.py`）检查这些环境变量，如果已设置则跳过相应的验证器：
 
 ```python
 # Example for ESLint
@@ -97,9 +97,9 @@ if os.environ.get("DISABLE_ESLINT") == "1":
     return
 ```
 
-### Pre-Commit Hook
+### Pre-Commit 钩子
 
-The pre-commit hook script (`src/pre_commit_hook.sh`) loads the environment variables from the `.env` file:
+pre-commit 钩子脚本（`src/pre_commit_hook.sh`）从 `.env` 文件加载环境变量：
 
 ```bash
 # Get the absolute path of the script's directory
@@ -117,17 +117,17 @@ if [ -f "$SCRIPT_DIR/../.env" ]; then
 fi
 ```
 
-## Customizing Modes
+## 自定义模式
 
-You can customize which validators are enabled in each mode by editing the mode-specific configuration files:
+您可以通过编辑特定模式的配置文件来自定义每种模式中启用的验证器：
 
-1. Edit `config/pre-commit-vscode.yaml` to customize VS Code mode
-2. Edit `config/pre-commit-terminal.yaml` to customize Terminal mode
+1. 编辑 `config/pre-commit-vscode.yaml` 以自定义 VS Code 模式
+2. 编辑 `config/pre-commit-terminal.yaml` 以自定义终端模式
 
-You can also create additional modes by creating new configuration templates and updating the `switch_mode.sh` script to support them.
+您还可以通过创建新的配置模板并更新 `switch_mode.sh` 脚本以支持它们，来创建额外的模式。
 
-## Best Practices
+## 最佳实践
 
-- Use **VS Code mode** if you primarily use VS Code for Git operations
-- Use **Terminal mode** if you want the full range of validations and use terminal commands for Git
-- Run the quality check manually (`./run_quality_check.sh`) before committing if you want to check for issues that might be disabled in VS Code mode
+- 如果您主要使用 VS Code 进行 Git 操作，请使用 **VS Code 模式**
+- 如果您想获得全范围的验证并使用终端命令进行 Git 操作，请使用**终端模式**
+- 如果您想检查在 VS Code 模式下可能被禁用的问题，请在提交前手动运行质量检查（`./run_quality_check.sh`）

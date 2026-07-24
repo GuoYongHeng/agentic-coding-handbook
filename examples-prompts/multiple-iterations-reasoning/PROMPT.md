@@ -1,33 +1,33 @@
-# Multiple Iterations Reasoning Prompt
+# 多轮迭代推理提示词
 
-## Overview
-This prompt guides you through solving complex problems using an iterative approach that progressively refines solutions through multiple rounds of critical analysis and improvement.
+## 概述
+本提示词引导你通过迭代方法解决复杂问题，该方法通过多轮批判性分析和改进，逐步优化解决方案。
 
-I want you to solve the following problem/task: [DESCRIBE PROBLEM OR TASK HERE]
+我希望你解决以下问题/任务：[在此描述问题或任务]
 
-## Iterative Solution Process
+## 迭代解题过程
 
-### 1. Initial Solution
-Provide a concise initial solution to the problem. Focus on core requirements and a working approach. Keep code examples minimal.
+### 1. 初始方案
+提供一个简洁的初始解决方案。关注核心需求和可行的方法，代码示例保持精简。
 
-### 2. Analysis Rounds (3 iterations)
-For each round:
+### 2. 分析轮次（3 次迭代）
+每轮执行以下操作：
 
-#### a) Critical Analysis
-- Strengths: What works well (2-3 key points)
-- Weaknesses: Edge cases and limitations (2-3 key points)
-- Potential optimizations (1-2 specific improvements)
+#### a) 批判性分析
+- 优势：哪些方面运作良好（2-3 个关键点）
+- 弱点：边界情况和局限性（2-3 个关键点）
+- 潜在优化点（1-2 项具体改进）
 
-#### b) Solution Refinement
-- Implement key changes that address the most critical weaknesses
-- Focus only on substantial improvements
-- Note briefly what changed and why
+#### b) 方案优化
+- 实施解决最关键弱点的关键变更
+- 只关注实质性改进
+- 简要说明变更内容及原因
 
-### 3. Last Solution
-Provide your optimized solution with:
-- A brief summary of major improvements (2-3 sentences)
-- Any remaining considerations
+### 3. 最终方案
+提供你的优化方案，包含：
+- 主要改进的简要总结（2-3 句话）
+- 任何剩余的注意事项
 
-Label each section clearly (e.g., "INITIAL SOLUTION", "ROUND 1", etc.).
+清晰标注每个部分（例如"初始方案"、"第 1 轮"等）。
 
-Note: Keep all explanations concise. For code examples, show only the most relevant parts and use comments to indicate omitted sections.
+注意：所有说明保持简洁。对于代码示例，只展示最相关的部分，并使用注释表示省略的内容。

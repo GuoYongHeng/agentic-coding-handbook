@@ -1,175 +1,175 @@
-# Pre-Commitator: Implementation Overview
+# Pre-Commitator：实现概述
 
-## Architecture
+## 架构
 
-Pre-Commitator consists of the following components:
+Pre-Commitator 由以下组件构成：
 
-1. **Quality Gate Python Script** (`src/quality_gate.py`):
-   - Core validation engine that runs multiple quality checks
-   - Supports Python, JavaScript, and other language checks
-   - Provides clear, formatted error messages
-   - Designed to be run both by pre-commit hooks and manually
-   - Supports environment variables to selectively disable validators
+1. **质量门 Python 脚本**（`src/quality_gate.py`）：
+   - 运行多种质量检查的核心验证引擎
+   - 支持 Python、JavaScript 和其他语言检查
+   - 提供清晰、格式化的错误信息
+   - 设计为既可由 pre-commit 钩子运行，也可手动运行
+   - 支持通过环境变量有选择地禁用验证器
 
-2. **Pre-Commit Hook Integration** (`src/pre_commit_hook.sh`):
-   - Automatically runs quality gate during git commits
-   - Blocks commits if quality issues are found
-   - Provides colorful, clear output
-   - Loads environment variables from .env file
+2. **Pre-Commit 钩子集成**（`src/pre_commit_hook.sh`）：
+   - 在 git 提交期间自动运行质量门
+   - 如果发现质量问题则阻止提交
+   - 提供彩色、清晰的输出
+   - 从 .env 文件加载环境变量
 
-3. **Command-Line Interface** (`run_quality_check.sh`):
-   - User-friendly CLI for running checks manually
-   - Can check staged files, specific files, or all files
-   - Makes it easy to validate code before committing
+3. **命令行界面**（`run_quality_check.sh`）：
+   - 用于手动运行检查的用户友好型 CLI
+   - 可检查暂存文件、特定文件或所有文件
+   - 使提交前验证代码变得简单
 
-4. **Installation Script** (`install.sh`):
-   - Installs all necessary dependencies
-   - Sets up pre-commit hooks
-   - Makes scripts executable
-   - Configures VS Code or terminal mode based on user preference
+4. **安装脚本**（`install.sh`）：
+   - 安装所有必要的依赖
+   - 设置 pre-commit 钩子
+   - 使脚本可执行
+   - 根据用户偏好配置 VS Code 或终端模式
 
-5. **Mode Switcher** (`switch_mode.sh`):
-   - Switches between VS Code-compatible mode and terminal-optimized mode
-   - Creates appropriate .env file to disable validators in VS Code mode
-   - Uses pre-defined configuration templates for consistent setup
-   - Attempts to install Horusec (optional security scanner)
+5. **模式切换器**（`switch_mode.sh`）：
+   - 在兼容 VS Code 的模式和终端优化模式之间切换
+   - 创建适当的 .env 文件以在 VS Code 模式下禁用验证器
+   - 使用预定义的配置模板进行一致的设置
+   - 尝试安装 Horusec（可选安全扫描器）
 
-6. **Auto-Stage Hook** (`src/auto_stage_hook.sh`):
-   - Automatically stages files modified by pre-commit hooks
-   - Eliminates the need to manually stage files after hook modifications
-   - Provides a seamless commit experience
+6. **自动暂存钩子**（`src/auto_stage_hook.sh`）：
+   - 自动暂存由 pre-commit 钩子修改的文件
+   - 消除钩子修改后手动暂存文件的需要
+   - 提供无缝的提交体验
 
-7. **SSL Certificate Fix** (`fix_certificates.sh` and `fix_certificates_unix.sh`):
-   - Fixes SSL certificate issues on macOS for Python
-   - Provides alternative installation methods for certificates
-   - Creates a temporary SSL context fix via ssl_context_fix.py
-   - Sets PYTHONPATH environment variable to enable the fix
-   - Prevents "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed" errors
-   - Essential for pre-commit hooks that need network access
+7. **SSL 证书修复**（`fix_certificates.sh` 和 `fix_certificates_unix.sh`）：
+   - 修复 macOS 上 Python 的 SSL 证书问题
+   - 提供替代的证书安装方法
+   - 通过 ssl_context_fix.py 创建临时 SSL 上下文修复
+   - 设置 PYTHONPATH 环境变量以启用修复
+   - 防止 "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed" 错误
+   - 对于需要网络访问的 pre-commit 钩子至关重要
 
-8. **Horusec Installation** (`src/install_horusec.sh`):
-   - Installs Horusec security scanner based on platform
-   - Handles installation failures gracefully
-   - Provides platform-specific installation methods
+8. **Horusec 安装**（`src/install_horusec.sh`）：
+   - 根据平台安装 Horusec 安全扫描器
+   - 优雅地处理安装失败
+   - 提供特定于平台的安装方法
 
-## Implementation Details
+## 实现细节
 
-### Quality Validations
+### 质量验证
 
-1. **File Hygiene**:
-   - Trailing whitespace
-   - End-of-file newlines
-   - YAML validity
-   - File size limits
+1. **文件卫生**：
+   - 行尾空格
+   - 文件末尾换行符
+   - YAML 有效性
+   - 文件大小限制
 
-2. **Code Quality**:
-   - Complexity metrics (Lizard)
-   - Code formatting (Black for Python)
-   - Static analysis
+2. **代码质量**：
+   - 复杂度指标（Lizard）
+   - 代码格式化（Python 的 Black）
+   - 静态分析
 
-3. **Security**:
-   - Bandit for Python security scanning
-   - ESLint security plugin for JavaScript/TypeScript
-   - Horusec multi-language scanner
-   - Semgrep for pattern-based security scanning
-   - Dependency vulnerability checks (pip-audit)
+3. **安全性**：
+   - Bandit 用于 Python 安全扫描
+   - ESLint 安全插件用于 JavaScript/TypeScript
+   - Horusec 多语言扫描器
+   - Semgrep 用于基于模式的安全扫描
+   - 依赖漏洞检查（pip-audit）
 
-### Features
+### 功能特性
 
-1. **Language Support**:
-   - Fully supports Python, JavaScript, and TypeScript
-   - Architecture supports expansion to other languages like Java, Go, Ruby, PHP, etc.
-   - Each validator only runs on relevant file types
+1. **语言支持**：
+   - 完全支持 Python、JavaScript 和 TypeScript
+   - 架构支持扩展到 Java、Go、Ruby、PHP 等其他语言
+   - 每个验证器仅在相关文件类型上运行
 
-2. **Performance**:
-   - Only checks files that are being committed
-   - Fast execution for developer workflow
+2. **性能**：
+   - 仅检查正在提交的文件
+   - 为开发者工作流快速执行
 
-3. **Clear Error Reporting**:
-   - Error messages designed to be understood by both humans and AI
-   - Categorizes errors vs. warnings
-   - Shows file, line, and issue description
+3. **清晰的错误报告**：
+   - 错误信息设计为对人类和 AI 都易于理解
+   - 将错误与警告分类
+   - 显示文件、行号和问题描述
 
-4. **Extensibility**:
-   - Easy to add new validation tools
-   - Pre-commit configuration allows customization
+4. **可扩展性**：
+   - 易于添加新的验证工具
+   - pre-commit 配置允许自定义
 
-5. **Environment-Specific Modes**:
-   - VS Code mode for IDE integration
-   - Terminal mode for full validation capability
-   - Environment variables control enabled validators
+5. **特定环境模式**：
+   - VS Code 模式用于 IDE 集成
+   - 终端模式用于完整验证能力
+   - 环境变量控制启用的验证器
 
-## Operation Modes
+## 运行模式
 
-### VS Code Mode
+### VS Code 模式
 
-VS Code mode disables certain validators that may cause issues when using VS Code's integrated source control:
+VS Code 模式禁用了在使用 VS Code 集成源代码控制时可能导致问题的某些验证器：
 
-1. **Implementation**:
-   - Uses `.env` file to set environment variables
-   - Disables problematic validators via environment variables
-   - Pre-commit hook loads these variables at runtime
+1. **实现**：
+   - 使用 `.env` 文件设置环境变量
+   - 通过环境变量禁用有问题的验证器
+   - pre-commit 钩子在运行时加载这些变量
 
-2. **Disabled Validators**:
-   - ESLint (due to SSL certificate issues when installing from pre-commit)
-   - Lizard (to prevent "command not found" errors)
-   - Bandit (to prevent "command not found" errors and SSL certificate issues)
-   - Semgrep (to prevent "command not found" errors)
+2. **禁用的验证器**：
+   - ESLint（由于从 pre-commit 安装时的 SSL 证书问题）
+   - Lizard（防止"命令未找到"错误）
+   - Bandit（防止"命令未找到"错误和 SSL 证书问题）
+   - Semgrep（防止"命令未找到"错误）
 
-3. **Configuration**:
-   - Uses `config/pre-commit-vscode.yaml` template
+3. **配置**：
+   - 使用 `config/pre-commit-vscode.yaml` 模板
 
-### Terminal Mode
+### 终端模式
 
-Terminal mode enables all validators for comprehensive code quality checking:
+终端模式启用所有验证器以进行全面的代码质量检查：
 
-1. **Implementation**:
-   - Removes `.env` file if it exists
-   - Enables all validators by default
-   - Ensures full validation capability
+1. **实现**：
+   - 如果存在 `.env` 文件则删除
+   - 默认启用所有验证器
+   - 确保完整的验证能力
 
-2. **Enabled Validators**:
-   - ESLint for JavaScript validation
-   - Lizard for complexity analysis
-   - Bandit for Python security
-   - Semgrep for security scanning
-   - Horusec for additional security scanning
+2. **启用的验证器**：
+   - ESLint 用于 JavaScript 验证
+   - Lizard 用于复杂度分析
+   - Bandit 用于 Python 安全
+   - Semgrep 用于安全扫描
+   - Horusec 用于额外的安全扫描
 
-3. **Configuration**:
-   - Uses `config/pre-commit-terminal.yaml` template
+3. **配置**：
+   - 使用 `config/pre-commit-terminal.yaml` 模板
 
-## Usage with AI
+## 与 AI 配合使用
 
-This tool is designed to work well with AI-generated code:
+该工具设计为与 AI 生成的代码配合良好：
 
-1. When AI generates code, run the quality check before using it
-2. Error messages are structured to be easily parsed by AI
-3. AI can understand and fix issues based on the error messages
+1. 当 AI 生成代码时，在使用之前运行质量检查
+2. 错误信息经过结构化，易于被 AI 解析
+3. AI 可以根据错误信息理解并修复问题
 
-## Auto-Stage Implementation
+## 自动暂存实现
 
-The auto-stage feature works by:
+自动暂存功能的工作原理如下：
 
-1. Backing up the original pre-commit hook to `pre-commit.original`
-2. Creating a new pre-commit hook that:
-   - Runs the original pre-commit hook
-   - Detects when files are modified by pre-commit hooks
-   - Automatically stages those modified files
-   - Preserves the exit code of the original hook
-3. Providing a seamless experience across both VS Code and Terminal modes
-4. Instructing the user to commit again to complete the process
+1. 将原始 pre-commit 钩子备份为 `pre-commit.original`
+2. 创建新的 pre-commit 钩子，该钩子：
+   - 运行原始 pre-commit 钩子
+   - 检测 pre-commit 钩子修改文件的时机
+   - 自动暂存这些修改的文件
+   - 保留原始钩子的退出代码
+3. 在 VS Code 和终端模式下都提供无缝体验
+4. 指示用户再次提交以完成流程
 
-This feature significantly improves the development workflow by eliminating the manual step of staging files that were automatically modified by pre-commit hooks, like whitespace or formatting fixes. The implementation is designed to be resilient to pre-commit reinstallation by maintaining a backup of the original hook.
+该功能通过消除手动暂存由 pre-commit 钩子自动修改的文件（如空格或格式修复）这一手动步骤，显著改善了开发工作流。实现设计为对 pre-commit 重新安装具有弹性，通过维护原始钩子的备份来实现。
 
-## Future Improvements
+## 未来改进
 
-1. **More Language Support**:
-   - Add Rust, C/C++ specialized validators
+1. **更多语言支持**：
+   - 添加 Rust、C/C++ 专用验证器
 
-2. **CI/CD Integration**:
-   - GitHub Actions workflow
-   - GitLab CI pipeline
+2. **CI/CD 集成**：
+   - GitHub Actions 工作流
+   - GitLab CI 流水线
 
-3. **Reporting Dashboard**:
-   - Trend analysis of code quality over time
-   - Visual representation of issues
+3. **报告仪表板**：
+   - 代码质量随时间的趋势分析
+   - 问题的可视化展示

@@ -2,50 +2,50 @@
 layout: default
 title: Agentic Coding Handbook
 nav_order: 1
-description: "Learn to work with AI coding agents effectively and responsibly"
+description: "学习如何高效、负责任地与 AI 编程智能体协作"
 permalink: /
 ---
 
-# Agentic Coding Handbook
+# 智能体编程手册
 
-In early 2025, we set out to explore a bold question: can AI-powered development fundamentally change how we build software? After a carefully controlled experiment comparing AI-assisted and traditional teams, the answer was clear: yes, it can.
+2025 年初，我们开始探索一个大胆的问题：AI 驱动的开发能否从根本上改变我们构建软件的方式？经过一场严格对照的实验，对比了 AI 辅助团队与传统团队的表现，答案显而易见：可以。
 
-Using tools like Cursor and GitHub Copilot Agent, our AI-assisted teams delivered projects 45% faster, with high code quality and much less manual effort. But the real breakthrough was learning a new way of working. Success came from mastering a different mindset: writing clear prompts, breaking work into smaller steps, focusing on structured specifications (spec-first), and maintaining strong code review discipline to ensure quality.
+借助 Cursor 和 GitHub Copilot Agent 等工具，我们的 AI 辅助团队交付项目的速度提升了 45%，代码质量高，人工工作量大幅减少。但真正的突破在于学会了一种全新的工作方式。成功的关键在于掌握一种不同的思维方式：编写清晰的提示词、将工作分解为更小的步骤、专注于结构化规格说明（规格优先），以及保持严格的代码审查纪律以确保质量。
 
-Before AI agents, developers wrote every line manually and progress depended heavily on personal expertise and speed. Now, engineers orchestrate AI: guiding it with prompts, validating outputs, and accelerating development across the full stack. Tasks that took hours such as scaffolding services or building UI screens now happen in minutes.
+在 AI 智能体出现之前，开发者手动编写每一行代码，进度高度依赖个人专业能力和速度。如今，工程师负责编排 AI：通过提示词引导它、验证输出结果，并加速全栈开发。过去需要数小时完成的任务，例如搭建服务脚手架或构建 UI 界面，现在几分钟内即可完成。
 
-AI Coding Agents work inside your IDE. You describe what you want in a chat interface, and the agent generates or modifies code across multiple files. They understand your project structure and external contexts (through Model Context Providers). They don't just autocomplete, they help implement real features, following your project's quality guidelines — and their suggestions reflect best practices found in public code across the industry.
+AI 编程智能体运行在你的 IDE 内。你在聊天界面中描述需求，智能体便会跨多个文件生成或修改代码。它们理解你的项目结构和外部上下文（通过模型上下文提供者）。它们不仅仅是自动补全，而是帮助实现真实功能，遵循你项目的质量规范——其建议也体现了业界公开代码中的最佳实践。
 
-The goal of this handbook is to teach you how to work with AI agents effectively and responsibly. You'll learn practical workflows that unlock faster delivery, cross-stack flexibility, and higher creativity while keeping you, the engineer, fully in control.
+本手册的目标是教你如何高效、负责任地与 AI 智能体协作。你将学到实用的工作流程，在保持工程师完全掌控的前提下，实现更快交付、跨栈灵活性和更高的创造力。
 
-## Quick Navigation
+## 快速导航
 
-The sidebar contains everything you need to master agentic coding. Here are the main sections:
+侧边栏包含掌握智能体编程所需的一切。以下是主要章节：
 
-### 🚀 **[Getting Started](getting-started/)**
+### 🚀 **[快速入门](getting-started/)**
 
-Your first steps with AI-powered development and the mindset shift required.
+AI 驱动开发的第一步，以及所需的思维转变。
 
-### 🔄 **[Core Workflows](workflows/)**
+### 🔄 **[核心工作流程](workflows/)**
 
-Battle-tested patterns that our teams use daily to deliver high-quality software.
+我们团队日常用于交付高质量软件的经过验证的模式。
 
-### 🧠 **[Prompt Engineering](prompts/)**
+### 🧠 **[提示词工程](prompts/)**
 
-Master the art of communicating effectively with AI coding agents.
+掌握与 AI 编程智能体高效沟通的艺术。
 
-### 🛠️ **[Tools & Setup](tools/)**
+### 🛠️ **[工具与配置](tools/)**
 
-Configure your development environment for maximum effectiveness.
+配置开发环境以达到最佳效果。
 
-### 💡 **[Examples & Templates](examples/)**
+### 💡 **[示例与模板](examples/)**
 
-Ready-to-use prompts, scripts, and documentation templates.
+可直接使用的提示词、脚本和文档模板。
 
-## Keep Reading
+## 继续阅读
 
-Start your agentic coding journey with our comprehensive guide: [Getting Started](./getting-started.md)
+通过我们的综合指南开启智能体编程之旅：[快速入门](./getting-started.md)
 
 ---
 
-_Use the navigation sidebar to explore each section. Every page includes practical examples, common pitfalls, and step-by-step guidance to help you succeed with agentic coding._
+_使用导航侧边栏探索各章节。每个页面都包含实践示例、常见陷阱和分步指导，帮助你成功驾驭智能体编程。_

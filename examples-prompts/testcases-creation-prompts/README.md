@@ -1,53 +1,53 @@
-# Testcase Coverage & Edge Cases Prompt - Usage Guide
+# 测试用例覆盖率与边界情况提示词使用指南
 
-This guide explains how to use the provided QA prompt to maximize your project's test coverage, especially for negative and edge cases.
-
----
-
-## How to Use the Prompt
-
-1. **Copy the Prompt:**  
-   Copy the prompt from `PROMPT.md` and provide it to your QA team or AI tool, along with your project context.
-
-2. **Generate Testcases:**  
-   The QA or AI will generate a comprehensive set of testcases, covering unhappy paths, edge cases, invalid input, timeouts, unauthorized access, and non-ideal user behaviors.  
-   All testcases will be organized by category and written in the format:
-   - Verify that user can't sign up without filling the mandatory fields
-   - Verify the behaviour when user who already had an account trying to register again
-
-3. **Review Techniques:**  
-   The prompt instructs to apply three expert QA techniques (such as Boundary Value Analysis, Error Guessing, and Exploratory Testing) and to review the testcases twice, ensuring completeness and quality.
-
-4. **Check Output:**  
-   All generated testcases will be saved in a separate file named `testcases_checklist.md` for easy review and tracking.
+本指南说明如何使用所提供的 QA 提示词，以最大化项目的测试覆盖率，尤其是负面场景和边界情况。
 
 ---
 
-## Best Practices
+## 如何使用提示词
 
-- **Provide Project Context:**  
-  The more details you provide about your project, the more relevant and thorough the testcases will be.
+1. **复制提示词：**
+   从 `PROMPT.md` 复制提示词，连同你的项目背景一起提供给 QA 团队或 AI 工具。
 
-- **Iterative Review:**  
-  Use the expert review techniques as described in the prompt to iteratively improve the testcases.
+2. **生成测试用例：**
+   QA 或 AI 将生成一套全面的测试用例，涵盖异常路径、边界情况、无效输入、超时、未授权访问和非理想用户行为。
+   所有测试用例将按类别整理，并以以下格式编写：
+   - 验证用户在未填写必填字段的情况下无法注册
+   - 验证已有账号的用户再次尝试注册时的系统行为
 
-- **Collaborate:**  
-  Share the `testcases_checklist.md` file with your team for further feedback and continuous improvement.
+3. **审查技术：**
+   提示词要求应用三种专家 QA 技术（如边界值分析、错误猜测和探索性测试），并对测试用例进行两轮审查，确保其完整性和质量。
 
-- **Keep Updated:**  
-  Update the checklist as your project evolves or new features are added.
-
----
-
-## Benefits
-
-- **Improved Coverage:**  
-  Ensures all negative, edge cases, and non-ideal scenarios are tested.
-- **Reduced Risk:**  
-  Helps catch bugs that might otherwise go unnoticed.
-- **Clear Documentation:**  
-  Keeps your testcases organized and easy to maintain.
+4. **检查输出：**
+   所有生成的测试用例将保存在名为 `testcases_checklist.md` 的单独文件中，便于审查和跟踪。
 
 ---
 
-By following this guide and using the prompt, you can significantly improve the reliability and robustness of your project through better test coverage.
+## 最佳实践
+
+- **提供项目背景：**
+  你提供的项目细节越多，生成的测试用例就越相关、越全面。
+
+- **迭代审查：**
+  按照提示词中描述的专家审查技术，迭代改进测试用例。
+
+- **协作：**
+  将 `testcases_checklist.md` 文件分享给团队，以获取进一步反馈并持续改进。
+
+- **保持更新：**
+  随着项目的发展或新功能的添加，更新检查清单。
+
+---
+
+## 优势
+
+- **提升覆盖率：**
+  确保所有负面场景、边界情况和非理想场景都得到测试。
+- **降低风险：**
+  帮助发现可能被忽略的 bug。
+- **清晰的文档：**
+  保持测试用例组织有序，便于维护。
+
+---
+
+通过遵循本指南并使用该提示词，你可以通过更好的测试覆盖率显著提升项目的可靠性和健壮性。

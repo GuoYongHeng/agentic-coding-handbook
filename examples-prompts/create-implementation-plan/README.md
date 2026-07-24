@@ -1,113 +1,112 @@
-## 📘 Overview
+## 概述
 
-This file explains how to use the AI [implementation planning prompt](./PROMPT.md) located in the same directory.  
-The prompt is designed to guide an advanced AI coding agent to generate a step-by-step technical plan for delivering a feature or fixing a ticket — **without writing code yet**.
+本文件说明如何使用同一目录下的 AI [实现规划提示词](./PROMPT.md)。
+该提示词旨在引导高级 AI 编码智能体生成逐步技术计划，用于交付某个功能或修复某个工单——**此阶段不编写代码**。
 
 ---
 
-## 🧠 What This Prompt Does
+## 该提示词的功能
 
-It instructs the AI to:
+它会指示 AI：
 
-- Ask for context about the feature/ticket
-- Collaborate using simulated domain experts (e.g., frontend, UX, architect)
-- Analyze the project’s codebase and propose changes
-- Collaborate with the human through Q&A and iteration
-- Generate a detailed implementation plan in a file named:  
+- 询问有关功能/工单的背景信息
+- 通过模拟领域专家（如前端、UX、架构师）进行协作
+- 分析项目代码库并提出变更建议
+- 通过问答和迭代与人类协作
+- 在以下名称的文件中生成详细的实现计划：
   **`plans/PLAN_<ISSUE_CODE>.md`**
 
 ---
 
-## 🧑‍💻 How to Use It
+## 使用方法
 
-### ✅ 1. Provide Context
+### 1. 提供背景信息
 
-Start by giving the AI the issue context. This can be:
+首先向 AI 提供问题背景。可以是：
 
-- Run this from the coding agent with the **indexed codebase**;
-- A **Jira ticket code**
-- A **user story** or **acceptance criteria**
-- **Figma mocks**, **screenshots**, **diagrams**, or **requirements documents**
-- External sources of information that can be accessed by the existing MCPs. Examples are: Confluence, Jira, Figma, Database, Github, Web Search.
+- 使用**已索引代码库**的编码智能体运行此提示词；
+- **Jira 工单代码**
+- **用户故事**或**验收标准**
+- **Figma 原型**、**截图**、**图表**或**需求文档**
+- 可通过现有 MCP 访问的外部信息源，例如：Confluence、Jira、Figma、数据库、GitHub、Web 搜索。
 
-💡 If you're using a coding agent, simply paste the info or drag in files. The AI will take it from there.
-
----
-
-### 🗣️ 2. Let the AI Ask Questions
-
-The AI will:
-
-- Simulate a chain-of-thought discussion between domain experts
-- Ask clarifying questions (in batches)
-- Suggest external data it might need via MCPs
-
-Answer these questions in full so it can proceed with high accuracy.
+如果你使用编码智能体，只需粘贴信息或拖入文件即可。AI 将从这里接管。
 
 ---
 
-### 🔍 3. Review Proposed Codebase Changes
+### 2. 让 AI 提问
 
-The AI will summarize:
+AI 将：
 
-- **Files to be changed or created**
-- **What will be done**
-- **Why each change matters**
-- **Any assumptions made**
+- 模拟领域专家之间的思维链讨论
+- 批量提出澄清问题
+- 建议可能需要通过 MCP 获取的外部数据
 
-At this stage: **no code is written**. You're expected to review and provide feedback.
-
----
-
-### ✍️ 4. Collaborate on Iteration
-
-You can:
-
-- Ask the AI to rephrase or simplify any change
-- Ask for alternative implementations
-- Add constraints (e.g., limit new files, avoid new deps)
-
-Once you're aligned on the changes, give the AI the green light to generate the plan file.
+请完整回答这些问题，以便 AI 能够高精度地继续工作。
 
 ---
 
-### 📝 5. Receive the Plan File
+### 3. 审查提议的代码库变更
 
-The AI will generate:  
+AI 将总结：
+
+- **待变更或创建的文件**
+- **将要做什么**
+- **每项变更的必要性**
+- **所做的任何假设**
+
+在此阶段：**不编写任何代码**。你需要审查并提供反馈。
+
+---
+
+### 4. 协作迭代
+
+你可以：
+
+- 要求 AI 重新表述或简化任何变更
+- 要求替代实现方案
+- 添加约束条件（例如，限制新文件数量，避免引入新依赖）
+
+一旦对变更达成共识，给予 AI 生成计划文件的绿灯。
+
+---
+
+### 5. 接收计划文件
+
+AI 将生成：
 **`plans/PLAN_<ISSUE_CODE>.md`**
 
-This file contains:
+该文件包含：
 
-- Implementation phases
-- Actionable steps per file
-- Design rationales
-- Edge case notes
-- Checklists and commit summaries
+- 实现阶段
+- 每个文件的可操作步骤
+- 设计原理
+- 边界情况说明
+- 检查清单和提交摘要
 
-You can now hand this to another AI agent (or dev) to implement.
-
----
-
-## 🛑 What Not To Do
-
-- **Don't ask the AI to implement code** during planning  
-  It will refuse until the plan is finalized.
-
-- **Don't skip the Q&A loop** — context matters.
-
-- **Don't change the output file path/name convention** unless you've updated the prompt.
+你现在可以将此文件交给另一个 AI 智能体（或开发者）来实施。
 
 ---
 
-## 📎 Additional Notes
+## 注意事项
 
-- The AI will mock external APIs only if necessary — and it will clearly label them.
-- The AI follows the project’s commit message style and Git policies.
-- You can version the plan file as needed (e.g., `PLAN_ADE-101_v2.md` for iterations).
+- **不要要求 AI 在规划阶段实现代码**
+  在计划最终确定之前，AI 将拒绝实现代码。
+
+- **不要跳过问答循环**——背景信息至关重要。
+
+- **不要更改输出文件路径/命名规范**，除非你已更新提示词。
 
 ---
 
-## 📣 Questions?
+## 附加说明
 
-If anything is unclear, just type your question into the coding agent while using the prompt. The AI will either answer or escalate for clarification.
+- AI 仅在必要时模拟外部 API——并且会清晰地标注它们。
+- AI 遵循项目的提交信息风格和 Git 策略。
+- 你可以根据需要对计划文件进行版本管理（例如，`PLAN_ADE-101_v2.md` 用于迭代版本）。
 
+---
+
+## 有疑问？
+
+如有任何不清楚的地方，在使用提示词时直接向编码智能体输入你的问题即可。AI 会直接回答或升级以寻求澄清。

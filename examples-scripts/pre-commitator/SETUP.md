@@ -1,37 +1,37 @@
-# Installation & Setup Guide
+# 安装与配置指南
 
-This guide provides detailed instructions for installing and setting up Pre-Commitator in your development environment.
+本指南提供了在开发环境中安装和配置 Pre-Commitator 的详细说明。
 
-## System Requirements
+## 系统要求
 
-- **Operating Systems**: macOS, Linux, Windows (via WSL recommended)
-- **Python**: 3.7 or newer
-- **Git**: 2.22.0 or newer
-- **Node.js**: 14.0 or newer (optional, for JavaScript validation)
+- **操作系统**：macOS、Linux、Windows（推荐通过 WSL）
+- **Python**：3.7 或更新版本
+- **Git**：2.22.0 或更新版本
+- **Node.js**：14.0 或更新版本（可选，用于 JavaScript 验证）
 
-## Step-by-Step Installation
+## 分步安装
 
-### 1. Basic Installation
+### 1. 基本安装
 
-The simplest way to install is using our installation script:
+最简单的安装方式是使用我们的安装脚本：
 
 ```bash
 ./install.sh
 ```
 
-This script will:
-- Install Python dependencies
-- Set up pre-commit hooks
-- Make scripts executable
-- Configure paths
-- Ask if you want to use VS Code mode or terminal mode
-- Attempt to install Horusec security scanner (optional)
+此脚本将会：
+- 安装 Python 依赖
+- 设置 pre-commit 钩子
+- 使脚本可执行
+- 配置路径
+- 询问您是否要使用 VS Code 模式或终端模式
+- 尝试安装 Horusec 安全扫描器（可选）
 
-### 2. Manual Installation
+### 2. 手动安装
 
-If you prefer a manual installation:
+如果您希望手动安装：
 
-#### Install Python Dependencies
+#### 安装 Python 依赖
 
 ```bash
 # Create and activate a virtual environment (recommended)
@@ -43,13 +43,13 @@ pip install -r requirements.txt
 pip install pre-commit
 ```
 
-#### Install JavaScript Dependencies (Optional)
+#### 安装 JavaScript 依赖（可选）
 
 ```bash
 npm install
 ```
 
-#### Install Pre-commit Hooks
+#### 安装 Pre-commit 钩子
 
 ```bash
 # Clean installation (recommended)
@@ -61,7 +61,7 @@ pre-commit uninstall
 pre-commit install -f
 ```
 
-#### Set Execution Permissions
+#### 设置执行权限
 
 ```bash
 chmod +x run_quality_check.sh
@@ -73,9 +73,9 @@ chmod +x src/install_horusec.sh
 chmod +x fix_certificates.sh
 ```
 
-#### Choose Operation Mode
+#### 选择运行模式
 
-Choose which mode you want to use based on your development environment:
+根据您的开发环境选择要使用的模式：
 
 ```bash
 # For VS Code users (disables problematic validators)
@@ -85,86 +85,86 @@ Choose which mode you want to use based on your development environment:
 ./switch_mode.sh terminal
 ```
 
-#### Install Auto-Stage Hook (Optional)
+#### 安装自动暂存钩子（可选）
 
-If you want modified files to be automatically staged after pre-commit hooks fix them:
+如果您希望在 pre-commit 钩子修复文件后自动暂存修改的文件：
 
 ```bash
 # Install the auto-stage hook
 ./src/auto_stage_hook.sh
 ```
 
-This hook works by backing up the original pre-commit hook and creating a new hook that automatically stages files modified by pre-commit hooks. It works seamlessly in both VS Code and Terminal modes, eliminating the need to manually stage files after the pre-commit hooks fix issues.
+此钩子通过备份原始 pre-commit 钩子并创建一个新钩子来工作，新钩子会自动暂存由 pre-commit 钩子修改的文件。它在 VS Code 和终端模式下均可无缝工作，消除了 pre-commit 钩子修复问题后手动暂存文件的需要。
 
-### 3. Optional Tools Installation
+### 3. 可选工具安装
 
-#### Install Semgrep (Security Scanner)
+#### 安装 Semgrep（安全扫描器）
 
-Semgrep is a lightweight static analysis tool used for finding code security issues.
+Semgrep 是一个用于发现代码安全问题的轻量级静态分析工具。
 
-**All platforms**:
+**所有平台**：
 ```bash
 pip install semgrep==1.50.0
 ```
 
-For more information, visit the official repository: https://github.com/returntocorp/semgrep
+更多信息，请访问官方仓库：https://github.com/returntocorp/semgrep
 
-#### Install Horusec (Security Scanner)
+#### 安装 Horusec（安全扫描器）
 
-Horusec is a multi-language security scanner.
+Horusec 是一个多语言安全扫描器。
 
 ```bash
 # The install script will detect your OS and install appropriately
 ./src/install_horusec.sh
 ```
 
-If Horusec installation fails, the hook will be skipped without affecting other validations.
+如果 Horusec 安装失败，钩子将被跳过，不影响其他验证。
 
-#### Fix SSL Certificate Issues (macOS)
+#### 修复 SSL 证书问题（macOS）
 
-If you encounter SSL certificate issues on macOS:
+如果在 macOS 上遇到 SSL 证书问题：
 
 ```bash
 # Fix SSL certificate issues
 ./fix_certificates.sh
 ```
 
-## Operation Modes
+## 运行模式
 
-Pre-Commitator supports two operation modes to accommodate different development environments:
+Pre-Commitator 支持两种运行模式，以适应不同的开发环境：
 
-### VS Code Mode
+### VS Code 模式
 
 ```bash
 ./switch_mode.sh vscode
 ```
 
-VS Code mode disables certain validators that may cause issues when using VS Code's source control integration:
+VS Code 模式禁用了在使用 VS Code 的源代码控制集成时可能导致问题的某些验证器：
 
-- Disables **ESLint** to prevent SSL certificate errors
-- Disables **Lizard**, **Bandit**, and **Semgrep** to prevent "command not found" errors
-- Uses environment variables to control which validators are active
-- Creates a `.env` file that is loaded by the pre-commit hook
+- 禁用 **ESLint**，防止 SSL 证书错误
+- 禁用 **Lizard**、**Bandit** 和 **Semgrep**，防止"命令未找到"错误
+- 使用环境变量控制哪些验证器处于活动状态
+- 创建由 pre-commit 钩子加载的 `.env` 文件
 
-### Terminal Mode
+### 终端模式
 
 ```bash
 ./switch_mode.sh terminal
 ```
 
-Terminal mode enables all validators for comprehensive code quality checking:
+终端模式启用所有验证器以进行全面的代码质量检查：
 
-- Enables **ESLint** for JavaScript/TypeScript validation
-- Enables **Lizard** for code complexity analysis
-- Enables **Bandit** for Python security checking
-- Enables **Semgrep** for multi-language security scanning
-- Enables **Horusec** for additional security scanning (if installed)
+- 启用 **ESLint** 用于 JavaScript/TypeScript 验证
+- 启用 **Lizard** 用于代码复杂度分析
+- 启用 **Bandit** 用于 Python 安全检查
+- 启用 **Semgrep** 用于多语言安全扫描
+- 启用 **Horusec** 用于额外的安全扫描（如果已安装）
 
-## Configuration
+## 配置
 
-### Customizing Validation Rules
+### 自定义验证规则
 
-Edit `.pre-commit-config.yaml` to modify the validation settings:
+编辑 `.pre-commit-config.yaml` 来修改验证设置：
 
 ```yaml
 # Example: Adjust Lizard complexity thresholds
@@ -182,31 +182,31 @@ Edit `.pre-commit-config.yaml` to modify the validation settings:
         ]
 ```
 
-### Mode-Specific Configurations
+### 特定模式配置
 
-Pre-Commitator includes pre-defined configuration templates for each mode:
+Pre-Commitator 为每种模式提供预定义的配置模板：
 
-- `config/pre-commit-vscode.yaml` - Configuration for VS Code mode
-- `config/pre-commit-terminal.yaml` - Configuration for terminal mode
+- `config/pre-commit-vscode.yaml` - VS Code 模式的配置
+- `config/pre-commit-terminal.yaml` - 终端模式的配置
 
-You can customize these templates to adjust which validators are enabled in each mode.
+您可以自定义这些模板，以调整每种模式中启用的验证器。
 
-### Environment Variables
+### 环境变量
 
-Pre-Commitator uses environment variables to selectively enable or disable validators:
+Pre-Commitator 使用环境变量来有选择地启用或禁用验证器：
 
-- `DISABLE_ESLINT=1` - Disables ESLint JavaScript validation
-- `DISABLE_LIZARD=1` - Disables Lizard complexity analysis
-- `DISABLE_BANDIT=1` - Disables Bandit Python security checks
-- `DISABLE_SEMGREP=1` - Disables Semgrep security scanning
+- `DISABLE_ESLINT=1` - 禁用 ESLint JavaScript 验证
+- `DISABLE_LIZARD=1` - 禁用 Lizard 复杂度分析
+- `DISABLE_BANDIT=1` - 禁用 Bandit Python 安全检查
+- `DISABLE_SEMGREP=1` - 禁用 Semgrep 安全扫描
 
-These environment variables are controlled by the `.env` file that is created by the `switch_mode.sh` script.
+这些环境变量由 `switch_mode.sh` 脚本创建的 `.env` 文件控制。
 
-### Setting Up Specific Languages
+### 配置特定语言
 
-#### Python Configuration
+#### Python 配置
 
-Modify `.bandit.yml` to change security scanning settings:
+修改 `.bandit.yml` 以更改安全扫描设置：
 
 ```yaml
 # Add additional skips
@@ -215,9 +215,9 @@ skips:
   - B404  # subprocess without shell=True
 ```
 
-#### JavaScript Configuration
+#### JavaScript 配置
 
-Modify `.eslintrc.json` to customize JavaScript linting:
+修改 `.eslintrc.json` 以自定义 JavaScript 代码检查：
 
 ```json
 {
@@ -230,11 +230,11 @@ Modify `.eslintrc.json` to customize JavaScript linting:
 }
 ```
 
-## Integration with CI/CD
+## 与 CI/CD 集成
 
 ### GitHub Actions
 
-Create `.github/workflows/quality-check.yml`:
+创建 `.github/workflows/quality-check.yml`：
 
 ```yaml
 name: Code Quality Check
@@ -262,22 +262,22 @@ jobs:
           ./run_quality_check.sh --all
 ```
 
-## Troubleshooting
+## 故障排除
 
-### Common Issues
+### 常见问题
 
-1. **Permission Denied**:
+1. **权限被拒绝**：
    ```bash
    chmod +x *.sh src/*.py src/*.sh
    ```
 
-2. **Line Endings on Windows**:
+2. **Windows 上的行尾问题**：
    ```bash
    # Fix line endings
    sed -i 's/\r$//' *.sh src/*.sh
    ```
 
-3. **Missing Dependencies**:
+3. **缺少依赖**：
    ```bash
    # Verify Python installations
    pip list
@@ -286,7 +286,7 @@ jobs:
    npm list
    ```
 
-4. **SSL Certificate Issues on macOS**:
+4. **macOS 上的 SSL 证书问题**：
    ```bash
    # Fix SSL certificate verification
    ./fix_certificates.sh
@@ -295,7 +295,7 @@ jobs:
    ./switch_mode.sh vscode
    ```
 
-5. **Pre-commit's Script is Installed in Migration Mode**:
+5. **Pre-commit 脚本以迁移模式安装**：
    ```bash
    # Reinstall pre-commit hooks
    pre-commit uninstall
@@ -303,7 +303,7 @@ jobs:
    ./switch_mode.sh vscode  # Or terminal mode
    ```
 
-6. **Auto-staging Not Working**:
+6. **自动暂存不工作**：
    ```bash
    # Reinstall auto-stage hook
    ./src/auto_stage_hook.sh
@@ -316,20 +316,20 @@ jobs:
    ./src/auto_stage_hook.sh
    ```
 
-### Getting Help
+### 获取帮助
 
-If you encounter persistent issues, please:
+如果您遇到持续性问题，请：
 
-1. Check if all dependencies are installed
-2. Verify file permissions
-3. Check Python and Node.js versions
-4. Open an issue on our GitHub repository
+1. 检查所有依赖是否已安装
+2. 验证文件权限
+3. 检查 Python 和 Node.js 版本
+4. 在我们的 GitHub 仓库上提交 issue
 
-## Next Steps
+## 后续步骤
 
-Once installation is complete, you can:
+安装完成后，您可以：
 
-1. Test your setup: `./run_quality_check.sh src/demo.py`
-2. Review sample configurations in the `config/` directory
-3. Integrate with your existing projects by copying the relevant files
-4. Switch between VS Code and terminal modes as needed
+1. 测试您的配置：`./run_quality_check.sh src/demo.py`
+2. 查看 `config/` 目录中的示例配置
+3. 通过复制相关文件集成到您现有的项目中
+4. 根据需要在 VS Code 和终端模式之间切换

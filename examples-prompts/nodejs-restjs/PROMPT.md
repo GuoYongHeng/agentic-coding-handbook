@@ -1,198 +1,198 @@
-# NestJS Enterprise Backend Assistant
+# NestJS 企业级后端助手
 
-## MISSION
-Create a production-ready NestJS backend application with hexagonal/clean architecture using latest enterprise standards. All tools must be configured, tested, and verified to work perfectly with zero-configuration deployment.
-
----
-
-## 🔍 MANDATORY WEB VERIFICATION
-**Before ANY installation, access official documentation:**
-1. **Latest Versions:** NestJS (https://docs.nestjs.com), TypeORM (https://typeorm.io), Prisma (https://www.prisma.io/docs), Swagger (https://docs.nestjs.com/openapi/introduction)
-2. **Node.js Compatibility:** Check package.json of latest NestJS, TypeORM, Prisma, and JWT packages on GitHub to determine compatible Node.js version
-3. **Use exact installation commands** from each package's official documentation
-4. **CRITICAL: Determine compatible versions** - use highest versions that work with ALL packages, not necessarily @latest
+## 使命
+使用最新的企业标准创建生产就绪的 NestJS 后端应用，采用六边形/整洁架构。所有工具必须经过配置、测试，并在零配置部署环境下验证可正常工作。
 
 ---
 
-## 🚀 PROJECT SETUP
+## 强制 WEB 验证
+**在任何安装之前，请访问官方文档：**
+1. **最新版本：** NestJS (https://docs.nestjs.com), TypeORM (https://typeorm.io), Prisma (https://www.prisma.io/docs), Swagger (https://docs.nestjs.com/openapi/introduction)
+2. **Node.js 兼容性：** 查看 GitHub 上最新 NestJS、TypeORM、Prisma 和 JWT 包的 package.json，确定兼容的 Node.js 版本
+3. **使用各包官方文档中的精确安装命令**
+4. **关键：确定兼容版本** - 使用与所有包兼容的最高版本，不一定是 @latest
 
-### Initialize & Verify
+---
+
+## 项目设置
+
+### 初始化与验证
 ```bash
 npm i -g @nestjs/cli@latest
 nest new my-backend-api --package-manager npm
 cd my-backend-api
-# Verify Node.js version compatibility with all planned packages
+# 验证 Node.js 版本与所有计划包的兼容性
 ```
 
-### Package Installation - Follow Official Docs
-**Core Framework:** @nestjs/common, @nestjs/core, @nestjs/platform-express, @nestjs/config, @nestjs/mapped-types
-**Database:** @nestjs/typeorm + typeorm + pg (PostgreSQL) OR prisma + @prisma/client + @nestjs/prisma
-**Authentication:** @nestjs/jwt, @nestjs/passport, passport-jwt, passport-local, bcrypt, @types/bcrypt
-**Validation:** class-validator, class-transformer, @nestjs/throttler
-**Documentation:** @nestjs/swagger, swagger-ui-express
-**Security:** helmet, @nestjs/throttler, cookie-parser, express-rate-limit
-**Testing:** @nestjs/testing, supertest, @types/supertest
-**Dev Tools:** eslint, prettier, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, jest
-**Utilities:** lodash, @types/lodash, uuid, @types/uuid, moment
+### 包安装 - 遵循官方文档
+**核心框架：** @nestjs/common, @nestjs/core, @nestjs/platform-express, @nestjs/config, @nestjs/mapped-types
+**数据库：** @nestjs/typeorm + typeorm + pg (PostgreSQL) 或 prisma + @prisma/client + @nestjs/prisma
+**认证：** @nestjs/jwt, @nestjs/passport, passport-jwt, passport-local, bcrypt, @types/bcrypt
+**验证：** class-validator, class-transformer, @nestjs/throttler
+**文档：** @nestjs/swagger, swagger-ui-express
+**安全：** helmet, @nestjs/throttler, cookie-parser, express-rate-limit
+**测试：** @nestjs/testing, supertest, @types/supertest
+**开发工具：** eslint, prettier, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, jest
+**工具库：** lodash, @types/lodash, uuid, @types/uuid, moment
 
 ---
 
-## 📁 HEXAGONAL ARCHITECTURE
+## 六边形架构
 
-### Folder Structure
+### 文件夹结构
 ```
 src/
 ├── common/
-│   ├── decorators/     # Custom decorators (roles, public, etc.)
-│   ├── filters/        # Exception filters
-│   ├── guards/         # Auth, roles, throttle guards
-│   ├── interceptors/   # Logging, transform interceptors
-│   ├── pipes/          # Validation pipes
-│   └── types/          # Shared interfaces & types
+│   ├── decorators/     # 自定义装饰器（角色、公开等）
+│   ├── filters/        # 异常过滤器
+│   ├── guards/         # 认证、角色、限流守卫
+│   ├── interceptors/   # 日志、转换拦截器
+│   ├── pipes/          # 验证管道
+│   └── types/          # 共享接口和类型
 ├── config/
-│   ├── database.config.ts    # DB configuration
-│   ├── jwt.config.ts         # JWT settings
-│   └── app.config.ts         # App-wide config
+│   ├── database.config.ts    # 数据库配置
+│   ├── jwt.config.ts         # JWT 设置
+│   └── app.config.ts         # 全局应用配置
 ├── modules/
 │   ├── auth/
 │   │   ├── domain/
-│   │   │   ├── entities/     # User, Token entities
-│   │   │   ├── repositories/ # Auth repository interfaces
-│   │   │   └── services/     # Domain business logic
+│   │   │   ├── entities/     # 用户、Token 实体
+│   │   │   ├── repositories/ # 认证仓储接口
+│   │   │   └── services/     # 领域业务逻辑
 │   │   ├── application/
-│   │   │   ├── dto/          # Request/Response DTOs
-│   │   │   ├── use-cases/    # Application services
-│   │   │   └── commands/     # CQRS commands (optional)
+│   │   │   ├── dto/          # 请求/响应 DTO
+│   │   │   ├── use-cases/    # 应用服务
+│   │   │   └── commands/     # CQRS 命令（可选）
 │   │   ├── infrastructure/
-│   │   │   ├── repositories/ # TypeORM/Prisma implementations
-│   │   │   ├── adapters/     # External service adapters
-│   │   │   └── persistence/  # Database schemas
+│   │   │   ├── repositories/ # TypeORM/Prisma 实现
+│   │   │   ├── adapters/     # 外部服务适配器
+│   │   │   └── persistence/  # 数据库 Schema
 │   │   └── presentation/
-│   │       ├── controllers/  # REST controllers
-│   │       └── guards/       # Module-specific guards
+│   │       ├── controllers/  # REST 控制器
+│   │       └── guards/       # 模块专属守卫
 │   └── users/
 │       ├── domain/
 │       ├── application/
 │       ├── infrastructure/
 │       └── presentation/
 ├── shared/
-│   ├── database/       # DB connection, migrations
-│   ├── interfaces/     # Global interfaces
-│   └── utils/          # Helper functions
+│   ├── database/       # 数据库连接、迁移
+│   ├── interfaces/     # 全局接口
+│   └── utils/          # 辅助函数
 └── main.ts
 ```
 
-### Architecture Rules
-✅ **DO:** Layer separation, dependency injection, interface-based repositories
-❌ **AVOID:** Direct database calls in controllers, business logic in DTOs
+### 架构规范
+✅ **应做：** 层次分离、依赖注入、基于接口的仓储
+❌ **避免：** 在控制器中直接调用数据库，在 DTO 中编写业务逻辑
 
 ---
 
-## ⚙️ CONFIGURATION & FEATURES
+## 配置与功能
 
-### Core Modules Required
-- **Authentication:** JWT strategy, login/register, password reset, email verification
-- **Authorization:** Role-based access control (RBAC), guards, decorators
-- **Users:** CRUD operations, profile management, soft delete
-- **Health:** Health check endpoint with database connectivity
-- **Documentation:** Swagger with authentication schemas
+### 必需核心模块
+- **认证：** JWT 策略、登录/注册、密码重置、邮箱验证
+- **授权：** 基于角色的访问控制（RBAC）、守卫、装饰器
+- **用户：** CRUD 操作、个人资料管理、软删除
+- **健康检查：** 包含数据库连接的健康检查端点
+- **文档：** 包含认证 Schema 的 Swagger
 
-### Database Integration
-- **TypeORM Setup:** Entities, repositories, migrations, seeds
-- **Prisma Alternative:** Schema, client generation, migrations
-- **Connection:** Database pooling, transaction support
-- **Validation:** Entity-level validation with class-validator
+### 数据库集成
+- **TypeORM 设置：** 实体、仓储、迁移、种子数据
+- **Prisma 替代方案：** Schema、客户端生成、迁移
+- **连接：** 数据库连接池、事务支持
+- **验证：** 使用 class-validator 进行实体级验证
 
-### Security Implementation
-- **JWT:** Access/refresh token mechanism
-- **Password:** Bcrypt hashing with salt rounds
-- **Rate Limiting:** API throttling configuration
-- **Headers:** Helmet security middleware
-- **CORS:** Cross-origin configuration
-- **Validation:** Request/response validation pipes
+### 安全实现
+- **JWT：** 访问/刷新 Token 机制
+- **密码：** 带盐的 Bcrypt 哈希
+- **限流：** API 限速配置
+- **请求头：** Helmet 安全中间件
+- **CORS：** 跨域配置
+- **验证：** 请求/响应验证管道
 
 ---
 
-## ✅ VERIFICATION
+## 验证
 
-### Automated Checks (ALL must pass)
+### 自动化检查（所有检查必须通过）
 ```bash
-npm run start:dev     # Development server starts on port 3000
-npm run build         # Production build succeeds
-npm run test          # Unit tests pass, 0 failures
-npm run test:e2e      # E2E tests pass, 0 failures
-npm run lint          # Zero ESLint errors/warnings
-npm run format        # Prettier formatting check
+npm run start:dev     # 开发服务器在 3000 端口启动
+npm run build         # 生产构建成功
+npm run test          # 单元测试通过，0 个失败
+npm run test:e2e      # E2E 测试通过，0 个失败
+npm run lint          # 零 ESLint 错误/警告
+npm run format        # Prettier 格式化检查
 ```
 
-### API Endpoint Tests
+### API 端点测试
 ```bash
-# Health check responds
+# 健康检查响应
 curl http://localhost:3000/health
 
-# Swagger documentation loads
+# Swagger 文档加载
 curl http://localhost:3000/api
 
-# Authentication endpoints work
+# 认证端点可用
 POST /auth/register
 POST /auth/login
 GET /auth/profile (with JWT)
 ```
 
-### Database Verification
+### 数据库验证
 ```bash
-# Migrations run successfully
+# 迁移成功运行
 npm run migration:run
 
-# Seeds execute without errors  
+# 种子数据无错误执行
 npm run seed:run
 
-# Database connection established
-# Check application logs for connection success
+# 数据库连接已建立
+# 检查应用日志确认连接成功
 ```
 
 ---
 
-## 📋 DELIVERABLES
+## 交付物
 
-### Implementation Requirements
-1. **Installation steps** with exact commands from official NestJS docs
-2. **Complete auth module** (domain, application, infrastructure, presentation layers)
-3. **User management** with CRUD operations and validation
-4. **Database setup** with entities/models, migrations, and seeds
-5. **Security configuration** (JWT, RBAC, rate limiting, CORS)
-6. **API documentation** with Swagger decorators and examples
-7. **Global middleware** (exception filters, validation pipes, interceptors)
-8. **Docker configuration** (Dockerfile + docker-compose.yml with PostgreSQL)
-9. **Environment configuration** (.env files for dev/staging/prod)
-10. **Testing setup** (unit tests, e2e tests, test database)
+### 实现需求
+1. **安装步骤**，包含来自官方 NestJS 文档的精确命令
+2. **完整认证模块**（领域层、应用层、基础设施层、展示层）
+3. **用户管理**，包含 CRUD 操作和验证
+4. **数据库设置**，包含实体/模型、迁移和种子数据
+5. **安全配置**（JWT、RBAC、限流、CORS）
+6. **API 文档**，包含 Swagger 装饰器和示例
+7. **全局中间件**（异常过滤器、验证管道、拦截器）
+8. **Docker 配置**（Dockerfile + 包含 PostgreSQL 的 docker-compose.yml）
+9. **环境配置**（开发/预发布/生产的 .env 文件）
+10. **测试设置**（单元测试、E2E 测试、测试数据库）
 
-### Configuration Files
-- **TypeScript:** tsconfig.json with strict mode
-- **ESLint:** .eslintrc.js with NestJS rules
-- **Prettier:** .prettierrc with consistent formatting
-- **Jest:** jest.config.js for testing
-- **Docker:** Multi-stage Dockerfile optimized for production
+### 配置文件
+- **TypeScript：** 启用严格模式的 tsconfig.json
+- **ESLint：** 包含 NestJS 规则的 .eslintrc.js
+- **Prettier：** 保持一致格式化的 .prettierrc
+- **Jest：** 用于测试的 jest.config.js
+- **Docker：** 针对生产环境优化的多阶段 Dockerfile
 
-### Code Examples
-- **JWT Authentication:** Complete login/register flow
-- **RBAC System:** Role decorators and guards
-- **Repository Pattern:** Generic base repository with TypeORM/Prisma
-- **Exception Handling:** Global filters with structured error responses
-- **Validation:** DTO classes with class-validator decorators
+### 代码示例
+- **JWT 认证：** 完整的登录/注册流程
+- **RBAC 系统：** 角色装饰器和守卫
+- **仓储模式：** 使用 TypeORM/Prisma 的通用基础仓储
+- **异常处理：** 包含结构化错误响应的全局过滤器
+- **验证：** 使用 class-validator 装饰器的 DTO 类
 
 ---
 
-## 🎯 SUCCESS CRITERIA
-**Production-ready NestJS backend with hexagonal architecture, comprehensive authentication, database integration, API documentation, and Docker deployment - ready for immediate team collaboration.**
+## 成功标准
+**生产就绪的 NestJS 后端，具备六边形架构、完整认证、数据库集成、API 文档和 Docker 部署——随时可供团队协作使用。**
 
-### Quality Standards
-- TypeScript strict mode enabled
-- Zero build/lint/test errors
-- All security best practices implemented
-- Complete API documentation
-- Database properly configured with migrations
-- Docker containers start successfully
-- All endpoints secured and validated
+### 质量标准
+- 启用 TypeScript 严格模式
+- 零构建/代码检查/测试错误
+- 实现所有安全最佳实践
+- 完整的 API 文档
+- 正确配置数据库及迁移
+- Docker 容器成功启动
+- 所有端点均已安全防护并完成验证
 
-**QUALITY GUARANTEE:** Task incomplete until all verification checks pass and API endpoints respond correctly with proper authentication.
+**质量保证：** 在所有验证检查通过且 API 端点以正确的身份验证正常响应之前，任务未完成。

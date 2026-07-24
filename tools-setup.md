@@ -6,26 +6,26 @@ has_children: true
 permalink: /tools/
 ---
 
-# 🛠️ Tools & Setup
+# 🛠️ 工具与配置
 
-Understanding the ecosystem of agentic coding tools and how to configure them for maximum effectiveness.
+了解智能体编程工具生态系统，以及如何配置它们以达到最佳效果。
 
-## AI Models & Context
+## AI 模型与上下文
 
-- **Model Use Cases** - When to use different AI models
-- **Model Context Providers (MCPs)** - Extending AI context and capabilities
-- **Debugging MCPs** - Troubleshooting context providers
+- **模型使用场景** - 何时使用不同的 AI 模型
+- **模型上下文提供者（MCPs）** - 扩展 AI 上下文与能力
+- **调试 MCPs** - 上下文提供者故障排查
 
-## Development Environment
+## 开发环境
 
-- **IDE Setup** - Configuring Cursor, VS Code with Copilot
-- **Context Management** - Maintaining project context across sessions
-- **Quality Gates** - Automated validations and pre-commit hooks
+- **IDE 配置** - 配置 Cursor、带 Copilot 的 VS Code
+- **上下文管理** - 跨会话维护项目上下文
+- **质量门控** - 自动化验证与 pre-commit 钩子
 
-## Best Practices
+## 最佳实践
 
-- **Privacy Considerations** - Handling sensitive data with AI
-- **Team Guidelines** - Organization and project-specific standards
-- **Debugging** - Systematic troubleshooting approaches
+- **隐私注意事项** - 在 AI 中处理敏感数据
+- **团队规范** - 组织和项目专属标准
+- **调试** - 系统化的故障排查方法
 
-These tools and configurations form the foundation for effective agentic coding. Proper setup saves hours of debugging and ensures consistent, high-quality results across your team.
+这些工具和配置构成了高效智能体编程的基础。正确的配置可以节省大量调试时间，并确保团队产出一致、高质量的结果。
