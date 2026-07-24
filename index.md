@@ -49,3 +49,5 @@ AI 驱动开发的第一步，以及所需的思维转变。
 ---
 
 _使用导航侧边栏探索各章节。每个页面都包含实践示例、常见陷阱和分步指导，帮助你成功驾驭智能体编程。_
+
+> 📖 本项目是对 [Agentic Coding Handbook](https://tweag.github.io/agentic-coding-handbook/) 的中文翻译。如需查阅英文原文，请访问原始网站。
