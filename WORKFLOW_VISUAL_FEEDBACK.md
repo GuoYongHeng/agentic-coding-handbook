@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Visual Feedback Loop
-parent: Core Workflows
+title: 视觉反馈循环
+parent: 核心工作流程
 nav_order: 4
 ---
 

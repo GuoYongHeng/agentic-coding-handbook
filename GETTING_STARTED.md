@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Quick Start Guide
-parent: Getting Started
+title: 快速入门指南
+parent: 入门指南
 nav_order: 1
 ---
 

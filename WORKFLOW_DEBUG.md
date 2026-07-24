@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Debug Workflow
-parent: Core Workflows
+title: 调试工作流
+parent: 核心工作流程
 nav_order: 6
 ---
 

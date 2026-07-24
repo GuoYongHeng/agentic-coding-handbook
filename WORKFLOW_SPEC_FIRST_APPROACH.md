@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Spec-First Approach
-parent: Core Workflows
+title: 规格优先方法
+parent: 核心工作流程
 nav_order: 1
 ---
 

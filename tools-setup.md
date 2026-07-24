@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tools & Setup
+title: 工具与配置
 nav_order: 5
 has_children: true
 permalink: /tools/

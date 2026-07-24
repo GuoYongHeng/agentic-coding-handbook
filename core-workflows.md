@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Core Workflows
+title: 核心工作流程
 nav_order: 3
 has_children: true
 permalink: /workflows/

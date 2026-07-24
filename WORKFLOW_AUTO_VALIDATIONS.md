@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Auto Validations
-parent: Core Workflows
+title: 自动验证
+parent: 核心工作流程
 nav_order: 7
 ---
 

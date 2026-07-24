@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Examples & Templates
+title: 示例与模板
 nav_order: 6
 has_children: true
 permalink: /examples/

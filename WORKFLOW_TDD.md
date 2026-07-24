@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Test-Driven Development
-parent: Core Workflows
+title: 测试驱动开发
+parent: 核心工作流程
 nav_order: 2
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Exploratory Workflow
-parent: Core Workflows
+title: 探索式工作流
+parent: 核心工作流程
 nav_order: 5
 ---
 

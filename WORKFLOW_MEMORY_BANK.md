@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Memory Bank System
-parent: Core Workflows
+title: 记忆库系统
+parent: 核心工作流程
 nav_order: 3
 ---
 
